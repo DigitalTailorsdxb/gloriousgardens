@@ -91,6 +91,62 @@
             visibility: visible;
         }
         
+        /* Modern Range Slider Styles */
+        .modern-slider {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 12px;
+            border-radius: 6px;
+            background: linear-gradient(to right, #8b5cf6 0%, #8b5cf6 var(--slider-progress, 20%), #e5e7eb var(--slider-progress, 20%), #e5e7eb 100%);
+            outline: none;
+            cursor: pointer;
+            transition: background 0.15s ease;
+        }
+        
+        .modern-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+            cursor: pointer;
+            border: 4px solid white;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4), 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .modern-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(139, 92, 246, 0.5), 0 3px 6px rgba(0, 0, 0, 0.15);
+        }
+        
+        .modern-slider::-webkit-slider-thumb:active {
+            transform: scale(1.05);
+        }
+        
+        .modern-slider::-moz-range-thumb {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+            cursor: pointer;
+            border: 4px solid white;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4), 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .modern-slider::-moz-range-thumb:hover {
+            transform: scale(1.1);
+        }
+        
+        .modern-slider::-moz-range-track {
+            height: 12px;
+            border-radius: 6px;
+            background: #e5e7eb;
+        }
+        
         /* Desktop grid layout for quote form */
         @media (min-width: 1024px) {
             .quote-layout {
@@ -1103,12 +1159,16 @@
                                 </div>
                             </div>
                             
-                            <div class="mb-6">
+                            <div class="mb-8">
                                 <label class="block text-gray-700 font-semibold mb-2">Approximate total area <span id="areaRequired" class="text-red-500">*</span></label>
-                                <p class="text-sm text-gray-500 mb-3">m² = length × width (e.g. 10m × 7m = 70m²)</p>
-                                <div class="flex items-center gap-4">
-                                    <input type="range" id="areaSlider" min="30" max="400" value="100" class="flex-1 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-accent">
-                                    <span class="text-2xl font-bold text-primary w-24 text-right"><span id="areaValue">100</span> m²</span>
+                                <p class="text-sm text-gray-500 mb-4">m² = length × width (e.g. 10m × 7m = 70m²)</p>
+                                <div class="bg-gradient-to-r from-purple-50 to-blue-50 rounded-2xl p-6 border border-purple-100">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <span class="text-sm text-gray-500">30 m²</span>
+                                        <span class="text-3xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent"><span id="areaValue">100</span> m²</span>
+                                        <span class="text-sm text-gray-500">400 m²</span>
+                                    </div>
+                                    <input type="range" id="areaSlider" min="30" max="400" value="100" class="modern-slider w-full" style="--slider-progress: 18.9%;">
                                 </div>
                             </div>
                             

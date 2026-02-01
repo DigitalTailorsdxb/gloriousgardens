@@ -1725,10 +1725,21 @@ function initializeAreaSlider() {
     const slider = document.getElementById('areaSlider');
     const valueDisplay = document.getElementById('areaValue');
     
+    function updateSliderProgress(slider) {
+        const min = parseInt(slider.min) || 30;
+        const max = parseInt(slider.max) || 400;
+        const value = parseInt(slider.value);
+        const progress = ((value - min) / (max - min)) * 100;
+        slider.style.setProperty('--slider-progress', progress + '%');
+    }
+    
     if (slider) {
+        updateSliderProgress(slider);
+        
         slider.addEventListener('input', function() {
             quoteData.area = this.value;
             valueDisplay.textContent = this.value;
+            updateSliderProgress(this);
             updateSummary();
         });
     }
