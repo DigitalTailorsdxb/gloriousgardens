@@ -92,16 +92,45 @@
         }
         
         /* Modern Range Slider Styles */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 8px;
+        }
+        
+        .slider-track {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 4px;
+        }
+        
+        .slider-progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 8px;
+            background: linear-gradient(90deg, #10b981, #14b8a6);
+            border-radius: 4px;
+            pointer-events: none;
+        }
+        
         .modern-slider {
             -webkit-appearance: none;
             appearance: none;
+            position: absolute;
+            top: -10px;
+            left: 0;
             width: 100%;
-            height: 12px;
-            border-radius: 6px;
-            background: linear-gradient(to right, #8b5cf6 0%, #8b5cf6 var(--slider-progress, 20%), #e5e7eb var(--slider-progress, 20%), #e5e7eb 100%);
+            height: 28px;
+            background: transparent;
             outline: none;
             cursor: pointer;
-            transition: background 0.15s ease;
+            margin: 0;
+            z-index: 10;
         }
         
         .modern-slider::-webkit-slider-thumb {
@@ -110,41 +139,35 @@
             width: 28px;
             height: 28px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+            background: white;
             cursor: pointer;
-            border: 4px solid white;
-            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4), 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 3px solid #10b981;
+            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
         }
         
         .modern-slider::-webkit-slider-thumb:hover {
             transform: scale(1.1);
-            box-shadow: 0 6px 16px rgba(139, 92, 246, 0.5), 0 3px 6px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4), 0 2px 4px rgba(0, 0, 0, 0.15);
         }
         
         .modern-slider::-webkit-slider-thumb:active {
             transform: scale(1.05);
+            border-color: #059669;
         }
         
         .modern-slider::-moz-range-thumb {
             width: 28px;
             height: 28px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+            background: white;
             cursor: pointer;
-            border: 4px solid white;
-            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4), 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        
-        .modern-slider::-moz-range-thumb:hover {
-            transform: scale(1.1);
+            border: 3px solid #10b981;
+            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
         }
         
         .modern-slider::-moz-range-track {
-            height: 12px;
-            border-radius: 6px;
-            background: #e5e7eb;
+            background: transparent;
         }
         
         /* Desktop grid layout for quote form */
@@ -1159,16 +1182,22 @@
                                 </div>
                             </div>
                             
-                            <div class="mb-8">
+                            <div class="mb-6">
                                 <label class="block text-gray-700 font-semibold mb-2">Approximate total area <span id="areaRequired" class="text-red-500">*</span></label>
-                                <p class="text-sm text-gray-500 mb-4">m² = length × width (e.g. 10m × 7m = 70m²)</p>
-                                <div class="bg-gradient-to-r from-purple-50 to-blue-50 rounded-2xl p-6 border border-purple-100">
-                                    <div class="flex items-center justify-between mb-4">
-                                        <span class="text-sm text-gray-500">30 m²</span>
-                                        <span class="text-3xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent"><span id="areaValue">100</span> m²</span>
-                                        <span class="text-sm text-gray-500">400 m²</span>
+                                <p class="text-sm text-gray-500 mb-3">m² = length × width (e.g. 10m × 7m = 70m²)</p>
+                                <div class="bg-gray-50 rounded-xl p-4 border border-gray-200">
+                                    <div class="text-center mb-4">
+                                        <span class="text-3xl font-bold text-emerald-600"><span id="areaValue">100</span> m²</span>
                                     </div>
-                                    <input type="range" id="areaSlider" min="30" max="400" value="100" class="modern-slider w-full" style="--slider-progress: 18.9%;">
+                                    <div class="slider-container mb-3">
+                                        <div class="slider-track"></div>
+                                        <div class="slider-progress" id="sliderProgress" style="width: 18.9%;"></div>
+                                        <input type="range" id="areaSlider" min="30" max="400" value="100" class="modern-slider">
+                                    </div>
+                                    <div class="flex justify-between text-xs text-gray-400">
+                                        <span>30 m²</span>
+                                        <span>400 m²</span>
+                                    </div>
                                 </div>
                             </div>
                             

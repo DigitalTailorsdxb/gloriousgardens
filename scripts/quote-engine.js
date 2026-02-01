@@ -1731,13 +1731,16 @@ function initializeAddProductButtons() {
 function initializeAreaSlider() {
     const slider = document.getElementById('areaSlider');
     const valueDisplay = document.getElementById('areaValue');
+    const progressBar = document.getElementById('sliderProgress');
     
     function updateSliderProgress(slider) {
         const min = parseInt(slider.min) || 30;
         const max = parseInt(slider.max) || 400;
         const value = parseInt(slider.value);
         const progress = ((value - min) / (max - min)) * 100;
-        slider.style.setProperty('--slider-progress', progress + '%');
+        if (progressBar) {
+            progressBar.style.width = progress + '%';
+        }
     }
     
     if (slider) {
