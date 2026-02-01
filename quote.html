@@ -1334,17 +1334,31 @@
                                 </div>
                             </div>
                             
-                            <div class="mb-6">
-                                <label class="block text-gray-700 font-semibold mb-2">Full Name *</label>
-                                <input 
-                                    type="text" 
-                                    id="name"
-                                    name="name"
-                                    required
-                                    autocomplete="name"
-                                    class="w-full px-5 py-4 rounded-xl border-2 border-gray-200 focus:outline-none focus:border-accent transition-colors text-base"
-                                    placeholder="John Smith"
-                                >
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                                <div>
+                                    <label class="block text-gray-700 font-semibold mb-2">First Name *</label>
+                                    <input 
+                                        type="text" 
+                                        id="firstName"
+                                        name="firstName"
+                                        required
+                                        autocomplete="given-name"
+                                        class="w-full px-5 py-4 rounded-xl border-2 border-gray-200 focus:outline-none focus:border-accent transition-colors text-base"
+                                        placeholder="John"
+                                    >
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-semibold mb-2">Surname *</label>
+                                    <input 
+                                        type="text" 
+                                        id="surname"
+                                        name="surname"
+                                        required
+                                        autocomplete="family-name"
+                                        class="w-full px-5 py-4 rounded-xl border-2 border-gray-200 focus:outline-none focus:border-accent transition-colors text-base"
+                                        placeholder="Smith"
+                                    >
+                                </div>
                             </div>
                             
                             <div class="mb-6">

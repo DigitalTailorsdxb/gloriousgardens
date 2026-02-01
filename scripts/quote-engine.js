@@ -1966,13 +1966,19 @@ function nextStep() {
     
     // Step 5: Validate contact details
     if (currentStep === 5) {
-        const nameInput = document.getElementById('name');
+        const firstNameInput = document.getElementById('firstName');
+        const surnameInput = document.getElementById('surname');
         const emailInput = document.getElementById('email');
         const phoneInput = document.getElementById('phone');
         
-        if (!nameInput.value.trim()) {
-            alert('Please enter your name');
-            nameInput.focus();
+        if (!firstNameInput.value.trim()) {
+            alert('Please enter your first name');
+            firstNameInput.focus();
+            return;
+        }
+        if (!surnameInput.value.trim()) {
+            alert('Please enter your surname');
+            surnameInput.focus();
             return;
         }
         if (!emailInput.value.trim() || !emailInput.value.includes('@')) {
@@ -1987,7 +1993,9 @@ function nextStep() {
         }
         
         // Store contact details
-        quoteData.name = nameInput.value.trim();
+        quoteData.firstName = firstNameInput.value.trim();
+        quoteData.surname = surnameInput.value.trim();
+        quoteData.name = `${quoteData.firstName} ${quoteData.surname}`;
         quoteData.email = emailInput.value.trim();
         quoteData.phone = phoneInput.value.trim();
     }
@@ -2366,10 +2374,18 @@ async function submitQuote() {
     console.log('Current quoteData:', quoteData);
     
     // Validation
-    const nameInput = document.getElementById('name');
-    if (!nameInput.value.trim()) {
-        alert('Please enter your name');
-        nameInput.focus();
+    const firstNameInput = document.getElementById('firstName');
+    if (!firstNameInput.value.trim()) {
+        alert('Please enter your first name');
+        firstNameInput.focus();
+        isSubmittingQuote = false;
+        return;
+    }
+    
+    const surnameInput = document.getElementById('surname');
+    if (!surnameInput.value.trim()) {
+        alert('Please enter your surname');
+        surnameInput.focus();
         isSubmittingQuote = false;
         return;
     }
@@ -2382,7 +2398,9 @@ async function submitQuote() {
         return;
     }
     
-    quoteData.name = nameInput.value.trim();
+    quoteData.firstName = firstNameInput.value.trim();
+    quoteData.surname = surnameInput.value.trim();
+    quoteData.name = `${quoteData.firstName} ${quoteData.surname}`;
     quoteData.email = emailInput.value.trim();
     
     const phoneInput = document.getElementById('phone');
@@ -2745,6 +2763,8 @@ function prepareWebhookPayload() {
         
         const payload = {
             customer: {
+                firstName: quoteData.firstName || '',
+                surname: quoteData.surname || '',
                 name: quoteData.name || 'Unknown',
                 email: quoteData.email || '',
                 phone: quoteData.phone || '',
