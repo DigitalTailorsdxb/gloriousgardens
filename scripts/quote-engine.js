@@ -191,6 +191,13 @@ const SubmissionOverlay = {
         // Hide processing, show appropriate success
         document.getElementById('overlayProcessing').classList.add('hidden');
         
+        // Populate email addresses on success screens
+        const userEmail = quoteData.email || 'your email';
+        const emailQuote = document.getElementById('successEmailQuote');
+        const emailRedesign = document.getElementById('successEmailRedesign');
+        if (emailQuote) emailQuote.textContent = userEmail;
+        if (emailRedesign) emailRedesign.textContent = userEmail;
+        
         if (this.hasImage) {
             document.getElementById('overlaySuccessRedesign').classList.remove('hidden');
         } else {
