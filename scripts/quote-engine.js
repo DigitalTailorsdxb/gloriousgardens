@@ -1344,6 +1344,11 @@ function initializeQuoteModeCards() {
             
             console.log('✅ Quote mode selected:', mode);
             updateSummary();
+            
+            // Auto-advance to Step 2 after brief visual feedback
+            setTimeout(() => {
+                nextStep();
+            }, 300);
         });
     });
 }
