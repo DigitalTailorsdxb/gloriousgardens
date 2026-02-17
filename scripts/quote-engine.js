@@ -2480,14 +2480,12 @@ async function submitQuote() {
             console.log('Standard quotes: /webhook/premium-landscapes-quote');
             console.log('Full redesign: /webhook/premium-landscapes-full-redesign');
             
-            // Demo mode: Simulate webhook completion - animation will run its full duration
+            isSubmittingQuote = false;
             if (isFullRedesignMode) {
-                // Let animation run then complete
                 setTimeout(() => {
                     onWebhookComplete(true, { demo: true });
-                }, 8000); // Allow time for animation
+                }, 8000);
             } else {
-                // For individual products, store demo result - animation will handle completion
                 onIndividualWebhookComplete(true, { demo: true });
             }
             return;
@@ -2516,9 +2514,11 @@ async function submitQuote() {
                 body: JSON.stringify(webhookPayload)
             }).then(response => {
                 console.log('✅ Webhook sent successfully, status:', response.status);
+                isSubmittingQuote = false;
                 onWebhookComplete(true, { success: true });
             }).catch(error => {
                 console.warn('⚠️ Webhook error (UI continues):', error.message);
+                isSubmittingQuote = false;
                 onWebhookComplete(false, { error: error.message });
             });
             
@@ -2572,18 +2572,18 @@ async function submitQuote() {
                 
             } catch (error) {
                 console.error('❌ Network Error:', error);
+                isSubmittingQuote = false;
                 stopIndividualProgressAnimation();
                 document.getElementById('loadingState').classList.add('hidden');
-                // Network/timeout error - show with default contact info
                 showNetworkError();
             }
         }
         
     } catch (error) {
         console.error('❌ Error preparing quote:', error);
+        isSubmittingQuote = false;
         
         if (isFullRedesignMode) {
-            // For full redesign, let animation continue - email will arrive
             console.warn('Payload preparation error, webhook may not have sent');
         } else {
             stopIndividualProgressAnimation();
