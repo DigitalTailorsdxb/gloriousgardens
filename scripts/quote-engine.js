@@ -1848,8 +1848,15 @@ function initializeFileUploadStep5() {
     });
     
     function handleFilesStep5(files) {
-        quoteData.files = Array.from(files);
-        displayFilePreview(files, filePreview);
+        const validFiles = Array.from(files).filter(file => {
+            if (file.size > 50 * 1024 * 1024) {
+                alert(`"${file.name}" is too large (${(file.size / (1024 * 1024)).toFixed(1)}MB). Please use a smaller photo or export as JPEG.`);
+                return false;
+            }
+            return true;
+        });
+        quoteData.files = validFiles;
+        displayFilePreview(validFiles, filePreview);
         updateSummary();
         updateAIDesignVisibility();
     }
@@ -3300,13 +3307,28 @@ function toggleAIUploadSection() {
     updateSummary();
 }
 
-// Handle AI design file uploads (limit: 1 image only)
 function handleAIFiles(files) {
     if (files.length === 0) return;
     
-    // Only accept the first image (replace existing if any)
-    aiDesignFiles = [files[0]];
+    const file = files[0];
+    const maxSizeMB = 50;
+    const fileSizeMB = (file.size / (1024 * 1024)).toFixed(1);
     
+    if (!file.type.startsWith('image/')) {
+        alert('Please upload an image file (JPEG, PNG, etc.)');
+        return;
+    }
+    
+    if (file.size > maxSizeMB * 1024 * 1024) {
+        alert(`Image is too large (${fileSizeMB}MB). Please use a smaller photo or export as JPEG first.`);
+        return;
+    }
+    
+    if (file.size > 10 * 1024 * 1024) {
+        console.log(`⚠️ Large image detected (${fileSizeMB}MB) - will be compressed before sending`);
+    }
+    
+    aiDesignFiles = [file];
     displayAIFilePreview();
 }
 
