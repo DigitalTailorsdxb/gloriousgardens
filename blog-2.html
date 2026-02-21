@@ -68,6 +68,10 @@
         .mobile-menu {
             transition: transform 0.3s ease;
         }
+        .mobile-menu.active {
+            transform: translateX(0) !important;
+            -webkit-transform: translateX(0) !important;
+        }
     </style>
     
     <script src="scripts/config.js"></script>
@@ -76,7 +80,7 @@
 <body class="bg-white">
 
     <!-- Navigation Header -->
-    <header class="bg-white shadow-sm fixed w-full top-0 z-50">
+    <header class="bg-white shadow-sm fixed w-full top-0 z-50" style="-webkit-transform: translateZ(0); transform: translateZ(0);">
         <nav class="container mx-auto px-4 py-0 flex items-center justify-between">
             <div class="flex items-center space-x-2">
                 <a href="index.html">
@@ -98,24 +102,24 @@
                 <i class="fas fa-bars"></i>
             </button>
         </nav>
-        
-        <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white shadow-2xl transform translate-x-full md:hidden z-50">
-            <div class="p-6">
-                <button id="closeMobileMenu" class="text-primary text-2xl mb-8">
-                    <i class="fas fa-times"></i>
-                </button>
-                <div class="flex flex-col space-y-6">
-                    <a href="index.html" class="text-gray-700 hover:text-primary transition text-lg mobile-menu-link">Home</a>
-                    <a href="about.html" class="text-gray-700 hover:text-primary transition text-lg mobile-menu-link">About</a>
-                    <a href="services.html" class="text-gray-700 hover:text-primary transition text-lg mobile-menu-link">Services</a>
-                    <a href="gallery.html" class="text-gray-700 hover:text-primary transition text-lg mobile-menu-link">Gallery</a>
-                    <a href="quote.html" class="text-gray-700 hover:text-primary transition text-lg mobile-menu-link">Instant Quote</a>
-                    <a href="quote.html" class="text-gray-700 hover:text-primary transition text-lg mobile-menu-link">Quote + AI Design</a>
-                    <a href="contact.html" class="text-primary font-semibold transition text-lg mobile-menu-link">Contact</a>
-                </div>
+    </header>
+
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white shadow-2xl transform translate-x-full md:hidden z-50" style="-webkit-transform: translateX(100%); transform: translateX(100%);">
+        <div class="p-6">
+            <button id="closeMobileMenu" class="text-primary text-2xl mb-8">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="flex flex-col space-y-6">
+                <a href="index.html" class="text-gray-700 hover:text-primary transition text-lg mobile-menu-link">Home</a>
+                <a href="about.html" class="text-gray-700 hover:text-primary transition text-lg mobile-menu-link">About</a>
+                <a href="services.html" class="text-gray-700 hover:text-primary transition text-lg mobile-menu-link">Services</a>
+                <a href="gallery.html" class="text-gray-700 hover:text-primary transition text-lg mobile-menu-link">Gallery</a>
+                <a href="quote.html" class="text-gray-700 hover:text-primary transition text-lg mobile-menu-link">Instant Quote</a>
+                <a href="quote.html" class="text-gray-700 hover:text-primary transition text-lg mobile-menu-link">Quote + AI Design</a>
+                <a href="contact.html" class="text-primary font-semibold transition text-lg mobile-menu-link">Contact</a>
             </div>
         </div>
-    </header>
+    </div>
 
     <!-- Blog Post Header -->
     <section class="pt-32 pb-12 px-4 bg-stone">
