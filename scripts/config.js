@@ -101,8 +101,11 @@ function applyBranding() {
     setElement('footerEmail', brandConfig.email);
     setElement('emailLink', brandConfig.email, 'href', `mailto:${brandConfig.email}`);
     
-    setElement('contactLocation', brandConfig.location);
-    setElement('footerLocation', brandConfig.location);
+    const locationLink = `<a href="areas-we-cover.html" class="hover:text-primary transition">${brandConfig.location}</a>`;
+    const contactLocationEl = document.getElementById('contactLocation');
+    if (contactLocationEl) contactLocationEl.innerHTML = locationLink;
+    const footerLocationEl = document.getElementById('footerLocation');
+    if (footerLocationEl) footerLocationEl.innerHTML = locationLink;
     setElement('addressLine1', 'Your Business Address');
     setElement('addressLine2', 'Your City, County');
     setElement('addressPostcode', 'Postcode');
