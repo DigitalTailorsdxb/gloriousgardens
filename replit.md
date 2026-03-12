@@ -9,7 +9,7 @@ Premium Landscapes is an AI-powered, high-converting landscaping website templat
 I prefer iterative development with clear, concise communication at each phase. Please ask before making major architectural changes or integrating new third-party services. Ensure all code is cleanly commented and follows a mobile-first approach. I value detailed explanations for complex integrations and architectural decisions. Do not make changes to files outside the specified scope for a given task without explicit approval.
 
 ## System Architecture
-The website utilizes a multi-page architecture (`index.html`, `quote.html`, `about.html`, `services.html`, `gallery.html`, `contact.html`, `blog.html`, and individual blog post pages) for enhanced UX and SEO. The standalone AI Design page was removed in favor of an integrated quote + design flow for better conversion.
+The website utilizes a multi-page architecture (`index.html`, `quote.html`, `about.html`, `services.html`, `gallery.html`, `contact.html`, `blog.html`, `case-studies.html`, `areas-we-cover.html`, individual blog post pages, 7 service detail pages, 8 project case study pages, and 20+ location pages) for enhanced UX and SEO. The standalone AI Design page was removed in favor of an integrated quote + design flow for better conversion.
 
 ### UI/UX Decisions
 - **Visual Style:** Modern SaaS design with white backgrounds for a clean, professional, and minimal aesthetic.
