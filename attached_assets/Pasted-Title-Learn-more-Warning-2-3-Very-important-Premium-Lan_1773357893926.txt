@@ -1,0 +1,220 @@
+Title
+
+Learn more
+Warning
+2/3
+Very important
+Premium Landscapes - AI-Powered Instant Quotes & Garden Designs
+The page title should be shorter than 580 pixels. It is 624 pixels long. Optimize title
+There are no duplicate words in the title.
+Meta description
+
+Learn more
+2/2
+Very important
+Get instant garden quotes and AI-generated landscape designs in minutes. Professional landscaping services including lawns, patios, decking, and more.
+The length of the meta description is perfect. (942 pixels out of 1000 max pixel length)
+Crawlability
+
+Learn more
+1/1
+Very important
+There are no problems in accessing the page.
+Canonical link
+
+Learn more
+Errors
+1/2
+Important
+https://premiumlandscapes.co.uk/
+The canonical link points to a different domain.
+Language
+
+Learn more
+4/4
+Low importance
+Language detected in text: en
+Language defined in HTML: en
+Server location: Germany
+The following language is defined in the HTML code: en
+Alternate/hreflang links
+
+Learn more
+1/1
+Low importance
+There are no alternate links specified on this page.
+Other meta tags
+
+Learn more
+2/2
+Low importance
+There is no rel=next meta tag on this page.
+There is no rel=prev meta tag on this page.
+Domain
+
+Learn more
+3/3
+Low importance
+The domain is not a subdomain.
+The domain length works well.
+The domain name does not contain any non-Latin characters.
+Page URL
+
+Learn more
+3/3
+Low importance
+No parameters were found in the URL.
+No session ID was found in the URL.
+The URL does not have too many subdirectories.
+Charset encoding
+
+Learn more
+1/1
+Low importance
+The charset encoding (UTF-8) is set correctly.
+Doctype
+
+Learn more
+2/2
+Nice to have
+The doctype HTML 5 is set correctly.
+The doctype is placed first in the HTML code.
+Favicon
+
+Learn more
+1/1
+Nice to have
+The favicon is linked correctly.
+Page quality
+69%
+Content
+
+Learn more
+Warning
+7/8
+Very important
+There are only 399 count words on this page. Good pages should have about 800 words of useful content.
+24.1% of the text are stop words.
+Keywords used in the page title are also used in the page content. That's good!
+Some words from the page title are not used within H1 headings
+6 paragraphs (text blocks) were found on this page.
+No placeholder texts or images were found.
+There are no duplicates on the site
+The average sentence length of 15.14 words is good.
+Frames
+
+Learn more
+1/1
+Very important
+This page does not use a frameset.
+Mobile optimization
+
+Learn more
+Warning
+2/3
+Low importance
+No Apple touch icon is specified
+A viewport (width=device-width, initial-scale=1.0) is provided.
+This page only loads 3 JavaScript files. That's good!
+Strong and bold tags
+
+Learn more
+1/1
+Low importance
+The usage of strong and bold tags is perfect. We recommend the use of up to 8 tags for this page.
+Image SEO
+
+Learn more
+1/1
+Low importance
+ALT text (alternative text) is correctly used on all found images.
+Social media
+
+Learn more
+Warning
+0/1
+Nice to have
+There are few social sharing options on the page. Sharing plugins can increase the page's reach on social media.
+Additional markup
+
+Learn more
+1/1
+Nice to have
+No additional page markup was found.
+HTTPS
+
+Learn more
+2/2
+Low importance
+This page uses HTTPS to protect the privacy and integrity of information exchanged.
+All included files are also transferred via HTTPS.
+Others
+100%
+H1 heading
+
+Learn more
+2/2
+Very important
+AI-Powered Instant Quotes & Garden Designs
+The H1 heading is perfect
+Headings
+
+Learn more
+1/1
+Important
+The heading structure is perfect.
+Link structure
+92%
+Internal links
+
+Learn more
+Warning
+3/4
+Important
+Some anchor texts are used more than once
+The number of internal links is ok.
+None of the link texts are too long.
+There are no dynamic parameters used in internal links.
+External links
+
+Learn more
+1/1
+Nice to have
+There are 5 external links on this page.
+Server configuration
+100%
+HTTP redirects
+
+Learn more
+2/2
+Very important
+The checked page does not redirect to another URL.
+The redirect of URLs with www and non-www subdomain is configured correctly.
+HTTP header
+
+Learn more
+2/2
+Important
+No X-Powered HTTP header is sent.
+This page uses compression for data transfer.
+Performance
+
+Learn more
+4/4
+Low importance
+The HTML page response time of 0,12 seconds is below the target of 0.40 seconds.
+This page only loads 3 CSS files. That's ok.
+This page only loads 3 JavaScript files. That's good!
+The file size of the HTML document is fine. (61 kB)
+External factors
+9%
+Backlinks
+
+Learn more
+Warning
+0/4
+Very important
+This page has only a few links from other websites
+This page only has backlinks from 3 referring domains.
+This page only has 5 backlinks.
+This page only has backlinks from 3 different IP addresses
