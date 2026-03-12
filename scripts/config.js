@@ -14,7 +14,7 @@ const brandConfig = {
     // ============================================================================
     social: {
         // Facebook Business Page URL — used in reviews embed and CTA buttons
-        facebookPageUrl: "https://www.facebook.com/premiumlandscapesuk",
+        facebookPageUrl: "https://www.facebook.com/Premiumlandscapesuk/reviews",
 
         // Google Business Profile URL — used in reviews CTA button
         googleReviewsUrl: "https://g.page/r/YOUR_GOOGLE_REVIEW_LINK/review",
@@ -252,7 +252,9 @@ function loadFacebookPlugin() {
     const fbContainer = document.getElementById('facebookPagePlugin');
     if (!fbContainer) return;
 
-    const pageUrl = encodeURIComponent(brandConfig.social.facebookPageUrl);
+    // Strip any sub-path (e.g. /reviews) — the Page Plugin needs the base page URL
+    const basePageUrl = brandConfig.social.facebookPageUrl.replace(/\/(reviews|posts|about|photos).*$/, '');
+    const pageUrl = encodeURIComponent(basePageUrl);
     fbContainer.innerHTML = `
         <iframe
             src="https://www.facebook.com/plugins/page.php?href=${pageUrl}&tabs=timeline&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true"
