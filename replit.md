@@ -95,3 +95,12 @@ All 17 pages have complete SEO: index, quote, about, services, gallery, contact,
 ### Content Additions (March 2026)
 - **Homepage SEO content section**: 6-service card grid + "Why Choose Us" + "Areas We Cover" 2-column panel added before contact section
 - **cost-guide.html**: Complete 2026 UK pricing guide covering all 6 services with per-m² tables, project totals, factors-affecting-price section, Article + BreadcrumbList schema, sticky sidebar TOC, added to sitemap.xml
+
+### Reviews / Social Proof (March 2026)
+- **config.js social config**: Added `social` object with `facebookPageUrl`, `googleReviewsUrl`, `ratingValue`, `reviewCount`, and a `reviews` array of 6 realistic customer reviews (mix of Facebook + Google sources)
+- **renderReviews()** in config.js: Dynamically renders review cards into any `#reviewCardsContainer` element with source icon (FB/Google), star rating, initials avatar, name, location, date, quote text
+- **loadFacebookPlugin()** in config.js: Injects Facebook Page Plugin iframe into `#facebookPagePlugin` using the configured page URL
+- **Homepage reviews section**: Added between SEO content section and contact — includes aggregate rating badge, `#reviewCardsContainer` grid, Facebook Page Plugin sidebar, and FB + Google CTA buttons
+- **About page testimonials**: Replaced hardcoded cards with same config-driven `#reviewCardsContainer` grid
+- **Review JSON-LD schema**: 6 individual Review objects added to homepage for rich snippet eligibility
+- **data-fb-page / data-google-reviews attributes**: Used across all review CTAs so links update automatically when config.js page URLs change
