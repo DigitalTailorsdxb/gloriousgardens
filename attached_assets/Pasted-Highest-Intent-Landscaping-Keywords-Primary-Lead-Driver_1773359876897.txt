@@ -1,0 +1,200 @@
+Highest-Intent Landscaping Keywords (Primary Lead Drivers)
+
+These are the searches most likely to produce enquiries.
+
+Use dedicated service pages.
+
+Keyword	Page
+landscapers leicester	/landscaping-leicester
+garden landscaping leicester	/garden-landscaping-leicester
+patio installation leicester	/patio-installation-leicester
+porcelain patios leicester	/porcelain-patios-leicester
+artificial grass leicester	/artificial-grass-leicester
+composite decking leicester	/composite-decking-leicester
+garden design leicester	/garden-design-leicester
+garden makeover leicester	/garden-makeovers-leicester
+front garden landscaping leicester	/front-garden-landscaping-leicester
+driveways leicester	/driveways-leicester
+2. Medium Competition Service Keywords
+
+These are long-tail services and easier to rank.
+
+Keyword	Page
+sandstone patios leicester	/sandstone-patios-leicester
+limestone patios leicester	/limestone-patios-leicester
+natural stone patios leicester	/natural-stone-patios-leicester
+granite patios leicester	/granite-patios-leicester
+raised decking leicester	/raised-decking-leicester
+timber decking leicester	/timber-decking-leicester
+pergolas leicester	/pergolas-leicester
+garden lighting leicester	/garden-lighting-leicester
+garden walls leicester	/garden-walls-leicester
+retaining walls leicester	/retaining-walls-leicester
+3. Landscaping Feature Keywords
+
+These target homeowners planning new gardens.
+
+Keyword	Page
+garden fire pits leicester	/fire-pits-leicester
+outdoor seating areas leicester	/outdoor-seating-leicester
+water features leicester	/water-features-leicester
+garden steps leicester	/garden-steps-leicester
+brick planters leicester	/brick-planters-leicester
+garden drainage leicester	/garden-drainage-leicester
+garden levelling leicester	/garden-levelling-leicester
+soil preparation leicester	/soil-preparation-leicester
+4. Instant Quote & Cost Keywords (Your Biggest SEO Advantage)
+
+Almost no landscaping companies target these.
+
+Create a quote / cost hub.
+
+Main pages
+Keyword	Page
+garden landscaping cost calculator	/garden-landscaping-cost-calculator
+patio cost calculator	/patio-cost-calculator
+artificial grass cost calculator	/artificial-grass-cost-calculator
+composite decking cost calculator	/composite-decking-cost-calculator
+garden design cost calculator	/garden-design-cost-calculator
+garden makeover cost calculator	/garden-makeover-cost-calculator
+Cost guides
+Keyword	Page
+how much does landscaping cost uk	/landscaping-cost-uk
+patio cost per m2 uk	/patio-cost-per-m2
+artificial grass installation cost	/artificial-grass-cost
+composite decking cost uk	/composite-decking-cost
+garden design cost uk	/garden-design-cost
+
+Each page should include:
+
+average UK cost ranges
+
+material comparisons
+
+project examples
+
+link to instant quote tool
+
+5. Instant Garden Design Keywords
+
+These align perfectly with your system.
+
+Keyword	Page
+garden design tool online	/garden-design-tool
+garden design ai	/ai-garden-design
+garden design online free	/online-garden-design
+garden design and quote online	/garden-design-and-quote
+garden quote calculator	/garden-quote-calculator
+
+These keywords have very low competition.
+
+6. Local Area Keywords
+
+Target surrounding towns.
+
+Keyword	Page
+landscapers wigston	/landscaping-wigston
+landscapers oadby	/landscaping-oadby
+landscapers narborough	/landscaping-narborough
+landscapers blaby	/landscaping-blaby
+landscapers cosby	/landscaping-cosby
+landscapers enderby	/landscaping-enderby
+landscapers kirby muxloe	/landscaping-kirby-muxloe
+landscapers glenfield	/landscaping-glenfield
+landscapers anstey	/landscaping-anstey
+landscapers syston	/landscaping-syston
+landscapers birstall	/landscaping-birstall
+landscapers thurmaston	/landscaping-thurmaston
+landscapers ratby	/landscaping-ratby
+landscapers markfield	/landscaping-markfield
+landscapers hinckley	/landscaping-hinckley
+landscapers loughborough	/landscaping-loughborough
+7. Inspiration & Idea Keywords
+
+These attract early-stage searchers.
+
+Keyword	Page
+small garden ideas uk	/small-garden-ideas
+modern garden design ideas	/modern-garden-design
+low maintenance garden ideas	/low-maintenance-garden
+patio design ideas	/patio-design-ideas
+artificial grass garden ideas	/artificial-grass-ideas
+front garden design ideas	/front-garden-design
+
+These help build topical authority.
+
+8. Project Case Study Keywords
+
+Google ranks real projects extremely well.
+
+Create:
+
+Page
+/projects
+/projects/porcelain-patio-leicester
+/projects/artificial-grass-wigston
+/projects/composite-decking-narborough
+/projects/full-garden-makeover-leicester
+/projects/small-garden-transformation
+
+Each page should include:
+
+before / after photos
+
+materials used
+
+project cost range
+
+garden size
+
+installation timeline
+
+9. On-Page SEO Rules
+Title tag structure
+Primary Keyword + Leicester | Premium Landscapes
+
+Example
+
+Porcelain Patio Installation Leicester | Premium Landscapes
+Meta description structure
+Service + Location + trust + call to action
+
+Example
+
+Professional porcelain patio installation in Leicester. Modern low-maintenance patios designed and installed by Premium Landscapes. Get an instant garden quote online.
+Heading structure
+H1 Main keyword
+H2 Services / features
+H2 Cost guide
+H2 Installation process
+H2 FAQs
+10. Internal Linking Structure
+
+Every page should link to:
+
+related services
+
+location pages
+
+project examples
+
+quote calculators
+
+Example
+
+Planning a patio in Wigston? See our patio installations in Wigston.
+11. Image SEO
+
+Rename images:
+
+Bad
+
+IMG_4821.jpg
+
+Good
+
+porcelain-patio-leicester.jpg
+
+Alt text
+
+Porcelain patio installation in Leicester garden
