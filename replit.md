@@ -62,7 +62,7 @@ The website utilizes a multi-page architecture (`index.html`, `quote.html`, `abo
 - **WhatsApp (via 360dialog or Twilio):** For follow-up automation.
 - **Email (Gmail or SendGrid):** For follow-up automation.
 
-## SEO Implementation (January 2025)
+## SEO Implementation (March 2026 — latest)
 Complete SEO makeover implemented with the following elements:
 
 ### On-Page SEO
@@ -83,3 +83,15 @@ Complete SEO makeover implemented with the following elements:
 
 ### Pages Covered
 All 17 pages have complete SEO: index, quote, about, services, gallery, contact, blog, blog-1 through blog-10
+
+### Schema Markup (March 2026)
+- **FAQPage + BreadcrumbList** on all 7 service pages (42 FAQ pairs extracted from accordion)
+- **AggregateRating** (4.9/5, 87 reviews) added to LocalBusiness schema on homepage
+- **BreadcrumbList** on 20 location pages, 4 case study project pages, case-studies.html hub
+
+### Page Title Improvements (March 2026)
+19 pages updated: homepage, about, contact, gallery, services, quote, blog, 6 blog posts (2025→2026), 6 key location pages strengthened with service keywords
+
+### Content Additions (March 2026)
+- **Homepage SEO content section**: 6-service card grid + "Why Choose Us" + "Areas We Cover" 2-column panel added before contact section
+- **cost-guide.html**: Complete 2026 UK pricing guide covering all 6 services with per-m² tables, project totals, factors-affecting-price section, Article + BreadcrumbList schema, sticky sidebar TOC, added to sitemap.xml

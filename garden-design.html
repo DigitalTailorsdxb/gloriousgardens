@@ -69,6 +69,74 @@
         .price-card:hover { border-color: #2563eb; transform: translateY(-4px); box-shadow: 0 20px 40px rgba(37,99,235,0.15); }
         .faq-item { border-bottom: 1px solid #e5e7eb; }
     </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                {
+                        "@type": "Question",
+                        "name": "What's included in the free AI design?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "You upload a photo of your current garden, describe your vision, and our AI generates a photorealistic preview of your redesigned space. It's delivered to your email within 90 seconds."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "Do I have to use Premium Landscapes to build the design?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "No — you're free to take our design to any contractor. Though clients who use us for both design and build benefit from a fully integrated service."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "How accurate is the AI garden design?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "The AI preview gives an excellent indication of the style and feel of the finished garden. For precise build specifications, our full design package includes detailed working drawings."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "How long does a full garden design take?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "A concept design typically takes 5–7 working days. A full design package including 3D renders takes 2–3 weeks."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "Can you design for small gardens?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Absolutely. Small gardens benefit most from careful design — maximising every metre with smart zoning, vertical planting and well-chosen materials."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "Do you offer design for front gardens?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Yes — we design front gardens, driveways, side passages and full-wrap designs that unify front and back."
+                        }
+                }
+        ]
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {"@type":"ListItem","position":1,"name":"Home","item":"https://premium-landscapes.co.uk/"},
+                    {"@type":"ListItem","position":2,"name":"Services","item":"https://premium-landscapes.co.uk/services"},
+                    {"@type":"ListItem","position":3,"name":"Garden Design Leicester","item":"https://premium-landscapes.co.uk/garden-design"}
+                ]
+            }
+        ]
+    }
+    </script>
 </head>
 <body class="bg-white text-gray-800">
     <!-- Navigation -->
@@ -365,9 +433,6 @@
             </div>
         </div>
     </section>
-    <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What's included in the free AI design?","acceptedAnswer":{"@type":"Answer","text":"You upload a photo of your current garden, describe your vision, and our AI generates a photorealistic preview of your redesigned space. It's delivered to your email within 90 seconds."}},{"@type":"Question","name":"Do I have to use Premium Landscapes to build the design?","acceptedAnswer":{"@type":"Answer","text":"No — you're free to take our design to any contractor. Though clients who use us for both design and build benefit from a fully integrated service."}},{"@type":"Question","name":"How accurate is the AI garden design?","acceptedAnswer":{"@type":"Answer","text":"The AI preview gives an excellent indication of the style and feel of the finished garden. For precise build specifications, our full design package includes detailed working drawings."}},{"@type":"Question","name":"How long does a full garden design take?","acceptedAnswer":{"@type":"Answer","text":"A concept design typically takes 5–7 working days. A full design package including 3D renders takes 2–3 weeks."}},{"@type":"Question","name":"Can you design for small gardens?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. Small gardens benefit most from careful design — maximising every metre with smart zoning, vertical planting and well-chosen materials."}},{"@type":"Question","name":"Do you offer design for front gardens?","acceptedAnswer":{"@type":"Answer","text":"Yes — we design front gardens, driveways, side passages and full-wrap designs that unify front and back."}}]}
-    </script>
     <script>
         function toggleFaq(i) {
             const el = document.getElementById('faq-' + i);
