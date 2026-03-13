@@ -181,7 +181,7 @@ function applyBranding() {
     setElement('footerEmail', brandConfig.email);
     setElement('emailLink', brandConfig.email, 'href', `mailto:${brandConfig.email}`);
     
-    const locationLink = `<a href="areas-we-cover.html" class="hover:text-primary transition">${brandConfig.location}</a>`;
+    const locationLink = `${brandConfig.location} — <a href="areas-we-cover.html" class="hover:text-primary transition">Areas We Cover</a>`;
     const contactLocationEl = document.getElementById('contactLocation');
     if (contactLocationEl) contactLocationEl.innerHTML = locationLink;
     const footerLocationEl = document.getElementById('footerLocation');
