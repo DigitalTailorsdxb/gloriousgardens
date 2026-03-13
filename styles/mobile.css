@@ -1,0 +1,424 @@
+/* =========================================================
+   PREMIUM LANDSCAPES — MOBILE & TABLET UX
+   Applied across all 80+ pages via mobile.css
+   ========================================================= */
+
+/* ─── CSS CUSTOM PROPERTIES ─────────────────────────────── */
+:root {
+    --bottom-cta-height: 72px;
+    --nav-height: 64px;
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
+    --menu-transition: 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─── MENU OVERLAY BACKDROP ─────────────────────────────── */
+.menu-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 90;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    opacity: 0;
+    transition: opacity var(--menu-transition);
+}
+.menu-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* ─── MOBILE MENU: PATTERN 2 — DROPDOWN (54 pages) ──────── */
+/* These menus are always in the DOM and were always-visible on mobile.
+   Hide by default, show on .active */
+.mobile-menu:not([class*="fixed"]) {
+    display: none;
+    animation: menuSlideDown 0.25s ease forwards;
+}
+.mobile-menu:not([class*="fixed"]).active {
+    display: block;
+}
+@keyframes menuSlideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── MOBILE MENU: PATTERN 1 — SLIDE DRAWER (7 pages) ───── */
+/* Full-screen slide-in from right */
+.mobile-menu.fixed {
+    transition: transform var(--menu-transition) !important;
+    will-change: transform;
+}
+.mobile-menu.fixed.active {
+    transform: translateX(0) !important;
+    -webkit-transform: translateX(0) !important;
+}
+/* Prevent body scroll when full-screen menu is open */
+body.menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+
+/* ─── STICKY BOTTOM CTA BAR (mobile only) ───────────────── */
+.mobile-bottom-cta {
+    display: none;
+}
+@media (max-width: 767px) {
+    .mobile-bottom-cta {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 80;
+        background: white;
+        border-top: 1px solid #e5e7eb;
+        padding: 10px 16px calc(10px + var(--safe-bottom));
+        gap: 10px;
+        box-shadow: 0 -4px 20px rgba(0,0,0,0.12);
+        align-items: center;
+    }
+    .mobile-bottom-cta .cta-call {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        flex: 0 0 auto;
+        min-width: 52px;
+        height: 50px;
+        background: #f0f9ff;
+        color: #2563eb;
+        border: 2px solid #bfdbfe;
+        border-radius: 14px;
+        font-weight: 700;
+        font-size: 13px;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        padding: 0 14px;
+    }
+    .mobile-bottom-cta .cta-call:active {
+        background: #dbeafe;
+        transform: scale(0.97);
+    }
+    .mobile-bottom-cta .cta-quote {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        height: 50px;
+        background: linear-gradient(135deg, #2563eb, #7c3aed);
+        color: white;
+        border-radius: 14px;
+        font-weight: 700;
+        font-size: 15px;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        box-shadow: 0 4px 14px rgba(37,99,235,0.35);
+    }
+    .mobile-bottom-cta .cta-quote:active {
+        opacity: 0.9;
+        transform: scale(0.98);
+    }
+    /* Push page content up so it's not hidden behind the bar */
+    body:not(.no-bottom-cta) {
+        padding-bottom: calc(var(--bottom-cta-height) + var(--safe-bottom));
+    }
+    /* Hide bar on quote page — user is already converting */
+    body.on-quote-page .mobile-bottom-cta {
+        display: none !important;
+    }
+    body.on-quote-page {
+        padding-bottom: 0 !important;
+    }
+}
+
+/* ─── TOUCH TARGET MINIMUMS ──────────────────────────────── */
+@media (max-width: 767px) {
+    a, button, [role="button"], input[type="submit"],
+    input[type="button"], label[for] {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    /* Form controls — large enough for thumbs, no zoom on iOS */
+    input[type="text"], input[type="email"],
+    input[type="tel"], input[type="number"],
+    select, textarea {
+        font-size: 16px !important;
+        min-height: 52px;
+        padding: 14px 16px;
+        border-radius: 12px;
+        -webkit-appearance: none;
+        appearance: none;
+    }
+    textarea { min-height: 100px; }
+    /* Range slider — bigger thumb for touch */
+    input[type="range"] {
+        height: 6px;
+        cursor: pointer;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+        width: 28px;
+        height: 28px;
+        -webkit-appearance: none;
+        appearance: none;
+        background: #2563eb;
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(37,99,235,0.3);
+    }
+    input[type="range"]::-moz-range-thumb {
+        width: 28px;
+        height: 28px;
+        background: #2563eb;
+        border-radius: 50%;
+        cursor: pointer;
+        border: none;
+    }
+}
+
+/* ─── TYPOGRAPHY — MOBILE SCALING ───────────────────────── */
+@media (max-width: 479px) {
+    /* Headings scale down gracefully on small phones */
+    h1 { font-size: clamp(1.75rem, 7vw, 2.5rem) !important; line-height: 1.15 !important; }
+    h2 { font-size: clamp(1.4rem, 5.5vw, 2rem) !important; }
+    h3 { font-size: clamp(1.1rem, 4.5vw, 1.5rem) !important; }
+    /* Body text stays readable */
+    p, li { font-size: clamp(0.9rem, 3.5vw, 1rem); line-height: 1.65; }
+    /* Hero paragraphs specifically */
+    .text-xl { font-size: 1rem !important; }
+    .text-2xl { font-size: 1.2rem !important; }
+    .text-3xl { font-size: 1.5rem !important; }
+    .text-4xl { font-size: 1.85rem !important; }
+    .text-5xl { font-size: 2.25rem !important; }
+}
+
+/* ─── HERO SECTIONS — MOBILE SPACING ────────────────────── */
+@media (max-width: 767px) {
+    /* Prevent content sitting behind fixed header */
+    section:first-of-type {
+        scroll-margin-top: var(--nav-height);
+    }
+    /* Vertical breathing room in hero sections */
+    .hero-gradient, [class*="hero-bg"], [class*="hero-section"] {
+        padding-top: 3.5rem !important;
+        padding-bottom: 3rem !important;
+    }
+    /* Section vertical padding reduction */
+    section.py-20 { padding-top: 3rem !important; padding-bottom: 3rem !important; }
+    section.py-16 { padding-top: 2.5rem !important; padding-bottom: 2.5rem !important; }
+    section.py-12 { padding-top: 2rem !important; padding-bottom: 2rem !important; }
+    /* Horizontal padding safety net */
+    section { padding-left: max(1rem, env(safe-area-inset-left)); padding-right: max(1rem, env(safe-area-inset-right)); }
+}
+
+/* ─── PRICING TABLES — HORIZONTAL SCROLL ────────────────── */
+.table-scroll-wrapper {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    position: relative;
+}
+.table-scroll-wrapper::-webkit-scrollbar { display: none; }
+/* Fade indicator on right to signal scrollable content */
+@media (max-width: 767px) {
+    .table-scroll-wrapper::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 40px;
+        background: linear-gradient(to right, transparent, rgba(255,255,255,0.9));
+        pointer-events: none;
+        border-radius: 0 1rem 1rem 0;
+    }
+    /* Tables inside wrapper: don't compress columns */
+    .table-scroll-wrapper table { min-width: 520px; }
+    /* Table cells more compact */
+    .table-scroll-wrapper td,
+    .table-scroll-wrapper th {
+        padding: 10px 14px !important;
+        font-size: 0.8rem !important;
+        white-space: nowrap;
+    }
+}
+
+/* ─── CARDS — TOUCH FEEDBACK ─────────────────────────────── */
+@media (hover: none) {
+    /* On touch devices, replace hover with active press feedback */
+    .card-glass:hover,
+    .card-hover:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    .card-glass:active,
+    .card-hover:active {
+        transform: scale(0.98);
+        opacity: 0.92;
+        transition: transform 0.1s ease, opacity 0.1s ease;
+    }
+}
+
+/* ─── CALCULATOR PAGES — MOBILE ──────────────────────────── */
+@media (max-width: 639px) {
+    /* Material selection cards: single column on very small phones */
+    #materialGrid {
+        grid-template-columns: 1fr !important;
+    }
+    /* Result box — bigger font for the price */
+    #resultRange {
+        font-size: 2.25rem !important;
+    }
+}
+@media (max-width: 767px) {
+    /* Calculator card full-width */
+    #materialGrid label {
+        padding: 12px 14px;
+    }
+}
+
+/* ─── COST GUIDE TABLES — MOBILE ────────────────────────── */
+@media (max-width: 767px) {
+    /* Wrap overflow-x-auto tables in scroll hint */
+    .overflow-x-auto {
+        position: relative;
+        -webkit-overflow-scrolling: touch;
+    }
+    /* Price table row heights */
+    .price-row td { padding: 10px 12px !important; font-size: 0.82rem !important; }
+    .price-row:hover { background: transparent !important; }
+    .price-row:active { background: #f0f9ff !important; }
+}
+
+/* ─── QUOTE FORM — MOBILE ────────────────────────────────── */
+@media (max-width: 767px) {
+    /* Progress steps — show only icons on mobile, not full labels */
+    .progress-step .step-label {
+        font-size: 0.6rem !important;
+        line-height: 1.2 !important;
+    }
+    .progress-step .step-icon {
+        width: 36px !important;
+        height: 36px !important;
+    }
+    /* Quote step cards full-width */
+    .quote-mode-card {
+        width: 100% !important;
+    }
+    /* Upload area on mobile */
+    .upload-area {
+        padding: 1.5rem 1rem !important;
+    }
+}
+
+/* ─── NAVIGATION — HAMBURGER BUTTON ─────────────────────── */
+@media (max-width: 767px) {
+    #mobileMenuBtn {
+        min-width: 44px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        transition: background 0.15s ease;
+    }
+    #mobileMenuBtn:active {
+        background: rgba(0,0,0,0.06);
+    }
+    /* Mobile menu items: larger tap targets */
+    .mobile-menu-link {
+        min-height: 52px;
+        display: flex !important;
+        align-items: center;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        border-radius: 12px;
+    }
+}
+
+/* ─── TABLET LAYOUT IMPROVEMENTS (768px–1023px) ──────────── */
+@media (min-width: 768px) and (max-width: 1023px) {
+    /* Two-column grids that look odd on tablet */
+    .md\:grid-cols-3 { grid-template-columns: repeat(2, 1fr) !important; }
+    /* Hero text sizing for tablet */
+    h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+    /* Padding adjustments */
+    section { padding-left: 2rem !important; padding-right: 2rem !important; }
+    /* Calculator material grid: 2 columns */
+    #materialGrid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+/* ─── SMOOTH MOMENTUM SCROLLING ──────────────────────────── */
+html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+/* Prevent horizontal overflow on all pages */
+body {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+/* ─── SAFE AREA — NOTCH & HOME BAR ──────────────────────── */
+header {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+}
+
+/* ─── FOCUS STATES — ACCESSIBILITY ──────────────────────── */
+:focus-visible {
+    outline: 3px solid #2563eb;
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+:focus:not(:focus-visible) { outline: none; }
+
+/* ─── SCROLL-TO-TOP BUTTON ───────────────────────────────── */
+.scroll-top-btn {
+    display: none;
+    position: fixed;
+    bottom: calc(80px + var(--safe-bottom));
+    right: 16px;
+    z-index: 79;
+    width: 44px;
+    height: 44px;
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 50%;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #2563eb;
+    font-size: 18px;
+}
+.scroll-top-btn.visible {
+    display: flex;
+}
+.scroll-top-btn:active {
+    transform: scale(0.92);
+}
+@media (min-width: 768px) {
+    .scroll-top-btn { display: none !important; }
+}
+
+/* ─── IMAGE LOADING PLACEHOLDER ──────────────────────────── */
+img {
+    transition: opacity 0.3s ease;
+}
+img[loading="lazy"] {
+    background: #f1f5f9;
+}
+
+/* ─── BUTTON ACTIVE STATES (all mobile) ──────────────────── */
+@media (max-width: 767px) {
+    a.bg-primary:active,
+    button.bg-primary:active {
+        filter: brightness(0.9);
+        transform: scale(0.98);
+    }
+}

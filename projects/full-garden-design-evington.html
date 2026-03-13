@@ -72,6 +72,7 @@
         ]
     }
     </script>
+    <link rel="stylesheet" href="../styles/mobile.css">
 </head>
 <body class="bg-white text-gray-800">
     <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm">
@@ -87,12 +88,12 @@
                 </a>
                 <a href="../contact.html" class="text-gray-600 hover:text-primary transition font-medium">Contact</a>
             </div>
-            <button class="md:hidden text-gray-600" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+            <button class="md:hidden text-gray-600" id="mobileMenuBtn">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
         </nav>
     </header>
-    <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-gray-200 px-4 py-4 space-y-3 z-40">
+    <div id="mobileMenu" class="mobile-menu md:hidden bg-white border-b border-gray-200 px-4 py-4 space-y-3 z-40">
         <a href="../about.html" class="block text-gray-700 hover:text-primary">About</a>
         <a href="../services.html" class="block text-gray-700 hover:text-primary">Services</a>
         <a href="../gallery.html" class="block text-gray-700 hover:text-primary">Gallery</a>
@@ -140,11 +141,11 @@
                 <img src="../images/projects/evington/evington-6.jpg"
                      alt="Pergola walkway and circular lawn — full garden overview, Evington Leicester"
                      class="w-full h-80 object-cover rounded-2xl shadow-lg">
-                <img src="../images/projects/evington/evington-8.jpg"
+                <img loading="lazy" src="../images/projects/evington/evington-8.jpg"
                      alt="View from decking showing water feature, fire pit seating area and pergola walkway, Evington"
                      class="w-full h-80 object-cover rounded-2xl shadow-lg">
             </div>
-            <img src="../images/projects/evington/evington-2.jpg"
+            <img loading="lazy" src="../images/projects/evington/evington-2.jpg"
                  alt="Black pergola arch walkway leading through circular lawn to conservatory, Evington Leicester"
                  class="w-full h-72 object-cover rounded-2xl shadow-lg">
         </div>
@@ -185,7 +186,7 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 
             <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <img src="../images/projects/evington/evington-5.jpg" alt="Circular fire pit seating area with granite paving, Evington Leicester" class="w-full h-48 object-cover rounded-xl mb-3">
+                <img loading="lazy" src="../images/projects/evington/evington-5.jpg" alt="Circular fire pit seating area with granite paving, Evington Leicester" class="w-full h-48 object-cover rounded-xl mb-3">
                 <div class="flex items-center gap-3 mb-2">
                     <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">1</span>
                     <h3 class="font-bold text-gray-900">Design Consultation</h3>
@@ -193,7 +194,7 @@
                 <p class="text-gray-600 text-sm leading-relaxed">Three AI-generated concept directions were presented based on the customer's brief. The contemporary minimal scheme was selected and developed into full working drawings.</p>
             </div>
             <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <img src="../images/projects/evington/evington-4.jpg" alt="Ornamental laser-cut screen panels with planting and gravel border, Evington" class="w-full h-48 object-cover rounded-xl mb-3">
+                <img loading="lazy" src="../images/projects/evington/evington-4.jpg" alt="Ornamental laser-cut screen panels with planting and gravel border, Evington" class="w-full h-48 object-cover rounded-xl mb-3">
                 <div class="flex items-center gap-3 mb-2">
                     <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">2</span>
                     <h3 class="font-bold text-gray-900">Site Clearance &amp; Prep</h3>
@@ -201,7 +202,7 @@
                 <p class="text-gray-600 text-sm leading-relaxed">The site was cleared, levelled and drainage assessed. New slatted fencing and decorative screen panels were installed to all boundaries before any hard landscaping began.</p>
             </div>
             <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <img src="../images/projects/evington/evington-7.jpg" alt="Water feature with stone cladding and decorative screen panels, Evington Leicester" class="w-full h-48 object-cover rounded-xl mb-3">
+                <img loading="lazy" src="../images/projects/evington/evington-7.jpg" alt="Water feature with stone cladding and decorative screen panels, Evington Leicester" class="w-full h-48 object-cover rounded-xl mb-3">
                 <div class="flex items-center gap-3 mb-2">
                     <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">3</span>
                     <h3 class="font-bold text-gray-900">Water Feature &amp; Features</h3>
@@ -209,7 +210,7 @@
                 <p class="text-gray-600 text-sm leading-relaxed">The bespoke water feature was constructed with stone cladding, a stainless blade weir and rendered plinth. Decorative rose screen panels were installed as the backdrop focal point.</p>
             </div>
             <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <img src="../images/projects/evington/evington-1.jpg" alt="Composite decking with outdoor dining set and circular seating area beyond, Evington" class="w-full h-48 object-cover rounded-xl mb-3">
+                <img loading="lazy" src="../images/projects/evington/evington-1.jpg" alt="Composite decking with outdoor dining set and circular seating area beyond, Evington" class="w-full h-48 object-cover rounded-xl mb-3">
                 <div class="flex items-center gap-3 mb-2">
                     <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">4</span>
                     <h3 class="font-bold text-gray-900">Decking &amp; Patio</h3>
@@ -217,7 +218,7 @@
                 <p class="text-gray-600 text-sm leading-relaxed">The composite decking zone was installed adjacent to the house, creating a raised dining terrace. Beyond it, the granite sett patio with circular seating plinth was laid and pointed.</p>
             </div>
             <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <img src="../images/projects/evington/evington-3.jpg" alt="Premium artificial grass lawn area with porcelain edge detail, Evington Leicester" class="w-full h-48 object-cover rounded-xl mb-3">
+                <img loading="lazy" src="../images/projects/evington/evington-3.jpg" alt="Premium artificial grass lawn area with porcelain edge detail, Evington Leicester" class="w-full h-48 object-cover rounded-xl mb-3">
                 <div class="flex items-center gap-3 mb-2">
                     <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">5</span>
                     <h3 class="font-bold text-gray-900">Lawn &amp; Lighting</h3>
@@ -225,7 +226,7 @@
                 <p class="text-gray-600 text-sm leading-relaxed">Premium artificial grass was laid to the circular lawn zone with shaped porcelain edging. The 8-light LED system was installed into the lawn borders and commissioned.</p>
             </div>
             <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <img src="../images/projects/evington/evington-6.jpg" alt="Completed pergola walkway with artificial grass and planting — Evington garden handover" class="w-full h-48 object-cover rounded-xl mb-3">
+                <img loading="lazy" src="../images/projects/evington/evington-6.jpg" alt="Completed pergola walkway with artificial grass and planting — Evington garden handover" class="w-full h-48 object-cover rounded-xl mb-3">
                 <div class="flex items-center gap-3 mb-2">
                     <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">6</span>
                     <h3 class="font-bold text-gray-900">Planting &amp; Handover</h3>
@@ -244,31 +245,31 @@
             </div>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
                 <a href="../images/projects/evington/evington-1.jpg" target="_blank" class="group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <img src="../images/projects/evington/evington-1.jpg" alt="Composite decking with outdoor dining set and seating area, Evington" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" src="../images/projects/evington/evington-1.jpg" alt="Composite decking with outdoor dining set and seating area, Evington" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
                 </a>
                 <a href="../images/projects/evington/evington-2.jpg" target="_blank" class="group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <img src="../images/projects/evington/evington-2.jpg" alt="Black pergola arch walkway through circular lawn, Evington Leicester" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" src="../images/projects/evington/evington-2.jpg" alt="Black pergola arch walkway through circular lawn, Evington Leicester" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
                 </a>
                 <a href="../images/projects/evington/evington-3.jpg" target="_blank" class="group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <img src="../images/projects/evington/evington-3.jpg" alt="Premium artificial grass with garden table tennis, Evington" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" src="../images/projects/evington/evington-3.jpg" alt="Premium artificial grass with garden table tennis, Evington" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
                 </a>
                 <a href="../images/projects/evington/evington-4.jpg" target="_blank" class="group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <img src="../images/projects/evington/evington-4.jpg" alt="Ornamental laser-cut screen panels with planting and gravel border, Evington" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" src="../images/projects/evington/evington-4.jpg" alt="Ornamental laser-cut screen panels with planting and gravel border, Evington" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
                 </a>
                 <a href="../images/projects/evington/evington-5.jpg" target="_blank" class="group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <img src="../images/projects/evington/evington-5.jpg" alt="Circular fire pit seating area with granite paving and topiary trees, Evington" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" src="../images/projects/evington/evington-5.jpg" alt="Circular fire pit seating area with granite paving and topiary trees, Evington" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
                 </a>
                 <a href="../images/projects/evington/evington-6.jpg" target="_blank" class="group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <img src="../images/projects/evington/evington-6.jpg" alt="Full garden overview — pergola walkway, circular lawn and planting, Evington Leicester" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" src="../images/projects/evington/evington-6.jpg" alt="Full garden overview — pergola walkway, circular lawn and planting, Evington Leicester" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
                 </a>
                 <a href="../images/projects/evington/evington-7.jpg" target="_blank" class="group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <img src="../images/projects/evington/evington-7.jpg" alt="Water feature with stone cladding and rose screen panels, Evington" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" src="../images/projects/evington/evington-7.jpg" alt="Water feature with stone cladding and rose screen panels, Evington" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
                 </a>
                 <a href="../images/projects/evington/evington-8.jpg" target="_blank" class="group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <img src="../images/projects/evington/evington-8.jpg" alt="View from decking showing water feature, circular seating and pergola walkway, Evington" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" src="../images/projects/evington/evington-8.jpg" alt="View from decking showing water feature, circular seating and pergola walkway, Evington" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
                 </a>
                 <a href="../images/projects/evington/evington-9.jpg" target="_blank" class="group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <img src="../images/projects/evington/evington-9.jpg" alt="Aerial view of porcelain patio with lounge seating, timber raised beds and hydrangea planting, Evington" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" src="../images/projects/evington/evington-9.jpg" alt="Aerial view of porcelain patio with lounge seating, timber raised beds and hydrangea planting, Evington" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
                 </a>
             </div>
         </div>

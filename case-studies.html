@@ -57,6 +57,7 @@
         ]
     }
     </script>
+    <link rel="stylesheet" href="styles/mobile.css">
 </head>
 <body class="bg-white text-gray-800">
     <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm">
@@ -72,12 +73,12 @@
                 </a>
                 <a href="contact.html" class="text-gray-600 hover:text-primary transition font-medium">Contact</a>
             </div>
-            <button class="md:hidden text-gray-600" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+            <button class="md:hidden text-gray-600" id="mobileMenuBtn">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
         </nav>
     </header>
-    <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-gray-200 px-4 py-4 space-y-3 z-40">
+    <div id="mobileMenu" class="mobile-menu md:hidden bg-white border-b border-gray-200 px-4 py-4 space-y-3 z-40">
         <a href="about.html" class="block text-gray-700 hover:text-primary">About</a>
         <a href="services.html" class="block text-gray-700 hover:text-primary">Services</a>
         <a href="gallery.html" class="block text-gray-700 hover:text-primary">Gallery</a>
@@ -119,7 +120,7 @@
 
                 <a href="projects/front-garden-renovation-wigston.html" class="card block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
                     <div class="relative h-48 overflow-hidden bg-gray-100">
-                        <img src="images/projects/wigston/wigston-1.jpg" alt="Front garden renovation Wigston — artificial grass, porcelain path and ornamental planting" class="w-full h-full object-cover">
+                        <img loading="lazy" src="images/projects/wigston/wigston-1.jpg" alt="Front garden renovation Wigston — artificial grass, porcelain path and ornamental planting" class="w-full h-full object-cover">
                         <span class="absolute top-3 left-3 bg-blue-500 text-white text-xs px-3 py-1 rounded-full font-semibold">Driveway</span>
                     </div>
                     <div class="p-6">
@@ -132,7 +133,7 @@
 
                 <a href="projects/tiered-garden-makeover-peterborough.html" class="card block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
                     <div class="relative h-48 overflow-hidden bg-gray-100">
-                        <img src="images/projects/peterborough/peterborough-3.jpg" alt="Tiered garden makeover Peterborough — bird's eye view with outdoor kitchen and lake" class="w-full h-full object-cover">
+                        <img loading="lazy" src="images/projects/peterborough/peterborough-3.jpg" alt="Tiered garden makeover Peterborough — bird's eye view with outdoor kitchen and lake" class="w-full h-full object-cover">
                         <span class="absolute top-3 left-3 bg-amber-500 text-white text-xs px-3 py-1 rounded-full font-semibold">Full Makeover</span>
                     </div>
                     <div class="p-6">
@@ -145,7 +146,7 @@
 
                 <a href="projects/driveway-kirby-muxloe.html" class="card block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
                     <div class="relative h-48 overflow-hidden bg-gray-100">
-                        <img src="images/projects/kirby-muxloe-driveway/driveway-3.jpg" alt="Gravel driveway Kirby Muxloe — white gravel with block paving path and charcoal edging" class="w-full h-full object-cover">
+                        <img loading="lazy" src="images/projects/kirby-muxloe-driveway/driveway-3.jpg" alt="Gravel driveway Kirby Muxloe — white gravel with block paving path and charcoal edging" class="w-full h-full object-cover">
                         <span class="absolute top-3 left-3 bg-primary text-white text-xs px-3 py-1 rounded-full font-semibold">Driveway</span>
                     </div>
                     <div class="p-6">
@@ -158,7 +159,7 @@
 
                 <a href="projects/composite-decking-kirby-muxloe.html" class="card block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
                     <div class="relative h-48 overflow-hidden bg-gray-100">
-                        <img src="images/projects/kirby-muxloe/kirby-4.jpg" alt="Composite decking Kirby Muxloe — teak-tone boards with dark fascia and laser-cut screens" class="w-full h-full object-cover">
+                        <img loading="lazy" src="images/projects/kirby-muxloe/kirby-4.jpg" alt="Composite decking Kirby Muxloe — teak-tone boards with dark fascia and laser-cut screens" class="w-full h-full object-cover">
                         <span class="absolute top-3 left-3 bg-primary text-white text-xs px-3 py-1 rounded-full font-semibold">Decking</span>
                     </div>
                     <div class="p-6">
@@ -171,7 +172,7 @@
 
                 <a href="projects/back-garden-patio-birstall.html" class="card block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
                     <div class="relative h-48 overflow-hidden bg-gray-100">
-                        <img src="images/projects/birstall/birstall-4.jpg" alt="Back Garden Patio Birstall — grey porcelain patio with timber sleeper raised planters" class="w-full h-full object-cover">
+                        <img loading="lazy" src="images/projects/birstall/birstall-4.jpg" alt="Back Garden Patio Birstall — grey porcelain patio with timber sleeper raised planters" class="w-full h-full object-cover">
                         <span class="absolute top-3 left-3 bg-primary text-white text-xs px-3 py-1 rounded-full font-semibold">Patio</span>
                     </div>
                     <div class="p-6">

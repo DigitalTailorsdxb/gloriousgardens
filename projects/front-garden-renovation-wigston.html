@@ -72,6 +72,7 @@
         ]
     }
     </script>
+    <link rel="stylesheet" href="../styles/mobile.css">
 </head>
 <body class="bg-white text-gray-800">
     <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm">
@@ -87,12 +88,12 @@
                 </a>
                 <a href="../contact.html" class="text-gray-600 hover:text-primary transition font-medium">Contact</a>
             </div>
-            <button class="md:hidden text-gray-600" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+            <button class="md:hidden text-gray-600" id="mobileMenuBtn">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
         </nav>
     </header>
-    <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-gray-200 px-4 py-4 space-y-3 z-40">
+    <div id="mobileMenu" class="mobile-menu md:hidden bg-white border-b border-gray-200 px-4 py-4 space-y-3 z-40">
         <a href="../about.html" class="block text-gray-700 hover:text-primary">About</a>
         <a href="../services.html" class="block text-gray-700 hover:text-primary">Services</a>
         <a href="../gallery.html" class="block text-gray-700 hover:text-primary">Gallery</a>
@@ -140,11 +141,11 @@
                 <img src="../images/projects/wigston/wigston-1.jpg"
                      alt="Completed front garden — premium artificial grass with porcelain path and lavender border, Wigston"
                      class="w-full h-80 object-cover rounded-2xl shadow-lg">
-                <img src="../images/projects/wigston/wigston-8.jpg"
+                <img loading="lazy" src="../images/projects/wigston/wigston-8.jpg"
                      alt="Street view of finished front garden with artificial grass and ornamental bay trees, Wigston"
                      class="w-full h-80 object-cover rounded-2xl shadow-lg">
             </div>
-            <img src="../images/projects/wigston/wigston-7.jpg"
+            <img loading="lazy" src="../images/projects/wigston/wigston-7.jpg"
                  alt="Porcelain slate pathway to front door flanked by lavender planting and artificial grass, Wigston"
                  class="w-full h-72 object-cover rounded-2xl shadow-lg">
         </div>
@@ -194,7 +195,7 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 
             <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <img src="../images/projects/wigston/wigston-6.jpg" alt="Artificial grass lawn with magnolia hedge and lavender border — close-up, Wigston" class="w-full h-48 object-cover rounded-xl mb-3">
+                <img loading="lazy" src="../images/projects/wigston/wigston-6.jpg" alt="Artificial grass lawn with magnolia hedge and lavender border — close-up, Wigston" class="w-full h-48 object-cover rounded-xl mb-3">
                 <div class="flex items-center gap-3 mb-2">
                     <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">1</span>
                     <h3 class="font-bold text-gray-900">Design &amp; Planning</h3>
@@ -202,7 +203,7 @@
                 <p class="text-gray-600 text-sm leading-relaxed">A full measured survey was carried out. The design centred on artificial grass as the main surface, with a porcelain pathway, lavender planting strips and a tree border for structure and screening.</p>
             </div>
             <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <img src="../images/projects/wigston/wigston-4.jpg" alt="Porcelain path edge detail with artificial grass and granite sett edging, Wigston" class="w-full h-48 object-cover rounded-xl mb-3">
+                <img loading="lazy" src="../images/projects/wigston/wigston-4.jpg" alt="Porcelain path edge detail with artificial grass and granite sett edging, Wigston" class="w-full h-48 object-cover rounded-xl mb-3">
                 <div class="flex items-center gap-3 mb-2">
                     <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">2</span>
                     <h3 class="font-bold text-gray-900">Clearance &amp; Excavation</h3>
@@ -210,7 +211,7 @@
                 <p class="text-gray-600 text-sm leading-relaxed">The existing lawn and concrete path were removed and ground was excavated to level throughout. The pathway zone and grass zones were established and separated with steel edging.</p>
             </div>
             <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <img src="../images/projects/wigston/wigston-5.jpg" alt="Front garden with lavender border, young bay trees and artificial grass, Wigston" class="w-full h-48 object-cover rounded-xl mb-3">
+                <img loading="lazy" src="../images/projects/wigston/wigston-5.jpg" alt="Front garden with lavender border, young bay trees and artificial grass, Wigston" class="w-full h-48 object-cover rounded-xl mb-3">
                 <div class="flex items-center gap-3 mb-2">
                     <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">3</span>
                     <h3 class="font-bold text-gray-900">Sub-Base &amp; Preparation</h3>
@@ -218,7 +219,7 @@
                 <p class="text-gray-600 text-sm leading-relaxed">Compacted MOT Type 1 sub-base was laid across the full frontage. Planting borders were prepared with topsoil and a weed membrane installed beneath the gravel side border.</p>
             </div>
             <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <img src="../images/projects/wigston/wigston-7.jpg" alt="Slate-effect porcelain pathway to front door with lavender edging and artificial grass, Wigston" class="w-full h-48 object-cover rounded-xl mb-3">
+                <img loading="lazy" src="../images/projects/wigston/wigston-7.jpg" alt="Slate-effect porcelain pathway to front door with lavender edging and artificial grass, Wigston" class="w-full h-48 object-cover rounded-xl mb-3">
                 <div class="flex items-center gap-3 mb-2">
                     <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">4</span>
                     <h3 class="font-bold text-gray-900">Pathway &amp; Edging</h3>
@@ -226,7 +227,7 @@
                 <p class="text-gray-600 text-sm leading-relaxed">The slate-effect porcelain pathway was laid on a full mortar bed, edged with granite cobble setts. The artificial grass was then installed and cut precisely to meet the edging on all sides.</p>
             </div>
             <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <img src="../images/projects/wigston/wigston-2.jpg" alt="Young magnolia and bay tree hedge planted in border with lavender, Wigston front garden" class="w-full h-48 object-cover rounded-xl mb-3">
+                <img loading="lazy" src="../images/projects/wigston/wigston-2.jpg" alt="Young magnolia and bay tree hedge planted in border with lavender, Wigston front garden" class="w-full h-48 object-cover rounded-xl mb-3">
                 <div class="flex items-center gap-3 mb-2">
                     <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">5</span>
                     <h3 class="font-bold text-gray-900">Planting &amp; Borders</h3>
@@ -234,7 +235,7 @@
                 <p class="text-gray-600 text-sm leading-relaxed">Lavender plants were installed in strips flanking the pathway. Young bay and magnolia trees were planted in the road-side border to provide long-term structure and seasonal interest.</p>
             </div>
             <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <img src="../images/projects/wigston/wigston-8.jpg" alt="Completed front garden — street view showing artificial grass, ornamental trees and porcelain path, Wigston" class="w-full h-48 object-cover rounded-xl mb-3">
+                <img loading="lazy" src="../images/projects/wigston/wigston-8.jpg" alt="Completed front garden — street view showing artificial grass, ornamental trees and porcelain path, Wigston" class="w-full h-48 object-cover rounded-xl mb-3">
                 <div class="flex items-center gap-3 mb-2">
                     <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">6</span>
                     <h3 class="font-bold text-gray-900">Finishing &amp; Handover</h3>
@@ -253,28 +254,28 @@
             </div>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
                 <a href="../images/projects/wigston/wigston-1.jpg" target="_blank" class="group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <img src="../images/projects/wigston/wigston-1.jpg" alt="Wide view of completed front garden with artificial grass, Wigston" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" src="../images/projects/wigston/wigston-1.jpg" alt="Wide view of completed front garden with artificial grass, Wigston" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
                 </a>
                 <a href="../images/projects/wigston/wigston-2.jpg" target="_blank" class="group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <img src="../images/projects/wigston/wigston-2.jpg" alt="Young magnolia and bay trees in border with lavender planting, Wigston" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" src="../images/projects/wigston/wigston-2.jpg" alt="Young magnolia and bay trees in border with lavender planting, Wigston" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
                 </a>
                 <a href="../images/projects/wigston/wigston-3.jpg" target="_blank" class="group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <img src="../images/projects/wigston/wigston-3.jpg" alt="Artificial grass with porcelain path and ornamental tree border, Wigston" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" src="../images/projects/wigston/wigston-3.jpg" alt="Artificial grass with porcelain path and ornamental tree border, Wigston" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
                 </a>
                 <a href="../images/projects/wigston/wigston-4.jpg" target="_blank" class="group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <img src="../images/projects/wigston/wigston-4.jpg" alt="Porcelain path edge detail with granite sett edging and artificial grass, Wigston" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" src="../images/projects/wigston/wigston-4.jpg" alt="Porcelain path edge detail with granite sett edging and artificial grass, Wigston" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
                 </a>
                 <a href="../images/projects/wigston/wigston-5.jpg" target="_blank" class="group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <img src="../images/projects/wigston/wigston-5.jpg" alt="Front garden with lavender border strip and young ornamental trees, Wigston" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" src="../images/projects/wigston/wigston-5.jpg" alt="Front garden with lavender border strip and young ornamental trees, Wigston" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
                 </a>
                 <a href="../images/projects/wigston/wigston-6.jpg" target="_blank" class="group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <img src="../images/projects/wigston/wigston-6.jpg" alt="Close view of artificial grass with magnolia hedge and lavender, Wigston" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" src="../images/projects/wigston/wigston-6.jpg" alt="Close view of artificial grass with magnolia hedge and lavender, Wigston" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
                 </a>
                 <a href="../images/projects/wigston/wigston-7.jpg" target="_blank" class="group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <img src="../images/projects/wigston/wigston-7.jpg" alt="Slate porcelain pathway to front door flanked by lavender and artificial grass, Wigston" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" src="../images/projects/wigston/wigston-7.jpg" alt="Slate porcelain pathway to front door flanked by lavender and artificial grass, Wigston" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
                 </a>
                 <a href="../images/projects/wigston/wigston-8.jpg" target="_blank" class="group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <img src="../images/projects/wigston/wigston-8.jpg" alt="Street-level view of completed front garden with ornamental trees and artificial grass, Wigston" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" src="../images/projects/wigston/wigston-8.jpg" alt="Street-level view of completed front garden with ornamental trees and artificial grass, Wigston" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
                 </a>
             </div>
         </div>

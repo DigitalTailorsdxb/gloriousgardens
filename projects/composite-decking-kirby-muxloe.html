@@ -70,6 +70,7 @@
         h1,h2,h3,h4 { font-family: 'Inter', sans-serif; }
         .hero-gradient { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 50%, #7c3aed 100%); }
     </style>
+    <link rel="stylesheet" href="../styles/mobile.css">
 </head>
 <body class="bg-white text-gray-800">
     <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm">
@@ -85,12 +86,12 @@
                 </a>
                 <a href="../contact.html" class="text-gray-600 hover:text-primary transition font-medium">Contact</a>
             </div>
-            <button class="md:hidden text-gray-600" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+            <button class="md:hidden text-gray-600" id="mobileMenuBtn">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
         </nav>
     </header>
-    <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-gray-200 px-4 py-4 space-y-3 z-40">
+    <div id="mobileMenu" class="mobile-menu md:hidden bg-white border-b border-gray-200 px-4 py-4 space-y-3 z-40">
         <a href="../about.html" class="block text-gray-700 hover:text-primary">About</a>
         <a href="../services.html" class="block text-gray-700 hover:text-primary">Services</a>
         <a href="../gallery.html" class="block text-gray-700 hover:text-primary">Gallery</a>
@@ -139,8 +140,8 @@
                     <img src="../images/projects/kirby-muxloe/kirby-4.jpg" alt="Wide view of completed composite deck with wicker seating and cantilever parasol — Kirby Muxloe" class="w-full h-72 object-cover rounded-2xl shadow-lg">
                 </div>
                 <div class="grid grid-rows-2 gap-4">
-                    <img src="../images/projects/kirby-muxloe/kirby-1.jpg" alt="Angled view of deck with furniture and bungalow backdrop — Kirby Muxloe" class="w-full h-32 object-cover rounded-2xl shadow-lg">
-                    <img src="../images/projects/kirby-muxloe/kirby-7.jpg" alt="Side elevation view of composite deck at sunset with lawn — Kirby Muxloe" class="w-full h-32 object-cover rounded-2xl shadow-lg">
+                    <img loading="lazy" src="../images/projects/kirby-muxloe/kirby-1.jpg" alt="Angled view of deck with furniture and bungalow backdrop — Kirby Muxloe" class="w-full h-32 object-cover rounded-2xl shadow-lg">
+                    <img loading="lazy" src="../images/projects/kirby-muxloe/kirby-7.jpg" alt="Side elevation view of composite deck at sunset with lawn — Kirby Muxloe" class="w-full h-32 object-cover rounded-2xl shadow-lg">
                 </div>
             </div>
         </div>
@@ -187,7 +188,7 @@
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                    <img src="../images/projects/kirby-muxloe/kirby-6.jpg" alt="Established mature garden setting — Kirby Muxloe" class="w-full h-48 object-cover rounded-xl mb-3">
+                    <img loading="lazy" src="../images/projects/kirby-muxloe/kirby-6.jpg" alt="Established mature garden setting — Kirby Muxloe" class="w-full h-48 object-cover rounded-xl mb-3">
                     <div class="flex items-center gap-3 mb-2">
                         <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">1</span>
                         <h3 class="font-bold text-gray-900">Design &amp; Survey</h3>
@@ -195,7 +196,7 @@
                     <p class="text-gray-600 text-sm leading-relaxed">A site survey mapped the full rear elevation, accounting for the conservatory, bi-fold doors, and existing lawn levels. The deck layout, board direction, fascia detail, and privacy screen positions were all agreed before groundwork began.</p>
                 </div>
                 <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                    <img src="../images/projects/kirby-muxloe/kirby-3.jpg" alt="Composite deck edge meeting lawn — detail view, Kirby Muxloe" class="w-full h-48 object-cover rounded-xl mb-3">
+                    <img loading="lazy" src="../images/projects/kirby-muxloe/kirby-3.jpg" alt="Composite deck edge meeting lawn — detail view, Kirby Muxloe" class="w-full h-48 object-cover rounded-xl mb-3">
                     <div class="flex items-center gap-3 mb-2">
                         <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">2</span>
                         <h3 class="font-bold text-gray-900">Ground Preparation</h3>
@@ -203,7 +204,7 @@
                     <p class="text-gray-600 text-sm leading-relaxed">The ground beneath the deck footprint was cleared, levelled, and treated. A weed membrane was laid across the full area before the sub-frame posts and bearers were positioned and set to level.</p>
                 </div>
                 <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                    <img src="../images/projects/kirby-muxloe/kirby-2.jpg" alt="Side view of composite deck with LED fascia lights — Kirby Muxloe" class="w-full h-48 object-cover rounded-xl mb-3">
+                    <img loading="lazy" src="../images/projects/kirby-muxloe/kirby-2.jpg" alt="Side view of composite deck with LED fascia lights — Kirby Muxloe" class="w-full h-48 object-cover rounded-xl mb-3">
                     <div class="flex items-center gap-3 mb-2">
                         <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">3</span>
                         <h3 class="font-bold text-gray-900">Sub-Frame &amp; Joists</h3>
@@ -211,7 +212,7 @@
                     <p class="text-gray-600 text-sm leading-relaxed">A treated softwood sub-frame was constructed across the full deck footprint, with joists spaced to the composite manufacturer's specification. The frame was checked for level and square before any boards were fitted.</p>
                 </div>
                 <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                    <img src="../images/projects/kirby-muxloe/kirby-7.jpg" alt="Wide deck with lawn and seating — sunset view, Kirby Muxloe" class="w-full h-48 object-cover rounded-xl mb-3">
+                    <img loading="lazy" src="../images/projects/kirby-muxloe/kirby-7.jpg" alt="Wide deck with lawn and seating — sunset view, Kirby Muxloe" class="w-full h-48 object-cover rounded-xl mb-3">
                     <div class="flex items-center gap-3 mb-2">
                         <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">4</span>
                         <h3 class="font-bold text-gray-900">Composite Board Laying</h3>
@@ -219,7 +220,7 @@
                     <p class="text-gray-600 text-sm leading-relaxed">Teak-tone composite boards were laid along the deck using hidden stainless-steel fixing clips, keeping the surface clean and uninterrupted. Boards were staggered at joins for strength and to avoid a repetitive pattern across the full span.</p>
                 </div>
                 <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                    <img src="../images/projects/kirby-muxloe/kirby-1.jpg" alt="Deck with furniture, umbrella and LED-lit fascia — Kirby Muxloe" class="w-full h-48 object-cover rounded-xl mb-3">
+                    <img loading="lazy" src="../images/projects/kirby-muxloe/kirby-1.jpg" alt="Deck with furniture, umbrella and LED-lit fascia — Kirby Muxloe" class="w-full h-48 object-cover rounded-xl mb-3">
                     <div class="flex items-center gap-3 mb-2">
                         <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">5</span>
                         <h3 class="font-bold text-gray-900">Fascia, Edging &amp; LED Lights</h3>
@@ -227,7 +228,7 @@
                     <p class="text-gray-600 text-sm leading-relaxed">Dark charcoal composite fascia boards were fixed around the full perimeter, framing the teak deck and giving it a defined, finished edge. LED lights were recessed into the front-facing fascia board, adding a warm glow along the deck edge at dusk.</p>
                 </div>
                 <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                    <img src="../images/projects/kirby-muxloe/kirby-5.jpg" alt="Side seating zone with laser-cut metal privacy screens and timber bench — Kirby Muxloe" class="w-full h-48 object-cover rounded-xl mb-3">
+                    <img loading="lazy" src="../images/projects/kirby-muxloe/kirby-5.jpg" alt="Side seating zone with laser-cut metal privacy screens and timber bench — Kirby Muxloe" class="w-full h-48 object-cover rounded-xl mb-3">
                     <div class="flex items-center gap-3 mb-2">
                         <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">6</span>
                         <h3 class="font-bold text-gray-900">Privacy Screens &amp; Handover</h3>
@@ -246,25 +247,25 @@
             </div>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
                 <a href="../images/projects/kirby-muxloe/kirby-1.jpg" target="_blank" class="group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <img src="../images/projects/kirby-muxloe/kirby-1.jpg" alt="Angled view of composite deck with furniture and parasol — Kirby Muxloe" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" src="../images/projects/kirby-muxloe/kirby-1.jpg" alt="Angled view of composite deck with furniture and parasol — Kirby Muxloe" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
                 </a>
                 <a href="../images/projects/kirby-muxloe/kirby-2.jpg" target="_blank" class="group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <img src="../images/projects/kirby-muxloe/kirby-2.jpg" alt="Side view of full deck with LED fascia lights and storage box — Kirby Muxloe" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" src="../images/projects/kirby-muxloe/kirby-2.jpg" alt="Side view of full deck with LED fascia lights and storage box — Kirby Muxloe" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
                 </a>
                 <a href="../images/projects/kirby-muxloe/kirby-3.jpg" target="_blank" class="group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <img src="../images/projects/kirby-muxloe/kirby-3.jpg" alt="Evening close-up of deck board edge with established rose and flower border — Kirby Muxloe" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" src="../images/projects/kirby-muxloe/kirby-3.jpg" alt="Evening close-up of deck board edge with established rose and flower border — Kirby Muxloe" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
                 </a>
                 <a href="../images/projects/kirby-muxloe/kirby-4.jpg" target="_blank" class="group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <img src="../images/projects/kirby-muxloe/kirby-4.jpg" alt="Wide front view of seating area with cantilever umbrella and laser-cut screen — Kirby Muxloe" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" src="../images/projects/kirby-muxloe/kirby-4.jpg" alt="Wide front view of seating area with cantilever umbrella and laser-cut screen — Kirby Muxloe" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
                 </a>
                 <a href="../images/projects/kirby-muxloe/kirby-5.jpg" target="_blank" class="group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <img src="../images/projects/kirby-muxloe/kirby-5.jpg" alt="Intimate side seating area with laser-cut metal screens and timber bench — Kirby Muxloe" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" src="../images/projects/kirby-muxloe/kirby-5.jpg" alt="Intimate side seating area with laser-cut metal screens and timber bench — Kirby Muxloe" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
                 </a>
                 <a href="../images/projects/kirby-muxloe/kirby-6.jpg" target="_blank" class="group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <img src="../images/projects/kirby-muxloe/kirby-6.jpg" alt="Evening garden view from deck — established rose borders and willow tree — Kirby Muxloe" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" src="../images/projects/kirby-muxloe/kirby-6.jpg" alt="Evening garden view from deck — established rose borders and willow tree — Kirby Muxloe" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
                 </a>
                 <a href="../images/projects/kirby-muxloe/kirby-7.jpg" target="_blank" class="group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <img src="../images/projects/kirby-muxloe/kirby-7.jpg" alt="Side elevation view of composite deck at golden hour with lawn — Kirby Muxloe" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" src="../images/projects/kirby-muxloe/kirby-7.jpg" alt="Side elevation view of composite deck at golden hour with lawn — Kirby Muxloe" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
                 </a>
             </div>
         </div>

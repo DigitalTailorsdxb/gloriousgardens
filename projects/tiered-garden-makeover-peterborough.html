@@ -72,6 +72,7 @@
         ]
     }
     </script>
+    <link rel="stylesheet" href="../styles/mobile.css">
 </head>
 <body class="bg-white text-gray-800">
     <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm">
@@ -87,12 +88,12 @@
                 </a>
                 <a href="../contact.html" class="text-gray-600 hover:text-primary transition font-medium">Contact</a>
             </div>
-            <button class="md:hidden text-gray-600" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+            <button class="md:hidden text-gray-600" id="mobileMenuBtn">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
         </nav>
     </header>
-    <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-gray-200 px-4 py-4 space-y-3 z-40">
+    <div id="mobileMenu" class="mobile-menu md:hidden bg-white border-b border-gray-200 px-4 py-4 space-y-3 z-40">
         <a href="../about.html" class="block text-gray-700 hover:text-primary">About</a>
         <a href="../services.html" class="block text-gray-700 hover:text-primary">Services</a>
         <a href="../gallery.html" class="block text-gray-700 hover:text-primary">Gallery</a>
@@ -140,11 +141,11 @@
                 <img src="../images/projects/peterborough/peterborough-3.jpg"
                      alt="Bird's eye view of tiered garden — outdoor kitchen, porcelain patio, artificial grass and waterside decking, Peterborough"
                      class="w-full h-80 object-cover rounded-2xl shadow-lg">
-                <img src="../images/projects/peterborough/peterborough-8.jpg"
+                <img loading="lazy" src="../images/projects/peterborough/peterborough-8.jpg"
                      alt="View from upper level overlooking lake — garden dining area and waterfront decking, Peterborough"
                      class="w-full h-80 object-cover rounded-2xl shadow-lg">
             </div>
-            <img src="../images/projects/peterborough/peterborough-6.jpg"
+            <img loading="lazy" src="../images/projects/peterborough/peterborough-6.jpg"
                  alt="Full width view of completed tiered garden — artificial grass, porcelain patio and outdoor kitchen with white rendered retaining walls, Peterborough"
                  class="w-full h-72 object-cover rounded-2xl shadow-lg">
         </div>
@@ -185,7 +186,7 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 
             <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <img src="../images/projects/peterborough/peterborough-4.jpg" alt="Aerial view of tiered layout showing outdoor kitchen zone, retaining walls and waterfront, Peterborough" class="w-full h-48 object-cover rounded-xl mb-3">
+                <img loading="lazy" src="../images/projects/peterborough/peterborough-4.jpg" alt="Aerial view of tiered layout showing outdoor kitchen zone, retaining walls and waterfront, Peterborough" class="w-full h-48 object-cover rounded-xl mb-3">
                 <div class="flex items-center gap-3 mb-2">
                     <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">1</span>
                     <h3 class="font-bold text-gray-900">Structural Design</h3>
@@ -193,7 +194,7 @@
                 <p class="text-gray-600 text-sm leading-relaxed">A full survey established exact levels across the plot. Structural calculations were carried out for the retaining walls, and the tier depths and positions were finalised.</p>
             </div>
             <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <img src="../images/projects/peterborough/peterborough-5.jpg" alt="Side elevation showing tiered retaining walls and stair access from house, Peterborough" class="w-full h-48 object-cover rounded-xl mb-3">
+                <img loading="lazy" src="../images/projects/peterborough/peterborough-5.jpg" alt="Side elevation showing tiered retaining walls and stair access from house, Peterborough" class="w-full h-48 object-cover rounded-xl mb-3">
                 <div class="flex items-center gap-3 mb-2">
                     <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">2</span>
                     <h3 class="font-bold text-gray-900">Excavation &amp; Earthworks</h3>
@@ -201,7 +202,7 @@
                 <p class="text-gray-600 text-sm leading-relaxed">Significant earthworks were required — material was excavated from the upper tiers and redistributed or removed. The three platforms were established and compacted.</p>
             </div>
             <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <img src="../images/projects/peterborough/peterborough-6.jpg" alt="Completed white rendered retaining walls with artificial grass foreground and outdoor kitchen, Peterborough" class="w-full h-48 object-cover rounded-xl mb-3">
+                <img loading="lazy" src="../images/projects/peterborough/peterborough-6.jpg" alt="Completed white rendered retaining walls with artificial grass foreground and outdoor kitchen, Peterborough" class="w-full h-48 object-cover rounded-xl mb-3">
                 <div class="flex items-center gap-3 mb-2">
                     <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">3</span>
                     <h3 class="font-bold text-gray-900">Retaining Wall Construction</h3>
@@ -209,7 +210,7 @@
                 <p class="text-gray-600 text-sm leading-relaxed">Two reinforced retaining walls were constructed between the tiers and rendered in a smooth white finish to complement the contemporary design brief.</p>
             </div>
             <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <img src="../images/projects/peterborough/peterborough-2.jpg" alt="Outdoor kitchen island with BBQ and bar stools on large porcelain patio, Peterborough" class="w-full h-48 object-cover rounded-xl mb-3">
+                <img loading="lazy" src="../images/projects/peterborough/peterborough-2.jpg" alt="Outdoor kitchen island with BBQ and bar stools on large porcelain patio, Peterborough" class="w-full h-48 object-cover rounded-xl mb-3">
                 <div class="flex items-center gap-3 mb-2">
                     <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">4</span>
                     <h3 class="font-bold text-gray-900">Patio &amp; Outdoor Kitchen</h3>
@@ -217,7 +218,7 @@
                 <p class="text-gray-600 text-sm leading-relaxed">Large-format porcelain slabs were laid to the main entertaining tier. The bespoke outdoor kitchen island with integrated BBQ and prep sink was installed and positioned.</p>
             </div>
             <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <img src="../images/projects/peterborough/peterborough-1.jpg" alt="Composite decking with lounge seating, artificial grass lawn and lake view, Peterborough" class="w-full h-48 object-cover rounded-xl mb-3">
+                <img loading="lazy" src="../images/projects/peterborough/peterborough-1.jpg" alt="Composite decking with lounge seating, artificial grass lawn and lake view, Peterborough" class="w-full h-48 object-cover rounded-xl mb-3">
                 <div class="flex items-center gap-3 mb-2">
                     <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">5</span>
                     <h3 class="font-bold text-gray-900">Decking &amp; Lawn</h3>
@@ -225,7 +226,7 @@
                 <p class="text-gray-600 text-sm leading-relaxed">Composite decking was installed to the lounge zone. Artificial grass was laid to the lawn tier with clean slab edging. The waterfront decking platform was constructed adjacent to the lake.</p>
             </div>
             <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <img src="../images/projects/peterborough/peterborough-7.jpg" alt="Completed porcelain patio with outdoor dining set and kitchen — finished garden, Peterborough" class="w-full h-48 object-cover rounded-xl mb-3">
+                <img loading="lazy" src="../images/projects/peterborough/peterborough-7.jpg" alt="Completed porcelain patio with outdoor dining set and kitchen — finished garden, Peterborough" class="w-full h-48 object-cover rounded-xl mb-3">
                 <div class="flex items-center gap-3 mb-2">
                     <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">6</span>
                     <h3 class="font-bold text-gray-900">Finishing &amp; Handover</h3>
@@ -244,28 +245,28 @@
             </div>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
                 <a href="../images/projects/peterborough/peterborough-1.jpg" target="_blank" class="group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <img src="../images/projects/peterborough/peterborough-1.jpg" alt="Composite decking with lounge seating, artificial grass and lake view, Peterborough" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" src="../images/projects/peterborough/peterborough-1.jpg" alt="Composite decking with lounge seating, artificial grass and lake view, Peterborough" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
                 </a>
                 <a href="../images/projects/peterborough/peterborough-2.jpg" target="_blank" class="group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <img src="../images/projects/peterborough/peterborough-2.jpg" alt="Outdoor kitchen island with BBQ and bar stools on porcelain patio, Peterborough" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" src="../images/projects/peterborough/peterborough-2.jpg" alt="Outdoor kitchen island with BBQ and bar stools on porcelain patio, Peterborough" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
                 </a>
                 <a href="../images/projects/peterborough/peterborough-3.jpg" target="_blank" class="group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <img src="../images/projects/peterborough/peterborough-3.jpg" alt="Bird's eye overview — outdoor kitchen, patio, lawn and lake, Peterborough" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" src="../images/projects/peterborough/peterborough-3.jpg" alt="Bird's eye overview — outdoor kitchen, patio, lawn and lake, Peterborough" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
                 </a>
                 <a href="../images/projects/peterborough/peterborough-4.jpg" target="_blank" class="group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <img src="../images/projects/peterborough/peterborough-4.jpg" alt="Aerial view of tiered garden with outdoor kitchen, hot tub and dining area, Peterborough" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" src="../images/projects/peterborough/peterborough-4.jpg" alt="Aerial view of tiered garden with outdoor kitchen, hot tub and dining area, Peterborough" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
                 </a>
                 <a href="../images/projects/peterborough/peterborough-5.jpg" target="_blank" class="group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <img src="../images/projects/peterborough/peterborough-5.jpg" alt="Side elevation showing retaining walls, outdoor kitchen and seating area, Peterborough" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" src="../images/projects/peterborough/peterborough-5.jpg" alt="Side elevation showing retaining walls, outdoor kitchen and seating area, Peterborough" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
                 </a>
                 <a href="../images/projects/peterborough/peterborough-6.jpg" target="_blank" class="group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <img src="../images/projects/peterborough/peterborough-6.jpg" alt="Wide view of completed tiered garden with artificial grass and white retaining walls, Peterborough" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" src="../images/projects/peterborough/peterborough-6.jpg" alt="Wide view of completed tiered garden with artificial grass and white retaining walls, Peterborough" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
                 </a>
                 <a href="../images/projects/peterborough/peterborough-7.jpg" target="_blank" class="group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <img src="../images/projects/peterborough/peterborough-7.jpg" alt="Large porcelain patio with dining set and outdoor kitchen in background, Peterborough" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" src="../images/projects/peterborough/peterborough-7.jpg" alt="Large porcelain patio with dining set and outdoor kitchen in background, Peterborough" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
                 </a>
                 <a href="../images/projects/peterborough/peterborough-8.jpg" target="_blank" class="group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <img src="../images/projects/peterborough/peterborough-8.jpg" alt="View from upper level over lake with garden dining area and waterfront decking, Peterborough" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" src="../images/projects/peterborough/peterborough-8.jpg" alt="View from upper level over lake with garden dining area and waterfront decking, Peterborough" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
                 </a>
             </div>
         </div>

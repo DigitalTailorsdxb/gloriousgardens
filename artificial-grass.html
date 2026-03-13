@@ -140,6 +140,7 @@
         ]
     }
     </script>
+    <link rel="stylesheet" href="styles/mobile.css">
 </head>
 <body class="bg-white text-gray-800">
     <!-- Navigation -->
@@ -158,12 +159,12 @@
                 </a>
                 <a href="contact.html" class="text-gray-600 hover:text-primary transition font-medium">Contact</a>
             </div>
-            <button class="md:hidden text-gray-600" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+            <button class="md:hidden text-gray-600" id="mobileMenuBtn">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
         </nav>
     </header>
-    <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-gray-200 px-4 py-4 space-y-3 z-40">
+    <div id="mobileMenu" class="mobile-menu md:hidden bg-white border-b border-gray-200 px-4 py-4 space-y-3 z-40">
         <a href="about.html" class="block text-gray-700 hover:text-primary">About</a>
         <a href="services.html" class="block text-primary font-semibold">Services</a>
         <a href="gallery.html" class="block text-gray-700 hover:text-primary">Gallery</a>

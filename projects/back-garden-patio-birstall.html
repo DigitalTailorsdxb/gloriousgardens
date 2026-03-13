@@ -72,6 +72,7 @@
         ]
     }
     </script>
+    <link rel="stylesheet" href="../styles/mobile.css">
 </head>
 <body class="bg-white text-gray-800">
     <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm">
@@ -87,12 +88,12 @@
                 </a>
                 <a href="../contact.html" class="text-gray-600 hover:text-primary transition font-medium">Contact</a>
             </div>
-            <button class="md:hidden text-gray-600" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+            <button class="md:hidden text-gray-600" id="mobileMenuBtn">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
         </nav>
     </header>
-    <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-gray-200 px-4 py-4 space-y-3 z-40">
+    <div id="mobileMenu" class="mobile-menu md:hidden bg-white border-b border-gray-200 px-4 py-4 space-y-3 z-40">
         <a href="../about.html" class="block text-gray-700 hover:text-primary">About</a>
         <a href="../services.html" class="block text-gray-700 hover:text-primary">Services</a>
         <a href="../gallery.html" class="block text-gray-700 hover:text-primary">Gallery</a>
@@ -141,8 +142,8 @@
                     <img src="../images/projects/birstall/birstall-4.jpg" alt="Full garden overview — lawn, timber raised planters, steps and grey porcelain patio, Birstall" class="w-full h-72 object-cover rounded-2xl shadow-lg">
                 </div>
                 <div class="grid grid-rows-2 gap-4">
-                    <img src="../images/projects/birstall/birstall-2.jpg" alt="Wide patio view with grey porcelain slabs and corner lounge seating, Birstall" class="w-full h-32 object-cover rounded-2xl shadow-lg">
-                    <img src="../images/projects/birstall/birstall-1.jpg" alt="Timber raised planters with porcelain steps and hydrangea planting, Birstall" class="w-full h-32 object-cover rounded-2xl shadow-lg">
+                    <img loading="lazy" src="../images/projects/birstall/birstall-2.jpg" alt="Wide patio view with grey porcelain slabs and corner lounge seating, Birstall" class="w-full h-32 object-cover rounded-2xl shadow-lg">
+                    <img loading="lazy" src="../images/projects/birstall/birstall-1.jpg" alt="Timber raised planters with porcelain steps and hydrangea planting, Birstall" class="w-full h-32 object-cover rounded-2xl shadow-lg">
                 </div>
             </div>
         </div>
@@ -193,7 +194,7 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 
             <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <img src="../images/projects/birstall/birstall-4.jpg" alt="Full garden overview showing lawn, raised planters, steps and patio — Birstall" class="w-full h-48 object-cover rounded-xl mb-3">
+                <img loading="lazy" src="../images/projects/birstall/birstall-4.jpg" alt="Full garden overview showing lawn, raised planters, steps and patio — Birstall" class="w-full h-48 object-cover rounded-xl mb-3">
                 <div class="flex items-center gap-3 mb-2">
                     <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">1</span>
                     <h3 class="font-bold text-gray-900">Design &amp; Planning</h3>
@@ -201,7 +202,7 @@
                 <p class="text-gray-600 text-sm leading-relaxed">A full site survey established the split-level design — porcelain patio off the house, timber sleeper planters as the dividing feature, and a lawn zone below. Fence and storage layouts were agreed at this stage.</p>
             </div>
             <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <img src="../images/projects/birstall/birstall-6.jpg" alt="Grey porcelain patio with bespoke timber storage unit — Birstall" class="w-full h-48 object-cover rounded-xl mb-3">
+                <img loading="lazy" src="../images/projects/birstall/birstall-6.jpg" alt="Grey porcelain patio with bespoke timber storage unit — Birstall" class="w-full h-48 object-cover rounded-xl mb-3">
                 <div class="flex items-center gap-3 mb-2">
                     <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">2</span>
                     <h3 class="font-bold text-gray-900">Clearance &amp; Groundworks</h3>
@@ -209,7 +210,7 @@
                 <p class="text-gray-600 text-sm leading-relaxed">The existing garden was cleared and excavated to level. The upper patio zone was dug to depth for sub-base and the level change between zones was marked out before construction began.</p>
             </div>
             <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <img src="../images/projects/birstall/birstall-3.jpg" alt="Timber sleeper raised planters and porcelain steps from patio side — Birstall" class="w-full h-48 object-cover rounded-xl mb-3">
+                <img loading="lazy" src="../images/projects/birstall/birstall-3.jpg" alt="Timber sleeper raised planters and porcelain steps from patio side — Birstall" class="w-full h-48 object-cover rounded-xl mb-3">
                 <div class="flex items-center gap-3 mb-2">
                     <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">3</span>
                     <h3 class="font-bold text-gray-900">Raised Planters &amp; Steps</h3>
@@ -217,7 +218,7 @@
                 <p class="text-gray-600 text-sm leading-relaxed">Stacked timber sleeper raised planters were constructed across the garden width with a central opening for the porcelain steps. Planters were lined and filled with topsoil ready for planting.</p>
             </div>
             <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <img src="../images/projects/birstall/birstall-2.jpg" alt="Completed grey porcelain patio with corner lounge seating and fire pit coffee table — Birstall" class="w-full h-48 object-cover rounded-xl mb-3">
+                <img loading="lazy" src="../images/projects/birstall/birstall-2.jpg" alt="Completed grey porcelain patio with corner lounge seating and fire pit coffee table — Birstall" class="w-full h-48 object-cover rounded-xl mb-3">
                 <div class="flex items-center gap-3 mb-2">
                     <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">4</span>
                     <h3 class="font-bold text-gray-900">Porcelain Patio Laying</h3>
@@ -225,7 +226,7 @@
                 <p class="text-gray-600 text-sm leading-relaxed">Large-format grey porcelain slabs were laid on a full mortar bed across the patio level, with matching porcelain steps fitted centrally between the planters. All joints were pointed with flexible grey mortar.</p>
             </div>
             <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <img src="../images/projects/birstall/birstall-5.jpg" alt="Close-up of timber raised planter with hydrangeas and lounge furniture — Birstall" class="w-full h-48 object-cover rounded-xl mb-3">
+                <img loading="lazy" src="../images/projects/birstall/birstall-5.jpg" alt="Close-up of timber raised planter with hydrangeas and lounge furniture — Birstall" class="w-full h-48 object-cover rounded-xl mb-3">
                 <div class="flex items-center gap-3 mb-2">
                     <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">5</span>
                     <h3 class="font-bold text-gray-900">Planting &amp; Fencing</h3>
@@ -233,7 +234,7 @@
                 <p class="text-gray-600 text-sm leading-relaxed">Hydrangeas were planted into the raised beds, with a decorative gravel strip laid at their base. Dark charcoal slatted fence panels were installed along the garden boundaries to complete the enclosure.</p>
             </div>
             <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <img src="../images/projects/birstall/birstall-1.jpg" alt="Lawn-level view of completed garden with timber planters, porcelain steps and patio — Birstall" class="w-full h-48 object-cover rounded-xl mb-3">
+                <img loading="lazy" src="../images/projects/birstall/birstall-1.jpg" alt="Lawn-level view of completed garden with timber planters, porcelain steps and patio — Birstall" class="w-full h-48 object-cover rounded-xl mb-3">
                 <div class="flex items-center gap-3 mb-2">
                     <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">6</span>
                     <h3 class="font-bold text-gray-900">Storage Unit &amp; Handover</h3>
@@ -252,22 +253,22 @@
             </div>
             <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
                 <a href="../images/projects/birstall/birstall-1.jpg" target="_blank" class="group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <img src="../images/projects/birstall/birstall-1.jpg" alt="Lawn-level view of raised planters, porcelain steps and patio — Birstall" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" src="../images/projects/birstall/birstall-1.jpg" alt="Lawn-level view of raised planters, porcelain steps and patio — Birstall" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
                 </a>
                 <a href="../images/projects/birstall/birstall-2.jpg" target="_blank" class="group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <img src="../images/projects/birstall/birstall-2.jpg" alt="Wide grey porcelain patio with corner lounge seating and fire pit table — Birstall" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" src="../images/projects/birstall/birstall-2.jpg" alt="Wide grey porcelain patio with corner lounge seating and fire pit table — Birstall" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
                 </a>
                 <a href="../images/projects/birstall/birstall-3.jpg" target="_blank" class="group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <img src="../images/projects/birstall/birstall-3.jpg" alt="Porcelain steps between timber sleeper raised planters with hydrangeas — Birstall" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" src="../images/projects/birstall/birstall-3.jpg" alt="Porcelain steps between timber sleeper raised planters with hydrangeas — Birstall" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
                 </a>
                 <a href="../images/projects/birstall/birstall-4.jpg" target="_blank" class="group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <img src="../images/projects/birstall/birstall-4.jpg" alt="Full garden overview — lawn, timber raised beds, steps, patio and lounge seating — Birstall" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" src="../images/projects/birstall/birstall-4.jpg" alt="Full garden overview — lawn, timber raised beds, steps, patio and lounge seating — Birstall" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
                 </a>
                 <a href="../images/projects/birstall/birstall-5.jpg" target="_blank" class="group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <img src="../images/projects/birstall/birstall-5.jpg" alt="Close-up of timber planter corner with hydrangea planting and porcelain patio — Birstall" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" src="../images/projects/birstall/birstall-5.jpg" alt="Close-up of timber planter corner with hydrangea planting and porcelain patio — Birstall" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
                 </a>
                 <a href="../images/projects/birstall/birstall-6.jpg" target="_blank" class="group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <img src="../images/projects/birstall/birstall-6.jpg" alt="Bespoke timber storage unit on grey porcelain patio — Birstall" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" src="../images/projects/birstall/birstall-6.jpg" alt="Bespoke timber storage unit on grey porcelain patio — Birstall" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
                 </a>
             </div>
         </div>
