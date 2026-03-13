@@ -25,14 +25,14 @@
     <meta property="og:url" content="https://premium-landscapes.co.uk/">
     <meta property="og:title" content="Landscaping Leicester | AI-Powered Quotes & Garden Designs | Premium Landscapes">
     <meta property="og:description" content="Get instant garden quotes and AI-generated landscape designs in minutes. Professional landscaping services.">
-    <meta property="og:image" content="https://premium-landscapes.co.uk/images/hero-garden.jpg">
+    <meta property="og:image" content="https://premium-landscapes.co.uk/images/hero-garden.webp">
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://premium-landscapes.co.uk/">
     <meta name="twitter:title" content="Premium Landscapes - AI-Powered Instant Quotes & Garden Designs">
     <meta name="twitter:description" content="Get instant garden quotes and AI-generated landscape designs in minutes.">
-    <meta name="twitter:image" content="https://premium-landscapes.co.uk/images/hero-garden.jpg">
+    <meta name="twitter:image" content="https://premium-landscapes.co.uk/images/hero-garden.webp">
     
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -45,7 +45,7 @@
         "url": "https://premium-landscapes.co.uk",
         "telephone": "+447877934782",
         "email": "premiumlandscapesuk@gmail.com",
-        "image": "https://premium-landscapes.co.uk/images/hero-garden.jpg",
+        "image": "https://premium-landscapes.co.uk/images/hero-garden.webp",
         "priceRange": "££-£££",
         "address": {
             "@type": "PostalAddress",
@@ -183,7 +183,7 @@
     </script>
 
     <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="scripts/tailwind.js"></script>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -191,7 +191,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     
     <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     
     <!-- Liquid Glass Design System -->
     <link rel="stylesheet" href="styles/liquid-glass.css">
@@ -227,7 +228,7 @@
         }
         
         .hero-bg {
-            background-image: url('images/hero-garden.jpg');
+            background-image: url('images/hero-garden.webp');
             background-size: cover;
             background-position: center;
         }
@@ -434,7 +435,7 @@
                     </div>
                 </div>
                 <div class="rounded-2xl overflow-hidden shadow-2xl">
-                    <img src="images/transforming-gardens.png" alt="Premium Landscapes - Luxury Garden Design with Patio and Water Feature" class="w-full h-full object-cover">
+                    <img src="images/transforming-gardens.webp" alt="Premium Landscapes - Luxury Garden Design with Patio and Water Feature" class="w-full h-full object-cover">
                 </div>
             </div>
         </div>
@@ -459,7 +460,7 @@
                         BEFORE
                     </div>
                     <div class="rounded-2xl overflow-hidden shadow-2xl border-4 border-gray-300">
-                        <img src="images/before-garden.jpg" alt="Overgrown Leicester garden before landscaping transformation" class="w-full h-full object-cover aspect-square">
+                        <img src="images/before-garden.webp" alt="Overgrown Leicester garden before landscaping transformation" class="w-full h-full object-cover aspect-square">
                     </div>
                     <div class="mt-4 text-center">
                         <p class="text-gray-600 italic">Overgrown lawn, muddy patches, no usable space</p>
@@ -474,7 +475,7 @@
                     <div class="relative">
                         <div class="absolute inset-0 bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 rounded-2xl blur-lg opacity-60"></div>
                         <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-emerald-400">
-                            <img src="images/after-garden.jpg" alt="Stunning modern garden transformation in Leicester by Premium Landscapes" class="w-full h-full object-cover aspect-square">
+                            <img src="images/after-garden.webp" alt="Stunning modern garden transformation in Leicester by Premium Landscapes" class="w-full h-full object-cover aspect-square">
                         </div>
                     </div>
                     <div class="mt-4 text-center">
@@ -562,7 +563,7 @@
                 <div class="glass-rim rounded-2xl">
                 <a href="artificial-grass.html" class="service-card block bg-white border-2 border-stone rounded-2xl overflow-hidden">
                     <div class="h-48 overflow-hidden">
-                        <img src="images/artificial-turf-family.png" alt="Artificial grass installation in Leicester garden" class="w-full h-full object-cover service-image-bright">
+                        <img src="images/artificial-turf-family.webp" alt="Artificial grass installation in Leicester garden" class="w-full h-full object-cover service-image-bright">
                     </div>
                     <div class="p-6 text-center">
                         <h3 class="font-heading font-bold text-2xl mb-3">Lawn Installation</h3>
@@ -575,7 +576,7 @@
                 <div class="glass-rim rounded-2xl">
                 <a href="composite-decking.html" class="service-card block bg-white border-2 border-stone rounded-2xl overflow-hidden">
                     <div class="h-48 overflow-hidden">
-                        <img src="images/decking-hero.jpg" alt="Composite decking installation in Leicester" class="w-full h-full object-cover service-image-bright">
+                        <img src="images/decking-hero.webp" alt="Composite decking installation in Leicester" class="w-full h-full object-cover service-image-bright">
                     </div>
                     <div class="p-6 text-center">
                         <h3 class="font-heading font-bold text-2xl mb-3">Decking</h3>
@@ -588,7 +589,7 @@
                 <div class="glass-rim rounded-2xl">
                 <a href="patios.html" class="service-card block bg-white border-2 border-stone rounded-2xl overflow-hidden">
                     <div class="h-48 overflow-hidden">
-                        <img src="images/gallery-patio.jpg" alt="Porcelain patio installation in Leicester garden" class="w-full h-full object-cover service-image-bright">
+                        <img src="images/gallery-patio.webp" alt="Porcelain patio installation in Leicester garden" class="w-full h-full object-cover service-image-bright">
                     </div>
                     <div class="p-6 text-center">
                         <h3 class="font-heading font-bold text-2xl mb-3">Patio</h3>
@@ -601,7 +602,7 @@
                 <div class="glass-rim rounded-2xl">
                 <a href="driveways.html" class="service-card block bg-white border-2 border-stone rounded-2xl overflow-hidden">
                     <div class="h-48 overflow-hidden">
-                        <img src="images/driveway-block-paving.png" alt="Block paving driveway installation in Leicester" class="w-full h-full object-cover service-image-bright">
+                        <img src="images/driveway-block-paving.webp" alt="Block paving driveway installation in Leicester" class="w-full h-full object-cover service-image-bright">
                     </div>
                     <div class="p-6 text-center">
                         <h3 class="font-heading font-bold text-2xl mb-3">Driveways</h3>
@@ -614,7 +615,7 @@
                 <div class="glass-rim rounded-2xl">
                 <a href="garden-lighting.html" class="service-card block bg-white border-2 border-stone rounded-2xl overflow-hidden">
                     <div class="h-48 overflow-hidden">
-                        <img src="images/garden-lighting.png" alt="Garden lighting installation in Leicester" class="w-full h-full object-cover service-image-bright">
+                        <img src="images/garden-lighting.webp" alt="Garden lighting installation in Leicester" class="w-full h-full object-cover service-image-bright">
                     </div>
                     <div class="p-6 text-center">
                         <h3 class="font-heading font-bold text-2xl mb-3">Garden Lighting</h3>
@@ -627,7 +628,7 @@
                 <div class="glass-rim rounded-2xl">
                 <a href="full-garden-makeover.html" class="service-card block bg-white border-2 border-stone rounded-2xl overflow-hidden">
                     <div class="h-48 overflow-hidden">
-                        <img src="images/services-garden.jpg" alt="Complete garden transformation and redesign in Leicester" class="w-full h-full object-cover service-image-bright">
+                        <img src="images/services-garden.webp" alt="Complete garden transformation and redesign in Leicester" class="w-full h-full object-cover service-image-bright">
                     </div>
                     <div class="p-6 text-center">
                         <h3 class="font-heading font-bold text-2xl mb-3">Full Redesigns</h3>
@@ -655,70 +656,70 @@
                     <!-- Example 1 -->
                     <div class="flex-shrink-0 w-full md:w-1/2 snap-center">
                         <div class="bg-white rounded-2xl h-96 overflow-hidden shadow-xl">
-                            <img src="images/services-garden.jpg" alt="Modern family garden design in Leicester by Premium Landscapes" class="w-full h-full object-cover">
+                            <img src="images/services-garden.webp" alt="Modern family garden design in Leicester by Premium Landscapes" class="w-full h-full object-cover">
                         </div>
                     </div>
                     
                     <!-- Example 2 -->
                     <div class="flex-shrink-0 w-full md:w-1/2 snap-center">
                         <div class="bg-white rounded-2xl h-96 overflow-hidden shadow-xl">
-                            <img src="images/gallery-patio.jpg" alt="Outdoor patio and seating area design in Leicester" class="w-full h-full object-cover">
+                            <img src="images/gallery-patio.webp" alt="Outdoor patio and seating area design in Leicester" class="w-full h-full object-cover">
                         </div>
                     </div>
                     
                     <!-- Example 3 -->
                     <div class="flex-shrink-0 w-full md:w-1/2 snap-center">
                         <div class="bg-white rounded-2xl h-96 overflow-hidden shadow-xl">
-                            <img src="images/garden-lighting.png" alt="LED garden lighting design in Leicester" class="w-full h-full object-cover">
+                            <img src="images/garden-lighting.webp" alt="LED garden lighting design in Leicester" class="w-full h-full object-cover">
                         </div>
                     </div>
                     
                     <!-- Example 4 -->
                     <div class="flex-shrink-0 w-full md:w-1/2 snap-center">
                         <div class="bg-white rounded-2xl h-96 overflow-hidden shadow-xl">
-                            <img src="images/artificial-turf-family.png" alt="Family-friendly garden with artificial grass in Leicester" class="w-full h-full object-cover">
+                            <img src="images/artificial-turf-family.webp" alt="Family-friendly garden with artificial grass in Leicester" class="w-full h-full object-cover">
                         </div>
                     </div>
                     
                     <!-- Example 5 -->
                     <div class="flex-shrink-0 w-full md:w-1/2 snap-center">
                         <div class="bg-white rounded-2xl h-96 overflow-hidden shadow-xl">
-                            <img src="images/tropical-paradise-garden.jpg" alt="Tropical paradise garden design by Premium Landscapes Leicester" class="w-full h-full object-cover">
+                            <img src="images/tropical-paradise-garden.webp" alt="Tropical paradise garden design by Premium Landscapes Leicester" class="w-full h-full object-cover">
                         </div>
                     </div>
                     
                     <!-- Example 6 -->
                     <div class="flex-shrink-0 w-full md:w-1/2 snap-center">
                         <div class="bg-white rounded-2xl h-96 overflow-hidden shadow-xl">
-                            <img src="images/ai-design-mediterranean.jpg" alt="Mediterranean style garden design by Premium Landscapes Leicester" class="w-full h-full object-cover">
+                            <img src="images/ai-design-mediterranean.webp" alt="Mediterranean style garden design by Premium Landscapes Leicester" class="w-full h-full object-cover">
                         </div>
                     </div>
                     
                     <!-- Example 7 -->
                     <div class="flex-shrink-0 w-full md:w-1/2 snap-center">
                         <div class="bg-white rounded-2xl h-96 overflow-hidden shadow-xl">
-                            <img src="images/decking-hero.jpg" alt="Premium composite decking design in Leicester garden" class="w-full h-full object-cover">
+                            <img src="images/decking-hero.webp" alt="Premium composite decking design in Leicester garden" class="w-full h-full object-cover">
                         </div>
                     </div>
                     
                     <!-- Example 8 -->
                     <div class="flex-shrink-0 w-full md:w-1/2 snap-center">
                         <div class="bg-white rounded-2xl h-96 overflow-hidden shadow-xl">
-                            <img src="images/family-garden-lighting.png" alt="Leicester garden with LED lighting installation" class="w-full h-full object-cover">
+                            <img src="images/family-garden-lighting.webp" alt="Leicester garden with LED lighting installation" class="w-full h-full object-cover">
                         </div>
                     </div>
                     
                     <!-- Example 9 -->
                     <div class="flex-shrink-0 w-full md:w-1/2 snap-center">
                         <div class="bg-white rounded-2xl h-96 overflow-hidden shadow-xl">
-                            <img src="images/natural-stone-patio.jpg" alt="Natural stone patio installation in Leicester garden" class="w-full h-full object-cover">
+                            <img src="images/natural-stone-patio.webp" alt="Natural stone patio installation in Leicester garden" class="w-full h-full object-cover">
                         </div>
                     </div>
                     
                     <!-- Example 10 -->
                     <div class="flex-shrink-0 w-full md:w-1/2 snap-center">
                         <div class="bg-white rounded-2xl h-96 overflow-hidden shadow-xl">
-                            <img src="images/gallery-garden-pergola.jpg" alt="Leicester garden with pergola and feature planting" class="w-full h-full object-cover">
+                            <img src="images/gallery-garden-pergola.webp" alt="Leicester garden with pergola and feature planting" class="w-full h-full object-cover">
                         </div>
                     </div>
                 </div>

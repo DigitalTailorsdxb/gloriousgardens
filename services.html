@@ -25,21 +25,22 @@
     <meta property="og:url" content="https://premium-landscapes.co.uk/services.html">
     <meta property="og:title" content="Landscaping Services Leicester | Patios, Decking, Driveways & More | Premium Landscapes">
     <meta property="og:description" content="Professional landscaping services including lawns, patios, decking, and complete garden redesigns.">
-    <meta property="og:image" content="https://premium-landscapes.co.uk/images/hero-garden.jpg">
+    <meta property="og:image" content="https://premium-landscapes.co.uk/images/hero-garden.webp">
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Our Services - Premium Landscapes">
     <meta name="twitter:description" content="Professional landscaping services including lawns, patios, decking, and garden redesigns.">
-    <meta name="twitter:image" content="https://premium-landscapes.co.uk/images/hero-garden.jpg">
+    <meta name="twitter:image" content="https://premium-landscapes.co.uk/images/hero-garden.webp">
     
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="scripts/tailwind.js"></script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     
     <!-- Liquid Glass Design System -->
     <link rel="stylesheet" href="styles/liquid-glass.css">
@@ -83,7 +84,7 @@
         }
         
         .services-hero {
-            background-image: url('images/services-garden.jpg');
+            background-image: url('images/services-garden.webp');
             background-size: cover;
             background-position: center;
         }
@@ -191,7 +192,7 @@
                 <div class="glass-rim rounded-xl">
                 <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
                     <div class="relative h-48 overflow-hidden">
-                        <img src="images/artificial-turf-family.png" alt="Artificial Turf Installation" class="w-full h-full object-cover service-image-bright">
+                        <img src="images/artificial-turf-family.webp" alt="Artificial Turf Installation" class="w-full h-full object-cover service-image-bright">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center pb-6">
                             <h3 class="text-2xl font-bold text-white">Lawn Installation</h3>
                         </div>
@@ -216,7 +217,7 @@
                 <div class="glass-rim rounded-xl">
                 <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
                     <div class="relative h-48 overflow-hidden">
-                        <img src="images/gallery-patio.jpg" alt="Patio & Paving" class="w-full h-full object-cover service-image-bright">
+                        <img src="images/gallery-patio.webp" alt="Patio & Paving" class="w-full h-full object-cover service-image-bright">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center pb-6">
                             <h3 class="text-2xl font-bold text-white">Patio & Paving</h3>
                         </div>
@@ -241,7 +242,7 @@
                 <div class="glass-rim rounded-xl">
                 <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
                     <div class="relative h-48 overflow-hidden">
-                        <img src="images/decking-hero.jpg" alt="Composite Decking" class="w-full h-full object-cover service-image-bright">
+                        <img src="images/decking-hero.webp" alt="Composite Decking" class="w-full h-full object-cover service-image-bright">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center pb-6">
                             <h3 class="text-2xl font-bold text-white">Decking</h3>
                         </div>
@@ -266,7 +267,7 @@
                 <div class="glass-rim rounded-xl">
                 <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
                     <div class="relative h-48 overflow-hidden">
-                        <img src="images/driveway-block-paving.png" alt="Block Paving Driveways" class="w-full h-full object-cover service-image-bright">
+                        <img src="images/driveway-block-paving.webp" alt="Block Paving Driveways" class="w-full h-full object-cover service-image-bright">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center pb-6">
                             <h3 class="text-2xl font-bold text-white">Driveways</h3>
                         </div>
@@ -291,7 +292,7 @@
                 <div class="glass-rim rounded-xl">
                 <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
                     <div class="relative h-48 overflow-hidden">
-                        <img src="images/garden-lighting.png" alt="Garden Lighting" class="w-full h-full object-cover service-image-bright">
+                        <img src="images/garden-lighting.webp" alt="Garden Lighting" class="w-full h-full object-cover service-image-bright">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center pb-6">
                             <h3 class="text-2xl font-bold text-white">Garden Lighting</h3>
                         </div>
@@ -316,7 +317,7 @@
                 <div class="glass-rim rounded-xl">
                 <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
                     <div class="relative h-48 overflow-hidden">
-                        <img src="images/services-garden.jpg" alt="Complete Garden Redesigns" class="w-full h-full object-cover service-image-bright">
+                        <img src="images/services-garden.webp" alt="Complete Garden Redesigns" class="w-full h-full object-cover service-image-bright">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center pb-6">
                             <h3 class="text-2xl font-bold text-white">Full Redesigns</h3>
                         </div>

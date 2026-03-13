@@ -24,13 +24,13 @@
     <meta property="og:url" content="https://premium-landscapes.co.uk/landscaping-markfield">
     <meta property="og:title" content="Landscaping Markfield | Premium Landscapes">
     <meta property="og:description" content="Professional landscaping services in Markfield. Patios, artificial grass, decking & full garden makeovers. Free instant quote online.">
-    <meta property="og:image" content="https://premium-landscapes.co.uk/images/hero-garden.jpg">
+    <meta property="og:image" content="https://premium-landscapes.co.uk/images/hero-garden.webp">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Landscaping Markfield | Premium Landscapes">
     <meta name="twitter:description" content="Professional landscaping in Markfield. Patios, artificial grass, decking & garden makeovers. Free instant quote.">
-    <meta name="twitter:image" content="https://premium-landscapes.co.uk/images/hero-garden.jpg">
+    <meta name="twitter:image" content="https://premium-landscapes.co.uk/images/hero-garden.webp">
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -42,7 +42,7 @@
         "url": "https://premium-landscapes.co.uk/landscaping-markfield",
         "telephone": "+447877934782",
         "email": "premiumlandscapesuk@gmail.com",
-        "image": "https://premium-landscapes.co.uk/images/hero-garden.jpg",
+        "image": "https://premium-landscapes.co.uk/images/hero-garden.webp",
         "priceRange": "££-£££",
         "areaServed": {
             "@type": "Place",
@@ -130,8 +130,9 @@
     }
     </script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <script src="scripts/tailwind.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -149,13 +150,15 @@
             }
         }
     </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Open Sans', sans-serif; }
         h1, h2, h3, h4 { font-family: 'Inter', sans-serif; }
         .hero-bg {
             background: linear-gradient(135deg, rgba(37,99,235,0.85) 0%, rgba(139,92,246,0.75) 100%),
-                        url('images/hero-garden.jpg') center/cover no-repeat;
+                        url('images/hero-garden.webp') center/cover no-repeat;
         }
         .mobile-menu { transition: transform 0.3s ease; }
         .mobile-menu.active {
@@ -305,7 +308,7 @@
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="service-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl">
-                    <img src="images/gallery-patio.jpg" alt="Patio installation Markfield" class="w-full h-48 object-cover">
+                    <img src="images/gallery-patio.webp" alt="Patio installation Markfield" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="font-bold text-xl text-gray-900 mb-2">Patio Installation Markfield</h3>
                         <p class="text-gray-600 text-sm mb-4">Porcelain, natural stone, block paving and more. Fully installed and sealed, built to last.</p>
@@ -314,7 +317,7 @@
                 </div>
 
                 <div class="service-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl">
-                    <img src="images/artificial-turf-family.png" alt="Artificial grass Markfield" class="w-full h-48 object-cover">
+                    <img src="images/artificial-turf-family.webp" alt="Artificial grass Markfield" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="font-bold text-xl text-gray-900 mb-2">Artificial Grass Markfield</h3>
                         <p class="text-gray-600 text-sm mb-4">Premium synthetic turf — no mowing, no mud, looks great year round. Child and pet friendly.</p>
@@ -323,7 +326,7 @@
                 </div>
 
                 <div class="service-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl">
-                    <img src="images/decking-hero.jpg" alt="Composite decking Markfield" class="w-full h-48 object-cover">
+                    <img src="images/decking-hero.webp" alt="Composite decking Markfield" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="font-bold text-xl text-gray-900 mb-2">Composite Decking Markfield</h3>
                         <p class="text-gray-600 text-sm mb-4">Durable, low-maintenance composite decking in a range of colours and profiles.</p>
@@ -332,7 +335,7 @@
                 </div>
 
                 <div class="service-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl">
-                    <img src="images/garden-lighting.png" alt="Garden lighting Markfield" class="w-full h-48 object-cover">
+                    <img src="images/garden-lighting.webp" alt="Garden lighting Markfield" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="font-bold text-xl text-gray-900 mb-2">Garden Lighting Markfield</h3>
                         <p class="text-gray-600 text-sm mb-4">LED garden lighting systems — path lights, spotlights, festoon lights and smart controls.</p>
@@ -341,7 +344,7 @@
                 </div>
 
                 <div class="service-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl">
-                    <img src="images/driveway-block-paving.png" alt="Driveways Markfield" class="w-full h-48 object-cover">
+                    <img src="images/driveway-block-paving.webp" alt="Driveways Markfield" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="font-bold text-xl text-gray-900 mb-2">Driveways Markfield</h3>
                         <p class="text-gray-600 text-sm mb-4">Block paving, resin bond and tarmac driveways. Fully edged and finished to a high standard.</p>
@@ -350,7 +353,7 @@
                 </div>
 
                 <div class="service-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl">
-                    <img src="images/services-garden.jpg" alt="Full garden makeover Markfield" class="w-full h-48 object-cover">
+                    <img src="images/services-garden.webp" alt="Full garden makeover Markfield" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="font-bold text-xl text-gray-900 mb-2">Full Garden Makeover Markfield</h3>
                         <p class="text-gray-600 text-sm mb-4">Complete garden redesigns from scratch — AI-designed, precisely costed, professionally installed.</p>

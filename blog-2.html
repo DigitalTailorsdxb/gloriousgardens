@@ -25,16 +25,16 @@
     <meta property="og:url" content="https://premium-landscapes.co.uk/blog-2.html">
     <meta property="og:title" content="Top 7 Modern Garden Design Ideas for Small Spaces">
     <meta property="og:description" content="Discover 7 modern design ideas to maximize your limited outdoor space.">
-    <meta property="og:image" content="https://premium-landscapes.co.uk/images/services-garden.jpg">
+    <meta property="og:image" content="https://premium-landscapes.co.uk/images/services-garden.webp">
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="7 Modern Small Garden Design Ideas">
     <meta name="twitter:description" content="Maximize your limited outdoor space with style and functionality.">
-    <meta name="twitter:image" content="https://premium-landscapes.co.uk/images/services-garden.jpg">
+    <meta name="twitter:image" content="https://premium-landscapes.co.uk/images/services-garden.webp">
     
     <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="scripts/tailwind.js"></script>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,7 +42,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     
     <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     
     <!-- Liquid Glass Design System -->
     <link rel="stylesheet" href="styles/liquid-glass.css">
@@ -155,7 +156,7 @@
     <section class="pb-12 px-4 bg-stone">
         <div class="container mx-auto">
             <div class="max-w-4xl mx-auto">
-                <img src="images/about-hero.jpg" alt="Modern Small Garden Design" class="w-full rounded-xl shadow-lg">
+                <img src="images/about-hero.webp" alt="Modern Small Garden Design" class="w-full rounded-xl shadow-lg">
             </div>
         </div>
     </section>

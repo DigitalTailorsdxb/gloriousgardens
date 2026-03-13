@@ -25,16 +25,16 @@
     <meta property="og:url" content="https://premium-landscapes.co.uk/blog.html">
     <meta property="og:title" content="Garden Design & Landscaping Blog | Tips, Ideas & Guides | Premium Landscapes">
     <meta property="og:description" content="Expert advice on garden design, landscaping costs, and modern outdoor living ideas.">
-    <meta property="og:image" content="https://premium-landscapes.co.uk/images/hero-garden.jpg">
+    <meta property="og:image" content="https://premium-landscapes.co.uk/images/hero-garden.webp">
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Garden Design & Landscaping Blog">
     <meta name="twitter:description" content="Expert advice on garden design, landscaping costs, and outdoor living ideas.">
-    <meta name="twitter:image" content="https://premium-landscapes.co.uk/images/hero-garden.jpg">
+    <meta name="twitter:image" content="https://premium-landscapes.co.uk/images/hero-garden.webp">
     
     <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="scripts/tailwind.js"></script>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,7 +42,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     
     <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     
     <!-- Liquid Glass Design System -->
     <link rel="stylesheet" href="styles/liquid-glass.css">
@@ -78,7 +79,7 @@
         }
         
         .blog-hero {
-            background-image: url('images/services-garden.jpg');
+            background-image: url('images/services-garden.webp');
             background-size: cover;
             background-position: center;
         }
@@ -215,7 +216,7 @@
                 <div class="glass-rim rounded-2xl">
                 <a href="blog-1.html" class="blog-card block bg-white rounded-xl shadow-lg overflow-hidden">
                     <div class="h-48 overflow-hidden">
-                        <img src="images/services-garden.jpg" alt="Garden Redesign Cost" class="w-full h-full object-cover">
+                        <img src="images/services-garden.webp" alt="Garden Redesign Cost" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6 card-content">
                         <div class="text-sm text-accent font-semibold mb-2">Cost Guide</div>
@@ -230,7 +231,7 @@
                 <div class="glass-rim rounded-2xl">
                 <a href="blog-2.html" class="blog-card block bg-white rounded-xl shadow-lg overflow-hidden">
                     <div class="h-48 overflow-hidden">
-                        <img src="images/about-hero.jpg" alt="Small Garden Design" class="w-full h-full object-cover">
+                        <img src="images/about-hero.webp" alt="Small Garden Design" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6 card-content">
                         <div class="text-sm text-accent font-semibold mb-2">Design Ideas</div>
@@ -245,7 +246,7 @@
                 <div class="glass-rim rounded-2xl">
                 <a href="blog-3.html" class="blog-card block bg-white rounded-xl shadow-lg overflow-hidden">
                     <div class="h-48 overflow-hidden">
-                        <img src="images/artificial-turf-family.png" alt="Artificial Grass Guide" class="w-full h-full object-cover">
+                        <img src="images/artificial-turf-family.webp" alt="Artificial Grass Guide" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6 card-content">
                         <div class="text-sm text-accent font-semibold mb-2">Lawn Care</div>
@@ -260,7 +261,7 @@
                 <div class="glass-rim rounded-2xl">
                 <a href="blog-4.html" class="blog-card block bg-white rounded-xl shadow-lg overflow-hidden">
                     <div class="h-48 overflow-hidden">
-                        <img src="images/gallery-patio.jpg" alt="Patio Materials" class="w-full h-full object-cover">
+                        <img src="images/gallery-patio.webp" alt="Patio Materials" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6 card-content">
                         <div class="text-sm text-accent font-semibold mb-2">Patio Guide</div>
@@ -275,7 +276,7 @@
                 <div class="glass-rim rounded-2xl">
                 <a href="blog-5.html" class="blog-card block bg-white rounded-xl shadow-lg overflow-hidden">
                     <div class="h-48 overflow-hidden">
-                        <img src="images/decking-hero.jpg" alt="Decking Maintenance" class="w-full h-full object-cover">
+                        <img src="images/decking-hero.webp" alt="Decking Maintenance" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6 card-content">
                         <div class="text-sm text-accent font-semibold mb-2">Decking Tips</div>
@@ -290,7 +291,7 @@
                 <div class="glass-rim rounded-2xl">
                 <a href="blog-6.html" class="blog-card block bg-white rounded-xl shadow-lg overflow-hidden">
                     <div class="h-48 overflow-hidden">
-                        <img src="images/garden-lighting.png" alt="Garden Lighting" class="w-full h-full object-cover">
+                        <img src="images/garden-lighting.webp" alt="Garden Lighting" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6 card-content">
                         <div class="text-sm text-accent font-semibold mb-2">Lighting Guide</div>
@@ -305,7 +306,7 @@
                 <div class="glass-rim rounded-2xl">
                 <a href="blog-7.html" class="blog-card block bg-white rounded-xl shadow-lg overflow-hidden">
                     <div class="h-48 overflow-hidden">
-                        <img src="images/family-garden-lighting.png" alt="Family Garden Design" class="w-full h-full object-cover">
+                        <img src="images/family-garden-lighting.webp" alt="Family Garden Design" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6 card-content">
                         <div class="text-sm text-accent font-semibold mb-2">Family Gardens</div>
@@ -320,7 +321,7 @@
                 <div class="glass-rim rounded-2xl">
                 <a href="blog-8.html" class="blog-card block bg-white rounded-xl shadow-lg overflow-hidden">
                     <div class="h-48 overflow-hidden">
-                        <img src="images/hero-garden.jpg" alt="Seasonal Garden Maintenance" class="w-full h-full object-cover">
+                        <img src="images/hero-garden.webp" alt="Seasonal Garden Maintenance" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6 card-content">
                         <div class="text-sm text-accent font-semibold mb-2">Maintenance</div>
@@ -335,7 +336,7 @@
                 <div class="glass-rim rounded-2xl">
                 <a href="blog-9.html" class="blog-card block bg-white rounded-xl shadow-lg overflow-hidden">
                     <div class="h-48 overflow-hidden">
-                        <img src="images/decking-hero.jpg" alt="Garden ROI" class="w-full h-full object-cover">
+                        <img src="images/decking-hero.webp" alt="Garden ROI" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6 card-content">
                         <div class="text-sm text-accent font-semibold mb-2">Property Value</div>
@@ -350,7 +351,7 @@
                 <div class="glass-rim rounded-2xl">
                 <a href="blog-10.html" class="blog-card block bg-white rounded-xl shadow-lg overflow-hidden">
                     <div class="h-48 overflow-hidden">
-                        <img src="images/quote-laptop.jpg" alt="AI Garden Design" class="w-full h-full object-cover">
+                        <img src="images/quote-laptop.webp" alt="AI Garden Design" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6 card-content">
                         <div class="text-sm text-accent font-semibold mb-2">Technology</div>
