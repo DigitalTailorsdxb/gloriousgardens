@@ -22,3 +22,6 @@ npm-debug.log*
 # Temporary files
 *.tmp
 *.temp
+
+# Replit conversation attachments (never deploy these)
+attached_assets/
