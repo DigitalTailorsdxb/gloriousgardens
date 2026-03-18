@@ -16,8 +16,9 @@ const brandConfig = {
         // Facebook Business Page URL — used in reviews embed and CTA buttons
         facebookPageUrl: "https://www.facebook.com/Premiumlandscapesuk/reviews",
 
-        // Google Business Profile URL — used in reviews CTA button
-        googleReviewsUrl: "https://g.page/r/YOUR_GOOGLE_REVIEW_LINK/review",
+        // Google Business Profile URL — update this once your Google profile is established
+        // To find your link: Google Business Profile dashboard → "Get more reviews" → copy the link
+        googleReviewsUrl: "https://www.google.com/maps/search/Premium+Landscapes+Kirby+Muxloe+Leicester",
 
         // Aggregate rating displayed in the reviews section header
         ratingValue: "4.9",
