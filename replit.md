@@ -88,9 +88,22 @@ All 17 pages have complete SEO: index, quote, about, services, gallery, contact,
 - **FAQPage + BreadcrumbList** on all 7 service pages (42 FAQ pairs extracted from accordion)
 - **AggregateRating** (4.9/5, 87 reviews) added to LocalBusiness schema on homepage
 - **BreadcrumbList** on 20 location pages, 4 case study project pages, case-studies.html hub
+- **Article + BreadcrumbList schema** added to all 10 blog posts (blog-1 through blog-10)
+- **LocalBusiness schema** updated: full address (44 Barwell Road, Kirby Muxloe, LE9 2AA), geo coordinates, 18-area areaServed array, serviceType
 
 ### Page Title Improvements (March 2026)
 19 pages updated: homepage, about, contact, gallery, services, quote, blog, 6 blog posts (2025→2026), 6 key location pages strengthened with service keywords
+- **Homepage H1** changed to "Landscaping & Garden Design in Leicester" (was AI-focused, now geo-targeted)
+- **Service page H1s** — all 6 now include "Leicester": Patio/Artificial Grass/Composite Decking/Driveway/Garden Lighting/Full Garden Makeover
+
+### SEO Structural Improvements (March 2026)
+- **Blog posts** — all 10 now have: visible author (Premium Landscapes Team), published date, category tag, breadcrumb nav (Home > Blog > Title), CTA block linking to relevant service page
+- **Service pages** — semantic `<nav aria-label="Breadcrumb"><ol>` markup applied to all 6 existing breadcrumb bars
+- **Service pages** — "Related Reading" blog card added at bottom of each, linking to relevant blog post
+- **Internal linking** — bidirectional: each blog → service page, each service page → blog post
+- **robots.txt** — fixed sitemap URL (was premiumlandscapes.co.uk, now premium-landscapes.co.uk)
+- **Google review link** — replaced broken placeholder with working Google Maps search URL; update config.js `googleReviewsUrl` once Google Business profile has reviews
+- **config.js address** — note: business address is 44 Barwell Road, Kirby Muxloe, Leicester, LE9 2AA
 
 ### Content Additions (March 2026)
 - **Homepage SEO content section**: 6-service card grid + "Why Choose Us" + "Areas We Cover" 2-column panel added before contact section

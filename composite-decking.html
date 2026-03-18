@@ -172,15 +172,15 @@
         <a href="contact.html" class="block text-gray-700 hover:text-primary">Contact</a>
     </div>
 
-    <div class="bg-gray-50 border-b border-gray-100">
-        <div class="max-w-6xl mx-auto px-4 py-3 text-sm text-gray-500">
-            <a href="index.html" class="hover:text-primary">Home</a>
-            <span class="mx-2">/</span>
-            <a href="services.html" class="hover:text-primary">Services</a>
-            <span class="mx-2">/</span>
-            <span class="text-gray-800 font-medium">Composite Decking</span>
-        </div>
-    </div>
+    <nav aria-label="Breadcrumb" class="bg-gray-50 border-b border-gray-100">
+        <ol class="max-w-6xl mx-auto px-4 py-3 text-sm text-gray-500 flex items-center gap-2">
+            <li><a href="index.html" class="hover:text-primary transition">Home</a></li>
+            <li><span class="text-gray-400">/</span></li>
+            <li><a href="services.html" class="hover:text-primary transition">Services</a></li>
+            <li><span class="text-gray-400">/</span></li>
+            <li class="text-gray-800 font-medium">Composite Decking</li>
+        </ol>
+    </nav>
     <section class="hero-gradient text-white py-20">
         <div class="max-w-4xl mx-auto px-4 text-center">
             <div class="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-2xl mb-6">
@@ -469,6 +469,23 @@
             </div>
         </div>
     </section>
+    <!-- Related Reading -->
+    <section class="py-8 px-4 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <div class="border border-gray-200 rounded-2xl p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                <div class="flex-shrink-0 bg-gradient-to-br from-primary to-accent rounded-xl w-12 h-12 flex items-center justify-center">
+                    <i class="fas fa-book-open text-white"></i>
+                </div>
+                <div class="flex-1">
+                    <p class="text-xs text-primary font-semibold uppercase tracking-wide mb-1">From the blog — Decking Guide</p>
+                    <a href="blog-5.html" class="font-bold text-gray-800 hover:text-primary transition text-lg leading-tight">Composite vs Timber Decking: Complete UK Buyer's Guide</a>
+                    <p class="text-sm text-gray-500 mt-1">Helpful reading before you commit to your project.</p>
+                </div>
+                <a href="blog-5.html" class="flex-shrink-0 text-primary font-semibold hover:text-accent transition text-sm whitespace-nowrap">Read article →</a>
+            </div>
+        </div>
+    </section>
+
 
     <section class="hero-gradient py-16 text-white text-center">
         <div class="max-w-3xl mx-auto px-4">
