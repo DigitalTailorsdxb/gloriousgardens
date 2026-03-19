@@ -25,9 +25,9 @@ class PremiumLandscapesHandler(SimpleHTTPRequestHandler):
 
     def end_headers(self):
         path = self.path.split('?')[0]
-        # Cache static assets aggressively, bust HTML on every request
+        # Short cache for images so logo/asset changes take effect quickly
         if path.endswith(('.webp', '.png', '.jpg', '.jpeg', '.gif', '.svg', '.ico')):
-            self.send_header('Cache-Control', 'public, max-age=86400')
+            self.send_header('Cache-Control', 'public, max-age=300')
         elif path.endswith(('.css', '.js')):
             self.send_header('Cache-Control', 'public, max-age=3600')
         else:
