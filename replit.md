@@ -1,7 +1,18 @@
-# Premium Landscapes - AI-Powered Landscaping Website
+# Glorious Gardens Son & Co. - AI-Powered Landscaping Website
+
+## Client
+**Glorious Gardens Son & Co. LTD** — Lorenzo & Esat, family-run landscaping since 1999, based in Farnborough, Hampshire.
+- **Address:** 13 Woodvale Road, Farnborough, GU14 6FL | **Geo:** 51.2895, -0.7479
+- **Phone:** 07946 861456 | **WhatsApp:** 447946861456 | **Email:** info@glorious-gardens-services.co.uk
+- **Domain:** glorious-gardens-services.co.uk | **GA:** GT-PHXQGL7T
+- **Rating:** 5.0★ across 76 reviews (Google + Checkatrade)
+- **Colors:** Primary `#2D6A4F` (dark green), Secondary `#4A9B6F`, Accent `#C9A84C` (gold), Stone `#F4FBF7`
+- **Services:** Patios · Fencing · Lawns · Decking · Garden Maintenance · Jet Washing · Full Makeovers
+- **Service areas:** Farnborough, Aldershot, Camberley, Fleet, Frimley, Sandhurst, Yateley, Bracknell, Woking, Guildford, Basingstoke, Winchester (Hampshire, Surrey, Berkshire)
+- **Webhooks:** `glorious-gardens-quote` and `glorious-gardens-full-redesign` on n8n.trade-engine.co.uk
 
 ## Overview
-Premium Landscapes is an AI-powered, high-converting landscaping website template designed for sale to landscaping businesses. It serves as a public demo and white-label solution, enabling rapid rebranding and offering AI-powered instant quotes and design generation. The platform aims to provide a significant competitive advantage in the landscaping market by boosting conversion rates.
+This is a rebranded instance of the Premium Landscapes white-label template, now fully customised for Glorious Gardens Son & Co. LTD. It provides AI-powered instant quotes and design generation for their Farnborough-based landscaping business.
 
 **Trade Engine Branding:** All AI features branded as "Powered by Trade Engine" (styled: "Trade" in slate, "Engine" in amber) with footer link to https://trade-engine.co.uk on every page. GREEN "FREE" badges on navigation and page headers emphasize no-cost features.
 
@@ -14,7 +25,7 @@ The website utilizes a multi-page architecture (`index.html`, `quote.html`, `abo
 ### UI/UX Decisions
 - **Visual Style:** Modern SaaS design with white backgrounds for a clean, professional, and minimal aesthetic.
 - **Liquid Glass Design System:** Inspired by Apple iOS 26 (2025), featuring translucent glass-like materials with backdrop blur, subtle refraction highlights, and smooth transitions. Applied to navigation, cards, buttons, and progress indicators via `styles/liquid-glass.css`.
-- **Color Palette:** Primary vibrant blue (`#2563eb`), secondary light blue (`#3b82f6`), accent purple (`#8b5cf6`), and very light blue (`#f0f9ff`).
+- **Color Palette:** Primary dark green (`#2D6A4F`), secondary mid-green (`#4A9B6F`), accent gold (`#C9A84C`), and light stone (`#F4FBF7`).
 - **Typography:** Headings use Inter or Poppins; body text uses Open Sans or Lato.
 - **Responsiveness:** Fully responsive, mobile-first design across all devices.
 - **Components:** Reusable CTA buttons, mobile hamburger menu, modular forms, cards, and popups. Glass-effect variants available via CSS classes.
