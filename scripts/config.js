@@ -14,7 +14,8 @@ const brandConfig = {
     // SOCIAL PROOF CONFIGURATION
     // ============================================================================
     social: {
-        facebookPageUrl: "https://www.facebook.com/GloriousGardensSonAndCo",
+        facebookPageUrl: "https://www.facebook.com/profile.php?id=61566840995126",
+        facebookReviewsUrl: "https://www.facebook.com/profile.php?id=61566840995126&sk=reviews",
         googleReviewsUrl: "https://www.google.com/maps/search/Glorious+Gardens+Son+Co+Farnborough",
         checkatradeUrl: "https://www.checkatrade.com/trades/gloriousgardensson",
 
@@ -164,7 +165,7 @@ function applyBranding() {
     setElement('whatsappLink', null, 'href', whatsappUrl);
 
     document.querySelectorAll('[data-fb-page]').forEach(el => {
-        el.href = brandConfig.social.facebookPageUrl;
+        el.href = brandConfig.social.facebookReviewsUrl || brandConfig.social.facebookPageUrl;
     });
     document.querySelectorAll('[data-google-reviews]').forEach(el => {
         el.href = brandConfig.social.googleReviewsUrl;
@@ -215,7 +216,10 @@ function loadFacebookPlugin() {
     const fbContainer = document.getElementById('facebookPagePlugin');
     if (!fbContainer) return;
 
-    const basePageUrl = brandConfig.social.facebookPageUrl.replace(/\/(reviews|posts|about|photos).*$/, '');
+    // Strip any trailing path segments or sk= params to get the base page URL
+    const basePageUrl = brandConfig.social.facebookPageUrl
+        .replace(/\/(reviews|posts|about|photos).*$/, '')
+        .replace(/(&sk=[^&]*)/, '');
     const pageUrl = encodeURIComponent(basePageUrl);
     fbContainer.innerHTML = `
         <iframe
