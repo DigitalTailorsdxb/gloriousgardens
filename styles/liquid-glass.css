@@ -15,8 +15,8 @@
     --glass-radius: 24px;
     --glass-radius-sm: 16px;
     --glass-radius-lg: 32px;
-    --primary-glass: rgba(37, 99, 235, 0.12);
-    --accent-glass: rgba(139, 92, 246, 0.12);
+    --primary-glass: rgba(45, 106, 79, 0.12);
+    --accent-glass: rgba(201, 168, 76, 0.12);
     --refraction-highlight: linear-gradient(135deg, 
         rgba(255, 255, 255, 0.4) 0%, 
         rgba(255, 255, 255, 0.1) 50%, 
@@ -168,7 +168,7 @@
     background: linear-gradient(135deg, 
         rgba(37, 99, 235, 0.15) 0%, 
         rgba(139, 92, 246, 0.1) 50%,
-        rgba(37, 99, 235, 0.12) 100%);
+        rgba(45, 106, 79, 0.12) 100%);
     border-color: rgba(37, 99, 235, 0.4);
     box-shadow: 
         0 8px 32px rgba(37, 99, 235, 0.2),
@@ -289,7 +289,7 @@
         rgba(37, 99, 235, 0.2) 0%, 
         rgba(59, 130, 246, 0.15) 100%);
     border-color: rgba(37, 99, 235, 0.2);
-    color: #1e40af;
+    color: #1B4332;
 }
 
 .badge-glass-accent {
@@ -323,9 +323,9 @@
 
 .progress-glass-fill {
     background: linear-gradient(90deg, 
-        #2563eb 0%, 
-        #3b82f6 50%, 
-        #8b5cf6 100%);
+        #2D6A4F 0%, 
+        #4A9B6F 50%, 
+        #C9A84C 100%);
     border-radius: 100px;
     height: 100%;
     transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -700,7 +700,7 @@
 .modern-header-blue .glow-border {
     position: absolute;
     inset: -2px;
-    background: linear-gradient(to right, #3b82f6, #6366f1, #8b5cf6);
+    background: linear-gradient(to right, #4A9B6F, #2D6A4F, #C9A84C);
     border-radius: 1.5rem;
     opacity: 0.75;
     filter: blur(4px);
@@ -731,7 +731,7 @@
 .modern-header-blue .icon-morph .bg-layer-1 {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom right, #60a5fa, #818cf8);
+    background: linear-gradient(to bottom right, #52A878, #818cf8);
     border-radius: 1rem;
     transform: rotate(6deg);
     transition: transform 0.3s;
@@ -769,7 +769,7 @@
 
 .modern-header-blue .icon-morph .icon-inner i {
     font-size: 1.5rem;
-    background: linear-gradient(to right, #3b82f6, #8b5cf6);
+    background: linear-gradient(to right, #4A9B6F, #C9A84C);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -813,7 +813,7 @@
         border-radius: 50%;
     }
     
-    .modern-header-blue .decorative-dots .dot-blue { background: #60a5fa; }
+    .modern-header-blue .decorative-dots .dot-blue { background: #52A878; }
     .modern-header-blue .decorative-dots .dot-indigo { background: #818cf8; }
     .modern-header-blue .decorative-dots .dot-violet { background: #a78bfa; }
     .modern-header-blue .decorative-dots .dot-blue-light { background: #93c5fd; }
@@ -830,7 +830,7 @@
     display: inline-block;
     padding: 3px;
     border-radius: 9999px;
-    background: linear-gradient(135deg, #3b82f6, #6366f1, #8b5cf6);
+    background: linear-gradient(135deg, #4A9B6F, #2D6A4F, #C9A84C);
     transition: all 0.3s ease;
     text-decoration: none;
 }
@@ -839,7 +839,7 @@
     content: '';
     position: absolute;
     inset: -2px;
-    background: linear-gradient(135deg, #3b82f6, #6366f1, #8b5cf6);
+    background: linear-gradient(135deg, #4A9B6F, #2D6A4F, #C9A84C);
     border-radius: 9999px;
     opacity: 0.5;
     filter: blur(8px);
@@ -857,7 +857,7 @@
     display: inline-block;
     padding: 3px;
     border-radius: 9999px;
-    background: linear-gradient(135deg, #3b82f6, #6366f1, #8b5cf6);
+    background: linear-gradient(135deg, #4A9B6F, #2D6A4F, #C9A84C);
     transition: all 0.3s ease;
     text-decoration: none;
 }
@@ -866,7 +866,7 @@
     content: '';
     position: absolute;
     inset: -3px;
-    background: linear-gradient(135deg, #3b82f6, #6366f1, #8b5cf6);
+    background: linear-gradient(135deg, #4A9B6F, #2D6A4F, #C9A84C);
     border-radius: 9999px;
     opacity: 0.4;
     filter: blur(10px);
@@ -885,7 +885,7 @@
     border-radius: 9999px;
     font-weight: 600;
     font-size: 1.125rem;
-    color: #3b82f6;
+    color: #4A9B6F;
     transition: all 0.3s ease;
     text-align: center;
 }
@@ -929,7 +929,7 @@
     content: '';
     position: absolute;
     inset: -3px;
-    background: linear-gradient(135deg, #3b82f6, #6366f1, #8b5cf6);
+    background: linear-gradient(135deg, #4A9B6F, #2D6A4F, #C9A84C);
     border-radius: 9999px;
     opacity: 0.4;
     filter: blur(10px);
@@ -951,7 +951,7 @@
 .modern-btn-filled .btn-inner {
     display: block;
     padding: 1rem 2.5rem;
-    background: linear-gradient(135deg, #3b82f6, #6366f1, #8b5cf6);
+    background: linear-gradient(135deg, #4A9B6F, #2D6A4F, #C9A84C);
     border-radius: 9999px;
     font-weight: 600;
     font-size: 1.125rem;
@@ -961,7 +961,7 @@
 }
 
 .modern-btn-filled:hover .btn-inner {
-    background: linear-gradient(135deg, #2563eb, #4f46e5, #7c3aed);
+    background: linear-gradient(135deg, #2D6A4F, #4A9B6F, #C9A84C);
 }
 
 /* Teal variant - white background */

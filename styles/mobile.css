@@ -88,7 +88,7 @@ body.menu-open {
         min-width: 52px;
         height: 50px;
         background: #f0f9ff;
-        color: #2563eb;
+        color: #2D6A4F;
         border: 2px solid #bfdbfe;
         border-radius: 14px;
         font-weight: 700;
@@ -108,7 +108,7 @@ body.menu-open {
         justify-content: center;
         gap: 8px;
         height: 50px;
-        background: linear-gradient(135deg, #2563eb, #7c3aed);
+        background: linear-gradient(135deg, #2D6A4F, #C9A84C);
         color: white;
         border-radius: 14px;
         font-weight: 700;
@@ -163,7 +163,7 @@ body.menu-open {
         height: 28px;
         -webkit-appearance: none;
         appearance: none;
-        background: #2563eb;
+        background: #2D6A4F;
         border-radius: 50%;
         cursor: pointer;
         box-shadow: 0 2px 8px rgba(37,99,235,0.3);
@@ -171,7 +171,7 @@ body.menu-open {
     input[type="range"]::-moz-range-thumb {
         width: 28px;
         height: 28px;
-        background: #2563eb;
+        background: #2D6A4F;
         border-radius: 50%;
         cursor: pointer;
         border: none;
@@ -370,7 +370,7 @@ header {
 
 /* ─── FOCUS STATES — ACCESSIBILITY ──────────────────────── */
 :focus-visible {
-    outline: 3px solid #2563eb;
+    outline: 3px solid #2D6A4F;
     outline-offset: 3px;
     border-radius: 4px;
 }
@@ -393,7 +393,7 @@ header {
     justify-content: center;
     cursor: pointer;
     transition: all 0.2s ease;
-    color: #2563eb;
+    color: #2D6A4F;
     font-size: 18px;
 }
 .scroll-top-btn.visible {

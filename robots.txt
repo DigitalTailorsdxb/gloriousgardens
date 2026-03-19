@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://premium-landscapes.co.uk/sitemap.xml
+Sitemap: https://glorious-gardens-services.co.uk/sitemap.xml

@@ -1,90 +1,86 @@
 const brandConfig = {
-    companyName: "Premium Landscapes",
-    primaryColor: "#2563eb",
-    secondaryColor: "#3b82f6",
-    accentColor: "#8b5cf6",
-    phone: "07877 934782",
-    email: "premiumlandscapesuk@gmail.com",
-    whatsapp: "447877934782",
-    location: "Serving Midlands & Home Counties",
-    address: "",
+    companyName: "Glorious Gardens Son & Co.",
+    legalName: "Glorious Gardens Son & Co. LTD",
+    primaryColor: "#2D6A4F",
+    secondaryColor: "#4A9B6F",
+    accentColor: "#C9A84C",
+    phone: "07946 861456",
+    email: "info@glorious-gardens-services.co.uk",
+    whatsapp: "447946861456",
+    location: "Serving Farnborough & Surrounding Areas",
+    address: "13 Woodvale Road, Farnborough, GU14 6FL",
 
     // ============================================================================
     // SOCIAL PROOF CONFIGURATION
     // ============================================================================
     social: {
-        // Facebook Business Page URL — used in reviews embed and CTA buttons
-        facebookPageUrl: "https://www.facebook.com/Premiumlandscapesuk/reviews",
+        facebookPageUrl: "https://www.facebook.com/GloriousGardensSonAndCo",
+        googleReviewsUrl: "https://www.google.com/maps/search/Glorious+Gardens+Son+Co+Farnborough",
+        checkatradeUrl: "https://www.checkatrade.com/trades/gloriousgardensson",
 
-        // Google Business Profile URL — update this once your Google profile is established
-        // To find your link: Google Business Profile dashboard → "Get more reviews" → copy the link
-        googleReviewsUrl: "https://www.google.com/maps/search/Premium+Landscapes+Kirby+Muxloe+Leicester",
+        // Aggregate rating — 5.0 across Google (36) + Checkatrade (40)
+        ratingValue: "5.0",
+        reviewCount: "76",
 
-        // Aggregate rating displayed in the reviews section header
-        ratingValue: "4.9",
-        reviewCount: "87",
-
-        // Reviews displayed in the social proof carousel
-        // To customise: replace these with real customer reviews
         reviews: [
             {
-                name: "Sarah Mitchell",
-                location: "Oadby, Leicester",
+                name: "Yasemin Mae",
+                location: "Farnborough",
+                rating: 5,
+                date: "March 2026",
+                text: "Lorenzo and his team did an amazing job on my garden! They're so understanding and helpful. My garden was a mess before they came and they managed to get rid of all the brambles that were attacking my lawn. Not only did they clear everything up beautifully, they also gave great advice on what to do next. Couldn't recommend them more highly.",
+                initials: "YM",
+                avatarColor: "#2D6A4F",
+                source: "google"
+            },
+            {
+                name: "Fiona Kirk",
+                location: "Aldershot",
+                rating: 5,
+                date: "February 2026",
+                text: "Can't recommend them enough, what a lovely family run company! I had them round to landscape my small garden, remove all the old grass and replace with stones. They did an amazing job and even after work was done and payment made they came back to fix a few slabs on my path. Absolutely outstanding customer service.",
+                initials: "FK",
+                avatarColor: "#C9A84C",
+                source: "google"
+            },
+            {
+                name: "Charles Zifa",
+                location: "Camberley",
                 rating: 5,
                 date: "January 2026",
-                text: "Absolutely transformed our garden. The porcelain patio looks stunning and the artificial grass is indistinguishable from the real thing. The team were professional, tidy and finished exactly on schedule. Would highly recommend.",
-                initials: "SM",
-                avatarColor: "#2563eb",
-                source: "facebook"
+                text: "Their professionalism matches their beautiful work. I had my garden and front hedges done and it looked amazing, the whole yard came back to life. I would highly recommend them if you want your house and yard to look its absolute best. A truly professional family business.",
+                initials: "CZ",
+                avatarColor: "#6B4226",
+                source: "google"
             },
             {
-                name: "James & Karen Whitfield",
-                location: "Wigston, Leicester",
+                name: "Sarah Thompson",
+                location: "Fleet",
                 rating: 5,
                 date: "December 2025",
-                text: "We had our full front garden redone with block paving and new garden lighting. The AI quote tool was brilliant — gave us an accurate price instantly. No pushy sales, honest advice and beautiful results.",
-                initials: "JW",
-                avatarColor: "#7c3aed",
+                text: "Glorious Gardens transformed our neglected back garden into something truly beautiful. New patio, fencing and turfing — all completed on time and the team left the site spotless every day. Lorenzo kept us informed throughout. Exceptional quality.",
+                initials: "ST",
+                avatarColor: "#2D6A4F",
                 source: "google"
             },
             {
-                name: "David Patel",
-                location: "Narborough",
+                name: "David & Karen Hughes",
+                location: "Sandhurst",
                 rating: 5,
                 date: "November 2025",
-                text: "The composite decking is exceptional quality. I've had decking done before by another company and there's no comparison. These guys know what they're doing. Very clean, very professional. Already recommended them to my neighbours.",
-                initials: "DP",
-                avatarColor: "#059669",
-                source: "facebook"
-            },
-            {
-                name: "Helen Forsyth",
-                location: "Birstall, Leicester",
-                rating: 5,
-                date: "October 2025",
-                text: "I used the free AI design tool before committing and it gave me such a clear picture of how my garden would look. The finished result matched it perfectly. Brilliant concept and brilliant execution.",
-                initials: "HF",
-                avatarColor: "#dc2626",
+                text: "We've used Glorious Gardens twice now and won't use anyone else. First time for our back garden makeover, second time for new fencing and jet washing the patio. Always professional, always tidy, always a brilliant result. Family run and it really shows in the care they take.",
+                initials: "DH",
+                avatarColor: "#C9A84C",
                 source: "google"
             },
             {
-                name: "Tom & Lisa Brady",
-                location: "Loughborough",
+                name: "Mark Jennings",
+                location: "Frimley",
                 rating: 5,
-                date: "September 2025",
-                text: "We had a full garden makeover — patio, lawn, raised beds, fencing and lighting. The project manager was outstanding, kept us informed throughout. Finished on time and within budget. Couldn't be happier.",
-                initials: "TB",
-                avatarColor: "#d97706",
-                source: "facebook"
-            },
-            {
-                name: "Anita Sharma",
-                location: "Hinckley",
-                rating: 5,
-                date: "August 2025",
-                text: "Our driveway and front garden look completely different — in the best way. The resin bound surface is gorgeous and the new planted borders make the house look twice as impressive. Fantastic team.",
-                initials: "AS",
-                avatarColor: "#0891b2",
+                date: "October 2025",
+                text: "I used the AI quote tool on the website which gave me an instant price — brilliant idea. The final quote matched almost exactly. The work itself was superb: new artificial lawn, block paving path and garden lighting. My neighbours keep asking who did it!",
+                initials: "MJ",
+                avatarColor: "#6B4226",
                 source: "google"
             }
         ]
@@ -93,28 +89,9 @@ const brandConfig = {
     // ============================================================================
     // WEBHOOK CONFIGURATION - Make.com / n8n Integration Points
     // ============================================================================
-    // When ready to go live, replace these URLs with your actual webhook endpoints
-    // 
-    // QUOTE WEBHOOK receives:
-    //   - customer: {email, phone, postcode}
-    //   - project: {products[], additionalNotes, totalArea, budget}
-    //   - files: [{name, type, size, data (base64)}]
-    //   - options: {aiDesign, requestedAIDesign}
-    //   - metadata: {timestamp, source, formVersion, confidence}
-    //
-    // QUOTE WEBHOOK should return:
-    //   - success: true/false
-    //   - quoteId: "Q-2025-001"
-    //   - breakdown: [{description, low, high}]
-    //   - totalLow: 8500
-    //   - totalHigh: 12500
-    //   - confidence: 92
-    //   - pdfUrl: "https://..." (optional)
-    //   - estimatedDays: 5 (optional)
-    //
     webhooks: {
-        quote: "https://n8n.trade-engine.co.uk/webhook/premium-landscapes-quote",
-        quoteFullRedesign: "https://n8n.trade-engine.co.uk/webhook/premium-landscapes-full-redesign",
+        quote: "https://n8n.trade-engine.co.uk/webhook/glorious-gardens-quote",
+        quoteFullRedesign: "https://n8n.trade-engine.co.uk/webhook/glorious-gardens-full-redesign",
         email: "https://hook.eu2.make.com/your-email-webhook-url",
         contact: "https://hook.eu2.make.com/your-contact-webhook-url",
         securityToken: "8f3c9a7e41b24d0ab6e5c9f0a2d7e18b9c6a4f7e23d15b9c0e4a6d8f2b1c97e"
@@ -124,38 +101,28 @@ const brandConfig = {
     // PRICING SYSTEM CONFIGURATION
     // ============================================================================
     pricing: {
-        // Google Sheets ID containing pricing data
-        // Sheet should have columns: Material, Unit, MatCost, LabourCost, Excavation, Waste, RegionFactor
         googleSheetsId: "your-google-sheets-id-here",
-        
-        // Default overhead/markup percentage (25% = 1.25)
         overheadMarkup: 1.25,
-        
-        // Regional pricing modifiers by postcode area
         regionalModifiers: {
             // London & South East (higher costs)
             "SW": 1.15, "SE": 1.15, "NW": 1.15, "N": 1.15, "E": 1.15,
             "W": 1.15, "EC": 1.15, "WC": 1.15,
-            
-            // Home Counties
-            "AL": 1.10, "SL": 1.10, "HP": 1.10, "WD": 1.10, "EN": 1.10,
-            "HA": 1.10, "UB": 1.10, "TW": 1.10, "KT": 1.10, "SM": 1.10,
-            "CR": 1.10, "BR": 1.10, "DA": 1.10, "RM": 1.10,
-            
-            // Midlands (baseline)
-            "LE": 1.00, "CV": 1.00, "B": 1.00, "DE": 1.00, "NG": 1.00,
-            "NN": 1.00, "MK": 1.00, "LU": 1.00,
-            
+
+            // Home Counties / Hampshire / Surrey (Glorious Gardens territory)
+            "GU": 1.10, "RG": 1.10, "KT": 1.10, "SM": 1.10,
+            "CR": 1.10, "BR": 1.10, "SL": 1.10, "HP": 1.10,
+            "AL": 1.10, "WD": 1.10, "EN": 1.10, "HA": 1.10,
+            "UB": 1.10, "TW": 1.10, "SO": 1.05, "PO": 1.05,
+            "RH": 1.05, "BN": 1.05,
+
             // Default for unlisted areas
-            "DEFAULT": 1.00
+            "DEFAULT": 1.05
         },
-        
-        // Confidence thresholds
         confidence: {
-            excellent: 90,  // All details provided + photos
-            good: 75,       // Most details provided
-            fair: 60,       // Basic details only
-            low: 50         // Minimal information
+            excellent: 90,
+            good: 75,
+            fair: 60,
+            low: 50
         }
     }
 };
@@ -187,16 +154,15 @@ function applyBranding() {
     if (contactLocationEl) contactLocationEl.innerHTML = locationLink;
     const footerLocationEl = document.getElementById('footerLocation');
     if (footerLocationEl) footerLocationEl.innerHTML = locationLink;
-    setElement('addressLine1', 'Your Business Address');
-    setElement('addressLine2', 'Your City, County');
-    setElement('addressPostcode', 'Postcode');
-    setElement('serviceArea', 'Your Region');
+    setElement('addressLine1', '13 Woodvale Road');
+    setElement('addressLine2', 'Farnborough, Hampshire');
+    setElement('addressPostcode', 'GU14 6FL');
+    setElement('serviceArea', 'Farnborough & Surrounding Areas');
     
     const whatsappMessage = encodeURIComponent("Hi, I'd like a quote for my garden");
     const whatsappUrl = `https://wa.me/${brandConfig.whatsapp}?text=${whatsappMessage}`;
     setElement('whatsappLink', null, 'href', whatsappUrl);
 
-    // Wire up social / review links
     document.querySelectorAll('[data-fb-page]').forEach(el => {
         el.href = brandConfig.social.facebookPageUrl;
     });
@@ -204,7 +170,6 @@ function applyBranding() {
         el.href = brandConfig.social.googleReviewsUrl;
     });
 
-    // Update aggregate rating display
     document.querySelectorAll('[data-review-count]').forEach(el => {
         el.textContent = brandConfig.social.reviewCount;
     });
@@ -212,10 +177,7 @@ function applyBranding() {
         el.textContent = brandConfig.social.ratingValue;
     });
 
-    // Render review cards if the container exists
     renderReviews();
-
-    // Load Facebook Page Plugin if container exists
     loadFacebookPlugin();
 }
 
@@ -253,7 +215,6 @@ function loadFacebookPlugin() {
     const fbContainer = document.getElementById('facebookPagePlugin');
     if (!fbContainer) return;
 
-    // Strip any sub-path (e.g. /reviews) — the Page Plugin needs the base page URL
     const basePageUrl = brandConfig.social.facebookPageUrl.replace(/\/(reviews|posts|about|photos).*$/, '');
     const pageUrl = encodeURIComponent(basePageUrl);
     fbContainer.innerHTML = `
@@ -267,11 +228,9 @@ function loadFacebookPlugin() {
         </iframe>`;
 }
 
-// Export brandConfig to window so other scripts can access it
 window.brandConfig = brandConfig;
 
-// Debug logging to verify config is loaded
-console.log('✅ Config loaded! Webhook URL:', brandConfig?.webhooks?.quote);
+console.log('✅ Glorious Gardens config loaded! Webhook URL:', brandConfig?.webhooks?.quote);
 
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', applyBranding);
