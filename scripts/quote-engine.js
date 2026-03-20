@@ -2484,8 +2484,8 @@ async function submitQuote() {
         if (!webhookUrl || webhookUrl.includes('your-') || webhookUrl.includes('-webhook-url')) {
             console.warn('⚠️ Webhook URL not configured. Using demo mode.');
             console.log('To enable live quotes, update the webhook URLs in scripts/config.js');
-            console.log('Standard quotes: /webhook/premium-landscapes-quote');
-            console.log('Full redesign: /webhook/premium-landscapes-full-redesign');
+            console.log('Standard quotes: /webhook/glorious-gardens-quote');
+            console.log('Full redesign: /webhook/glorious-gardens-full-redesign');
             
             isSubmittingQuote = false;
             if (isFullRedesignMode) {
@@ -2842,8 +2842,8 @@ function prepareWebhookPayload() {
             requestId: requestId, // Unique ID to detect duplicate webhook calls
             quoteType: isFullRedesign ? 'full_garden_redesign' : 'individual_products',
             webhookDestination: isFullRedesign 
-                ? window.brandConfig?.webhooks?.quoteFullRedesign || 'https://n8n.example.com/webhook/premium-landscapes-full-redesign'
-                : window.brandConfig?.webhooks?.quote || 'https://n8n.example.com/webhook/premium-landscapes-quote',
+                ? window.brandConfig?.webhooks?.quoteFullRedesign || 'https://n8n.example.com/webhook/glorious-gardens-full-redesign'
+                : window.brandConfig?.webhooks?.quote || 'https://n8n.example.com/webhook/glorious-gardens-quote',
             aiDesignRequested: quoteData.aiDesign || false
         };
         
