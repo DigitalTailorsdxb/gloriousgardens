@@ -223,7 +223,13 @@ const SubmissionOverlay = {
         if (data.pdfUrl) {
             document.querySelectorAll('.success-pdf-btn').forEach(el => {
                 el.href = data.pdfUrl;
+                el.setAttribute('data-url', data.pdfUrl);
+                el.onclick = function(e) {
+                    e.preventDefault();
+                    window.open(data.pdfUrl, '_blank', 'noopener');
+                };
                 el.classList.remove('hidden');
+                console.log('📄 PDF btn href set:', el.href);
             });
         }
 
@@ -234,8 +240,20 @@ const SubmissionOverlay = {
             const viewBtn = document.getElementById('successDesignViewBtn');
             const fallbackIcon = document.getElementById('successDesignIconFallback');
             if (img) img.src = data.imageUrl;
-            if (imgWrap) imgWrap.classList.remove('hidden');
-            if (viewBtn) { viewBtn.href = data.imageUrl; viewBtn.classList.remove('hidden'); }
+            if (imgWrap) {
+                imgWrap.classList.remove('hidden');
+                imgWrap.onclick = function() { window.open(data.imageUrl, '_blank', 'noopener'); };
+            }
+            if (viewBtn) {
+                viewBtn.href = data.imageUrl;
+                viewBtn.setAttribute('data-url', data.imageUrl);
+                viewBtn.onclick = function(e) {
+                    e.preventDefault();
+                    window.open(data.imageUrl, '_blank', 'noopener');
+                };
+                viewBtn.classList.remove('hidden');
+                console.log('🖼️ View btn href set:', viewBtn.href);
+            }
             if (fallbackIcon) fallbackIcon.classList.add('hidden');
         }
 
