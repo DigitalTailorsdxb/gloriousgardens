@@ -11,6 +11,23 @@ const SubmissionOverlay = {
     currentStep: 0,
     totalSteps: 6,
     stepTimers: [],
+    _imageUrl: null,
+    _pdfUrl: null,
+
+    // Open design image in new tab
+    openImage() {
+        if (this._imageUrl) {
+            const w = window.open(this._imageUrl, '_blank');
+            if (!w) window.location.href = this._imageUrl;
+        }
+    },
+    // Open PDF in new tab
+    openPdf() {
+        if (this._pdfUrl) {
+            const w = window.open(this._pdfUrl, '_blank');
+            if (!w) window.location.href = this._pdfUrl;
+        }
+    },
     
     // Progress steps WITH AI design (90 seconds total - 8 steps @ 11.25s each)
     stepsWithDesign: [
@@ -219,18 +236,22 @@ const SubmissionOverlay = {
             });
         }
 
-        // Populate PDF download links
+        // Store URLs on the overlay object so onclick handlers can always reach them
         if (data.pdfUrl) {
+            this._pdfUrl = data.pdfUrl;
             document.querySelectorAll('.success-pdf-btn').forEach(el => {
-                el.href = data.pdfUrl;
+                el.removeAttribute('href');
                 el.removeAttribute('target');
+                el.setAttribute('onclick', 'SubmissionOverlay.openPdf(); return false;');
+                el.style.cursor = 'pointer';
                 el.classList.remove('hidden');
-                console.log('📄 PDF btn href set:', el.href);
+                console.log('📄 PDF URL stored:', data.pdfUrl);
             });
         }
 
         // Populate design image (redesign only)
         if (data.imageUrl) {
+            this._imageUrl = data.imageUrl;
             const img = document.getElementById('successDesignImage');
             const imgWrap = document.getElementById('successDesignImageWrap');
             const viewBtn = document.getElementById('successDesignViewBtn');
@@ -238,13 +259,15 @@ const SubmissionOverlay = {
             if (img) img.src = data.imageUrl;
             if (imgWrap) {
                 imgWrap.classList.remove('hidden');
-                imgWrap.setAttribute('onclick', `window.location.href='${data.imageUrl}'`);
+                imgWrap.setAttribute('onclick', 'SubmissionOverlay.openImage(); return false;');
             }
             if (viewBtn) {
-                viewBtn.href = data.imageUrl;
+                viewBtn.removeAttribute('href');
                 viewBtn.removeAttribute('target');
+                viewBtn.setAttribute('onclick', 'SubmissionOverlay.openImage(); return false;');
+                viewBtn.style.cursor = 'pointer';
                 viewBtn.classList.remove('hidden');
-                console.log('🖼️ View btn href set:', viewBtn.href);
+                console.log('🖼️ Image URL stored:', data.imageUrl);
             }
             if (fallbackIcon) fallbackIcon.classList.add('hidden');
         }
