@@ -223,11 +223,7 @@ const SubmissionOverlay = {
         if (data.pdfUrl) {
             document.querySelectorAll('.success-pdf-btn').forEach(el => {
                 el.href = data.pdfUrl;
-                el.setAttribute('data-url', data.pdfUrl);
-                el.onclick = function(e) {
-                    e.preventDefault();
-                    window.open(data.pdfUrl, '_blank', 'noopener');
-                };
+                el.removeAttribute('target');
                 el.classList.remove('hidden');
                 console.log('📄 PDF btn href set:', el.href);
             });
@@ -242,15 +238,11 @@ const SubmissionOverlay = {
             if (img) img.src = data.imageUrl;
             if (imgWrap) {
                 imgWrap.classList.remove('hidden');
-                imgWrap.onclick = function() { window.open(data.imageUrl, '_blank', 'noopener'); };
+                imgWrap.setAttribute('onclick', `window.location.href='${data.imageUrl}'`);
             }
             if (viewBtn) {
                 viewBtn.href = data.imageUrl;
-                viewBtn.setAttribute('data-url', data.imageUrl);
-                viewBtn.onclick = function(e) {
-                    e.preventDefault();
-                    window.open(data.imageUrl, '_blank', 'noopener');
-                };
+                viewBtn.removeAttribute('target');
                 viewBtn.classList.remove('hidden');
                 console.log('🖼️ View btn href set:', viewBtn.href);
             }
