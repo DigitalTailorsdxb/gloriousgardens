@@ -2122,59 +2122,108 @@
                         </div>
                     </div>
                     
-                    <!-- Success State - Individual Products -->
+                    <!-- Success State - Individual Products (Quote Only) -->
                     <div id="overlaySuccessProducts" class="hidden text-center">
-                        <div class="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center shadow-lg">
-                            <i class="fas fa-check text-4xl text-white"></i>
+
+                        <!-- Tick icon -->
+                        <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center shadow-lg">
+                            <i class="fas fa-check text-2xl text-white"></i>
                         </div>
-                        <h2 class="font-heading font-bold text-3xl text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-600 mb-3">Quote Submitted!</h2>
-                        <p class="text-gray-600 text-lg mb-6">Your detailed quote is on its way to your inbox</p>
-                        
-                        <div class="bg-green-50 border border-green-200 rounded-2xl p-6 mb-6">
-                            <div class="flex items-center justify-center mb-3">
-                                <i class="fas fa-envelope-open-text text-green-600 text-2xl mr-3"></i>
-                                <span class="font-semibold text-green-800">Check your email</span>
-                            </div>
-                            <p class="text-gray-600 text-sm">Your PDF quote with detailed pricing should be in your inbox now.</p>
-                            <div class="mt-3 bg-white rounded-lg py-2 px-4 inline-block">
-                                <p class="text-gray-500 text-xs mb-1">Sent to:</p>
-                                <p class="font-semibold text-green-700" id="successEmailQuote">your@email.com</p>
-                            </div>
-                            <div class="mt-3 bg-amber-50 border border-amber-200 rounded-lg p-2.5 text-left">
-                                <p class="text-xs text-amber-800"><i class="fas fa-exclamation-triangle text-amber-500 mr-1.5"></i><strong>Can't find it?</strong> Check your <strong>Promotions</strong>, <strong>Spam</strong>, and <strong>Junk</strong> folders — emails sometimes end up there.</p>
+
+                        <h2 class="font-heading font-bold text-2xl md:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-600 mb-1">
+                            Quote Ready<span class="success-customer-name"></span>!
+                        </h2>
+                        <p class="text-gray-500 text-sm mb-4">Your personalised quote has been prepared</p>
+
+                        <!-- Quote total (shown if returned by webhook) -->
+                        <div class="success-total-block hidden mb-4">
+                            <div class="bg-gradient-to-r from-green-600 to-emerald-500 rounded-2xl px-6 py-4 inline-block shadow-md">
+                                <p class="text-green-100 text-xs uppercase tracking-widest mb-0.5">Your Estimated Total</p>
+                                <p class="success-quote-total text-white font-bold text-3xl"></p>
                             </div>
                         </div>
-                        
-                        <a href="index.html" class="inline-block bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-primary-dark transition">
-                            <i class="fas fa-home mr-2"></i> Back to Home
+
+                        <!-- PDF download button (shown if returned by webhook) -->
+                        <a href="#" target="_blank" rel="noopener"
+                           class="success-pdf-btn hidden w-full flex items-center justify-center gap-2 bg-primary text-white px-6 py-3.5 rounded-xl font-semibold text-base hover:bg-secondary transition shadow-md mb-3">
+                            <i class="fas fa-file-pdf text-lg"></i> Download Your PDF Quote
+                        </a>
+
+                        <!-- Email confirmation -->
+                        <div class="bg-green-50 border border-green-200 rounded-xl p-4 mb-4 text-left">
+                            <div class="flex items-start gap-3">
+                                <i class="fas fa-envelope-open-text text-green-500 mt-0.5"></i>
+                                <div>
+                                    <p class="text-sm font-semibold text-green-800 mb-0.5">Also sent to your inbox</p>
+                                    <p class="text-xs text-gray-600">Your quote has been emailed to <strong id="successEmailQuote" class="text-green-700">your email</strong></p>
+                                    <p class="text-xs text-amber-700 mt-1.5"><i class="fas fa-exclamation-triangle mr-1"></i>Check <strong>Promotions</strong>, <strong>Spam</strong> &amp; <strong>Junk</strong> if you don't see it.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="index.html" class="inline-block text-gray-500 hover:text-primary text-sm transition">
+                            <i class="fas fa-home mr-1"></i> Back to Home
                         </a>
                     </div>
-                    
-                    <!-- Success State - Full Redesign -->
+
+                    <!-- Success State - Full Redesign (Design + Quote) -->
                     <div id="overlaySuccessRedesign" class="hidden text-center">
-                        <div class="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-purple-400 to-blue-500 rounded-full flex items-center justify-center shadow-lg">
-                            <i class="fas fa-wand-magic-sparkles text-4xl text-white"></i>
-                        </div>
-                        <h2 class="font-heading font-bold text-3xl text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600 mb-3">Design Request Submitted!</h2>
-                        <p class="text-gray-600 text-lg mb-6">Your bespoke garden design has been created</p>
-                        
-                        <div class="bg-purple-50 border border-purple-200 rounded-2xl p-6 mb-6">
-                            <div class="flex items-center justify-center mb-3">
-                                <i class="fas fa-envelope text-purple-600 text-2xl mr-3"></i>
-                                <span class="font-semibold text-purple-800">Check your email</span>
-                            </div>
-                            <p class="text-gray-600 text-sm">Your AI-generated garden visualisation and quote should be in your inbox now.</p>
-                            <div class="mt-3 bg-white rounded-lg py-2 px-4 inline-block">
-                                <p class="text-gray-500 text-xs mb-1">Sent to:</p>
-                                <p class="font-semibold text-purple-700" id="successEmailRedesign">your@email.com</p>
-                            </div>
-                            <div class="mt-3 bg-amber-50 border border-amber-200 rounded-lg p-2.5 text-left">
-                                <p class="text-xs text-amber-800"><i class="fas fa-exclamation-triangle text-amber-500 mr-1.5"></i><strong>Can't find it?</strong> Check your <strong>Promotions</strong>, <strong>Spam</strong>, and <strong>Junk</strong> folders — emails sometimes end up there.</p>
+
+                        <!-- AI Design image preview (shown if imageUrl returned) -->
+                        <div id="successDesignImageWrap" class="hidden mb-4 rounded-2xl overflow-hidden shadow-xl border-4 border-primary/20 cursor-pointer" onclick="document.getElementById('successDesignViewBtn').click()">
+                            <img id="successDesignImage" src="" alt="Your AI Garden Design" class="w-full max-h-52 object-cover">
+                            <div class="bg-primary/90 text-white text-xs py-1.5 text-center font-medium tracking-wide">
+                                <i class="fas fa-expand mr-1"></i> Tap to view full design
                             </div>
                         </div>
-                        
-                        <a href="index.html" class="inline-block bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl transition">
-                            <i class="fas fa-home mr-2"></i> Back to Home
+
+                        <!-- No image fallback icon -->
+                        <div id="successDesignIconFallback" class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center shadow-lg">
+                            <i class="fas fa-seedling text-2xl text-white"></i>
+                        </div>
+
+                        <h2 class="font-heading font-bold text-2xl md:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary mb-1">
+                            Your Garden Design is Ready<span class="success-customer-name"></span>!
+                        </h2>
+                        <p class="text-gray-500 text-sm mb-4">Your AI-generated design and quote are prepared</p>
+
+                        <!-- Quote total -->
+                        <div class="success-total-block hidden mb-4">
+                            <div class="bg-gradient-to-r from-primary to-secondary rounded-2xl px-6 py-4 inline-block shadow-md">
+                                <p class="text-green-100 text-xs uppercase tracking-widest mb-0.5">Your Estimated Total</p>
+                                <p class="success-quote-total text-white font-bold text-3xl"></p>
+                            </div>
+                        </div>
+
+                        <!-- Action buttons -->
+                        <div class="flex flex-col gap-2 mb-4">
+                            <a id="successDesignViewBtn" href="#" target="_blank" rel="noopener"
+                               class="hidden w-full flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-3.5 rounded-xl font-semibold text-base hover:shadow-xl transition">
+                                <i class="fas fa-image text-lg"></i> View Full Garden Design
+                            </a>
+                            <a href="#" target="_blank" rel="noopener"
+                               class="success-pdf-btn hidden w-full flex items-center justify-center gap-2 bg-white border-2 border-primary text-primary px-6 py-3.5 rounded-xl font-semibold text-base hover:bg-green-50 transition">
+                                <i class="fas fa-file-pdf text-lg"></i> Download PDF Quote
+                            </a>
+                        </div>
+
+                        <!-- Email confirmation -->
+                        <div class="bg-green-50 border border-green-200 rounded-xl p-4 mb-4 text-left">
+                            <div class="flex items-start gap-3">
+                                <i class="fas fa-envelope-open-text text-green-500 mt-0.5"></i>
+                                <div>
+                                    <p class="text-sm font-semibold text-green-800 mb-0.5">Copies sent to your inbox</p>
+                                    <p class="text-xs text-gray-600">Design &amp; quote emailed to <strong id="successEmailRedesign" class="text-green-700">your email</strong></p>
+                                    <p class="text-xs text-amber-700 mt-1.5"><i class="fas fa-exclamation-triangle mr-1"></i>Check <strong>Promotions</strong>, <strong>Spam</strong> &amp; <strong>Junk</strong> if you don't see it.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="contact.html" class="inline-block bg-accent text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition mr-3">
+                            <i class="fas fa-phone mr-1"></i> Book a Site Visit
+                        </a>
+                        <a href="index.html" class="inline-block text-gray-500 hover:text-primary text-sm transition">
+                            <i class="fas fa-home mr-1"></i> Home
                         </a>
                     </div>
                     

@@ -187,17 +187,58 @@ const SubmissionOverlay = {
     
     showSuccess() {
         console.log('🎉 OVERLAY: Showing success state, hasImage:', this.hasImage);
-        
+
+        // Grab webhook result from whichever progress state has data
+        const data = progressState.webhookResult || progressStateIndividual?.webhookResult || {};
+        console.log('🎉 OVERLAY: Webhook data for success screen:', data);
+
         // Hide processing, show appropriate success
         document.getElementById('overlayProcessing').classList.add('hidden');
-        
-        // Populate email addresses on success screens
+
+        // Populate email
         const userEmail = quoteData.email || 'your email';
         const emailQuote = document.getElementById('successEmailQuote');
         const emailRedesign = document.getElementById('successEmailRedesign');
         if (emailQuote) emailQuote.textContent = userEmail;
         if (emailRedesign) emailRedesign.textContent = userEmail;
-        
+
+        // Populate customer name
+        const firstName = (data.customerName || quoteData.name || '').split(' ')[0];
+        document.querySelectorAll('.success-customer-name').forEach(el => {
+            el.textContent = firstName ? `, ${firstName}` : '';
+        });
+
+        // Populate quote total
+        if (data.quoteTotal) {
+            const formatted = typeof data.quoteTotal === 'number'
+                ? `£${data.quoteTotal.toLocaleString('en-GB')}`
+                : (String(data.quoteTotal).startsWith('£') ? data.quoteTotal : `£${data.quoteTotal}`);
+            document.querySelectorAll('.success-quote-total').forEach(el => {
+                el.textContent = formatted;
+                el.closest('.success-total-block')?.classList.remove('hidden');
+            });
+        }
+
+        // Populate PDF download links
+        if (data.pdfUrl) {
+            document.querySelectorAll('.success-pdf-btn').forEach(el => {
+                el.href = data.pdfUrl;
+                el.classList.remove('hidden');
+            });
+        }
+
+        // Populate design image (redesign only)
+        if (data.imageUrl) {
+            const img = document.getElementById('successDesignImage');
+            const imgWrap = document.getElementById('successDesignImageWrap');
+            const viewBtn = document.getElementById('successDesignViewBtn');
+            const fallbackIcon = document.getElementById('successDesignIconFallback');
+            if (img) img.src = data.imageUrl;
+            if (imgWrap) imgWrap.classList.remove('hidden');
+            if (viewBtn) { viewBtn.href = data.imageUrl; viewBtn.classList.remove('hidden'); }
+            if (fallbackIcon) fallbackIcon.classList.add('hidden');
+        }
+
         if (this.hasImage) {
             document.getElementById('overlaySuccessRedesign').classList.remove('hidden');
         } else {
@@ -2519,10 +2560,12 @@ async function submitQuote() {
                     'X-Webhook-Secret': window.brandConfig?.webhooks?.securityToken || ''
                 },
                 body: JSON.stringify(webhookPayload)
-            }).then(response => {
+            }).then(async response => {
                 console.log('✅ Webhook sent successfully, status:', response.status);
                 isSubmittingQuote = false;
-                onWebhookComplete(true, { success: true });
+                let result = { success: true };
+                try { result = await response.json(); console.log('📦 n8n response data:', result); } catch(e) {}
+                onWebhookComplete(true, result);
             }).catch(error => {
                 console.warn('⚠️ Webhook error (UI continues):', error.message);
                 isSubmittingQuote = false;
