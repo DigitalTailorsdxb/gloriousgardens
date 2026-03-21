@@ -438,7 +438,7 @@ function advanceIndividualProgressStep(stepIndex) {
 function onIndividualWebhookComplete(success, result) {
     progressStateIndividual.webhookComplete = true;
     progressStateIndividual.webhookSuccess = success;
-    progressStateIndividual.webhookResult = result;
+    progressStateIndividual.webhookResult = normaliseWebhookResult(result);
     
     if (success) {
         console.log('✅ Individual products webhook completed successfully');
@@ -605,11 +605,33 @@ function advanceProgressStep(stepIndex) {
     }
 }
 
+// Normalise any webhook response format into { success, pdfUrl, imageUrl, customerName, quoteTotal }
+function normaliseWebhookResult(raw) {
+    if (!raw) return {};
+    // Already in expected format
+    if (raw.pdfUrl || raw.imageUrl || raw.customerName || raw.quoteTotal) return raw;
+    // HubSpot deal array format: [{portalId, dealId, properties: {...}}]
+    const deal = Array.isArray(raw) ? raw[0] : (raw.dealId ? raw : null);
+    if (deal && deal.properties) {
+        const p = deal.properties;
+        const prop = (key) => (p[key]?.value || '').toString().trim();
+        const quoteRef = prop('quote_reference');
+        const customerName = quoteRef ? quoteRef.split(/\s*[–-]\s*/)[0].trim() : '';
+        const amount = prop('amount') || prop('hs_forecast_amount');
+        const quoteTotal = amount ? parseFloat(amount).toFixed(0) : '';
+        const pdfUrl = prop('ai_quote_pdf_url');
+        const imageUrl = prop('ai_garden_image_url');
+        console.log('🔄 Normalised HubSpot deal response → customerName:', customerName, 'total:', quoteTotal, 'pdfUrl:', !!pdfUrl, 'imageUrl:', !!imageUrl);
+        return { success: true, customerName, quoteTotal, pdfUrl: pdfUrl || undefined, imageUrl: imageUrl || undefined };
+    }
+    return raw;
+}
+
 // Called when webhook completes (logged for debugging, UI doesn't wait)
 function onWebhookComplete(success, result) {
     progressState.webhookComplete = true;
     progressState.webhookSuccess = success;
-    progressState.webhookResult = result;
+    progressState.webhookResult = normaliseWebhookResult(result);
     
     if (success) {
         console.log('✅ Webhook completed successfully (UI running independently)');
