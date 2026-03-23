@@ -256,6 +256,7 @@ document.addEventListener('DOMContentLoaded', function () {
             e.preventDefault();
             const formData = new FormData(contactForm);
             const contactData = {
+                type: "contact",
                 name: formData.get('contactName'),
                 email: formData.get('contactEmailForm'),
                 message: formData.get('contactMessage'),
