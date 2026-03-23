@@ -93,7 +93,6 @@ const brandConfig = {
     webhooks: {
         quote: "https://n8n.trade-engine.co.uk/webhook/glorious-gardens-quote",
         quoteFullRedesign: "https://n8n.trade-engine.co.uk/webhook/glorious-gardens-full-redesign",
-        contact: "https://n8n.trade-engine.co.uk/webhook/glorious-gardens-quote",
         securityToken: "8f3c9a7e41b24d0ab6e5c9f0a2d7e18b9c6a4f7e23d15b9c0e4a6d8f2b1c97e"
     },
     

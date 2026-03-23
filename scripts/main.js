@@ -247,43 +247,4 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    /* ═══════════════════════════════════════════════════════
-       CONTACT FORM
-    ═══════════════════════════════════════════════════════ */
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', async function (e) {
-            e.preventDefault();
-            const formData = new FormData(contactForm);
-            const contactData = {
-                type: "contact",
-                name: formData.get('contactName'),
-                email: formData.get('contactEmailForm'),
-                message: formData.get('contactMessage'),
-                timestamp: new Date().toISOString()
-            };
-            const resultDiv = document.getElementById('contactFormResult');
-            try {
-                const response = await fetch(brandConfig.webhooks.contact, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(contactData)
-                });
-                if (response.ok) {
-                    resultDiv.className = 'mt-4 p-4 rounded-lg bg-green-100 text-green-800';
-                    resultDiv.textContent = 'Thank you! Your message has been sent successfully.';
-                    resultDiv.classList.remove('hidden');
-                    contactForm.reset();
-                } else {
-                    throw new Error('Non-OK response');
-                }
-            } catch {
-                resultDiv.className = 'mt-4 p-4 rounded-lg bg-blue-100 text-blue-800';
-                resultDiv.textContent = 'Message received. We will get back to you shortly.';
-                resultDiv.classList.remove('hidden');
-            }
-            setTimeout(() => resultDiv.classList.add('hidden'), 5000);
-        });
-    }
-
 });
