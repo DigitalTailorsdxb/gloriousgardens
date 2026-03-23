@@ -422,3 +422,65 @@ img[loading="lazy"] {
         transform: scale(0.98);
     }
 }
+
+/* ─── WHATSAPP BUTTON — CLEAR OF STICKY CTA BAR ─────────── */
+/* Move the floating WhatsApp button above the 72px sticky CTA bar */
+@media (max-width: 767px) {
+    a[href*="wa.me"].fixed,
+    div.fixed a[href*="wa.me"] {
+        bottom: calc(var(--bottom-cta-height) + var(--safe-bottom) + 12px) !important;
+    }
+    /* Also move any wrapper div that holds the WhatsApp link */
+    div.fixed:has(a[href*="wa.me"]) {
+        bottom: calc(var(--bottom-cta-height) + var(--safe-bottom) + 12px) !important;
+    }
+}
+
+/* ─── HERO SECTION BUTTONS — FULL WIDTH ON SMALL SCREENS ─── */
+@media (max-width: 479px) {
+    /* Stack hero CTA buttons vertically on very small phones */
+    .hero-cta-group {
+        flex-direction: column !important;
+        width: 100%;
+    }
+    .hero-cta-group a,
+    .hero-cta-group button {
+        width: 100% !important;
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+/* ─── SERVICE PAGE HERO — TEXT LEGIBILITY ────────────────── */
+@media (max-width: 767px) {
+    /* Ensure hero images don't make text unreadable on mobile */
+    .hero-overlay {
+        background: linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.65) 100%);
+    }
+}
+
+/* ─── BLOG POST CONTENT — READABILITY ────────────────────── */
+@media (max-width: 767px) {
+    /* Ensure blog prose stays within bounds */
+    .prose img,
+    article img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+    /* Long URLs in blog text shouldn't break layout */
+    .prose a,
+    article a {
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+}
+
+/* ─── FOOTER LOCATION PILLS — WRAP PROPERLY ─────────────── */
+@media (max-width: 767px) {
+    /* Service area pill links in footer — wrap and stay readable */
+    .flex.flex-wrap.justify-center.gap-3.mb-5.text-sm a {
+        font-size: 0.75rem;
+        padding: 4px 10px;
+    }
+}
