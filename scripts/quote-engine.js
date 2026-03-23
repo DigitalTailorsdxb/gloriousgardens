@@ -256,7 +256,20 @@ const SubmissionOverlay = {
             const imgWrap = document.getElementById('successDesignImageWrap');
             const viewBtn = document.getElementById('successDesignViewBtn');
             const fallbackIcon = document.getElementById('successDesignIconFallback');
-            if (img) img.src = data.imageUrl;
+            console.log('🖼️ Design image URL received from n8n:', data.imageUrl);
+            if (img) {
+                img.src = data.imageUrl;
+                img.onerror = function () {
+                    console.warn('⚠️ Design image failed to load. URL was:', data.imageUrl);
+                    // Gracefully fall back to the icon
+                    if (imgWrap) imgWrap.classList.add('hidden');
+                    if (fallbackIcon) fallbackIcon.classList.remove('hidden');
+                    if (viewBtn) viewBtn.classList.add('hidden');
+                };
+                img.onload = function () {
+                    console.log('✅ Design image loaded successfully');
+                };
+            }
             if (imgWrap) {
                 imgWrap.classList.remove('hidden');
                 imgWrap.setAttribute('onclick', 'SubmissionOverlay.openImage(); return false;');
@@ -267,7 +280,6 @@ const SubmissionOverlay = {
                 viewBtn.setAttribute('onclick', 'SubmissionOverlay.openImage(); return false;');
                 viewBtn.style.cursor = 'pointer';
                 viewBtn.classList.remove('hidden');
-                console.log('🖼️ Image URL stored:', data.imageUrl);
             }
             if (fallbackIcon) fallbackIcon.classList.add('hidden');
         }
