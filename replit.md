@@ -122,6 +122,16 @@ All 17 pages have complete SEO: index, quote, about, services, gallery, contact,
 - **5 individual cost guide pages**: `patio-cost-per-m2.html`, `artificial-grass-cost.html`, `composite-decking-cost.html`, `garden-design-cost.html`, `landscaping-cost-uk.html` — deep-dive pricing pages with material comparison tables, real Leicester project examples, BreadcrumbList schema and cross-links.
 - **6 interactive cost calculator pages**: `patio-cost-calculator.html`, `artificial-grass-cost-calculator.html`, `composite-decking-cost-calculator.html`, `garden-design-cost-calculator.html`, `garden-makeover-cost-calculator.html`, `garden-landscaping-cost-calculator.html` — JS-powered slider + material selector with live price range calculation, CTA to free quote.
 
+### SEO & Link Cleanup (March 2026 — Session 2)
+- **Services page image alts**: All 6 service card images updated with location-rich alt text (Farnborough, Hampshire, Glorious Gardens Son & Co.)
+- **Service page H1s**: portfolio.html, gallery.html, services.html, garden-design.html all updated with Farnborough/Hampshire geo targeting
+- **Leicester hrefs removed**: All `landscaping-leicester.html` internal links in composite-decking, patios, driveways, artificial-grass, garden-design, full-garden-makeover, garden-lighting → `areas-we-cover.html` or `index.html`
+- **Footer location links**: All 9 service/content pages (+ 20+ project sub-pages) had Leicestershire town links (Oadby, Wigston, Narborough, Loughborough, Hinckley, Birstall, Syston) replaced with Hampshire towns (Aldershot, Fleet, Camberley, Frimley, Alton, Farnham, Guildford)
+- **Service area tags**: "Decking Kirby Muxloe", "Patios Wigston", etc. replaced with "Decking Aldershot", "Patios Fleet" etc. across all service pages
+- **Blog meta descriptions**: All 10 blog posts updated with Farnborough/Hampshire brand references and "from Glorious Gardens" attribution
+- **blog.html double period**: Fixed (`& Co..` → `& Co.`)
+- **Sitemap lastmod**: All dates updated to 2026-03-23
+
 ### Reviews / Social Proof (March 2026)
 - **config.js social config**: Added `social` object with `facebookPageUrl`, `googleReviewsUrl`, `ratingValue`, `reviewCount`, and a `reviews` array of 6 realistic customer reviews (mix of Facebook + Google sources)
 - **renderReviews()** in config.js: Dynamically renders review cards into any `#reviewCardsContainer` element with source icon (FB/Google), star rating, initials avatar, name, location, date, quote text
