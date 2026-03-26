@@ -476,9 +476,18 @@ function onIndividualWebhookComplete(success, result) {
     progressStateIndividual.webhookResult = normaliseWebhookResult(result);
     
     if (success) {
-        console.log('✅ Individual products webhook completed successfully');
+        console.log('✅ Individual webhook completed — showing result immediately');
+        // Show result right away, skip remaining animation
+        SubmissionOverlay.forceComplete();
+        if (progressStateIndividual.isAnimating) {
+            completeIndividualProgressAnimation();
+        }
     } else {
         console.warn('⚠️ Individual products webhook returned error:', result?.error || result?.message);
+        // Still complete animation so the error UI is shown
+        if (progressStateIndividual.isAnimating) {
+            completeIndividualProgressAnimation();
+        }
     }
 }
 
@@ -650,13 +659,21 @@ function normaliseWebhookResult(raw) {
     if (deal && deal.properties) {
         const p = deal.properties;
         const prop = (key) => (p[key]?.value || '').toString().trim();
+        // Customer name: prefer dealname ("lewis reid – Instant Quote"), fall back to quote_reference
+        const dealName = prop('dealname');
         const quoteRef = prop('quote_reference');
-        const customerName = quoteRef ? quoteRef.split(/\s*[–-]\s*/)[0].trim() : '';
-        const amount = prop('amount') || prop('hs_forecast_amount');
+        let customerName = '';
+        if (dealName && dealName.includes('–')) {
+            customerName = dealName.split(/\s*[–-]\s*/)[0].trim();
+        } else if (quoteRef && quoteRef.includes('–')) {
+            customerName = quoteRef.split(/\s*[–-]\s*/)[0].trim();
+        }
+        // Amount: check all known fields
+        const amount = prop('amount') || prop('estimated_total') || prop('hs_forecast_amount');
         const quoteTotal = amount ? parseFloat(amount).toFixed(0) : '';
         const pdfUrl = prop('ai_quote_pdf_url');
         const imageUrl = prop('ai_garden_image_url');
-        console.log('🔄 Normalised HubSpot deal response → customerName:', customerName, 'total:', quoteTotal, 'pdfUrl:', !!pdfUrl, 'imageUrl:', !!imageUrl);
+        console.log('🔄 Normalised HubSpot deal → customerName:', customerName, 'total:', quoteTotal, 'pdfUrl:', !!pdfUrl, 'imageUrl:', !!imageUrl);
         return { success: true, customerName, quoteTotal, pdfUrl: pdfUrl || undefined, imageUrl: imageUrl || undefined };
     }
     return raw;
