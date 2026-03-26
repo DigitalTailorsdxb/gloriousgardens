@@ -669,7 +669,13 @@ function onWebhookComplete(success, result) {
     progressState.webhookResult = normaliseWebhookResult(result);
     
     if (success) {
-        console.log('✅ Webhook completed successfully (UI running independently)');
+        console.log('✅ Webhook completed — showing result immediately');
+        // Show the result right away, regardless of where the animation is
+        SubmissionOverlay.forceComplete();
+        // Also complete the progress bar animation immediately
+        if (progressState.isAnimating) {
+            completeProgressAnimation();
+        }
     } else {
         console.warn('⚠️ Webhook returned error (UI continues independently):', result?.error || result?.message);
     }
