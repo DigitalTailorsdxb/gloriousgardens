@@ -484,3 +484,133 @@ img[loading="lazy"] {
         padding: 4px 10px;
     }
 }
+
+/* ─── FOOTER LOGOS — CAP HEIGHT ON MOBILE ────────────────── */
+/* Prevent oversized logos in footers on small screens */
+@media (max-width: 767px) {
+    footer img[alt*="Glorious Gardens"],
+    footer img[src*="logo-gg"] {
+        max-height: 64px !important;
+    }
+}
+
+/* ─── QUOTE PAGE — MODAL SCROLL SAFETY ───────────────────── */
+/* Modals can overflow on short phones — make them scrollable */
+@media (max-width: 767px) {
+    #addProductModal > div,
+    #materialDetailModal > div {
+        max-height: 90vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    /* Quality option buttons: allow wrapping on very small screens */
+    #materialDetailModal .grid.grid-cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+    #materialDetailModal .quality-option {
+        padding: 10px 6px !important;
+        font-size: 0.75rem;
+    }
+}
+
+/* ─── SUBMISSION OVERLAY — MOBILE SCROLL SAFETY ─────────── */
+/* On short phones the success card can overflow — ensure scroll */
+@media (max-width: 767px) {
+    #submissionOverlay .flex-1 {
+        justify-content: flex-start !important;
+        padding-top: 1.5rem !important;
+        padding-bottom: 5rem !important;
+    }
+    #submissionOverlay .w-full.max-w-lg {
+        padding-bottom: 1rem;
+    }
+}
+
+/* ─── SERVICE PAGE NAV — DROPDOWN SPACING & TOUCH TARGETS ── */
+/* Pattern 2 dropdown menus: polish container appearance */
+@media (max-width: 767px) {
+    #mobileMenu.mobile-menu:not(.fixed) {
+        padding: 12px 16px 16px;
+        border-radius: 0 0 16px 16px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+    }
+    /* All links inside any mobile menu get proper 48px touch targets,
+       regardless of whether they have the mobile-menu-link class */
+    #mobileMenu a {
+        display: flex !important;
+        align-items: center;
+        min-height: 48px;
+        padding: 0 12px;
+        border-radius: 10px;
+        font-size: 1rem;
+        transition: background 0.15s ease, color 0.15s ease;
+    }
+    #mobileMenu a:active {
+        background: rgba(45, 106, 79, 0.08);
+    }
+}
+
+/* ─── HERO SECTION — SPACING WHEN STICKY CTA BAR PRESENT ── */
+/* Ensure hero content isn't clipped by the sticky bottom bar */
+@media (max-width: 767px) {
+    #hero {
+        padding-bottom: calc(3rem + var(--bottom-cta-height)) !important;
+    }
+    /* Reduce excessive first-section top padding on small phones */
+    .hero-bg,
+    #hero {
+        padding-top: calc(var(--nav-height) + 1.5rem) !important;
+    }
+}
+
+/* ─── GALLERY / CAROUSEL — TOUCH SNAP ───────────────────── */
+@media (max-width: 767px) {
+    .carousel-container {
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-bottom: 8px;
+    }
+    .carousel-container::-webkit-scrollbar { display: none; }
+    /* Each card snaps into place */
+    .carousel-container > * {
+        scroll-snap-align: start;
+        flex-shrink: 0;
+    }
+}
+
+/* ─── HOMEPAGE SERVICE CARDS — FULL WIDTH ON MOBILE ─────── */
+/* 3-col service grid collapses to 1-col on small screens */
+@media (max-width: 639px) {
+    .service-card {
+        width: 100%;
+    }
+}
+
+/* ─── QUOTE PROGRESS STEPS — INDIVIDUAL PRODUCTS ────────── */
+/* Make individual product progress steps legible on mobile */
+@media (max-width: 479px) {
+    .progress-step-ind .step-label-ind {
+        font-size: 0.6rem !important;
+        line-height: 1.2;
+    }
+    .progress-step-ind .step-icon-ind {
+        width: 28px !important;
+        height: 28px !important;
+        font-size: 0.7rem !important;
+    }
+}
+
+/* ─── CONTACT PAGE FOOTER — STACKED LAYOUT ──────────────── */
+@media (max-width: 767px) {
+    /* Dark green contact footer: add vertical spacing between stacked columns */
+    footer.bg-primary .grid > div {
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    footer.bg-primary .grid > div:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+}
