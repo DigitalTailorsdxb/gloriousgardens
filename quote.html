@@ -2073,9 +2073,9 @@
         </div>
     </footer>
     
-    <script src="scripts/config.js?v=1774545000"></script>
-    <script src="scripts/quote-engine.js?v=1774545000"></script>
-    <script src="scripts/main.js?v=1774545000"></script>
+    <script src="scripts/config.js?v=1774699100"></script>
+    <script src="scripts/quote-engine.js?v=1774699100"></script>
+    <script src="scripts/main.js?v=1774699100"></script>
     <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/447946861456?text=Hi%2C%20I%27d%20like%20a%20quote%20for%20my%20garden" 
        target="_blank" 
@@ -2128,44 +2128,57 @@
                     <div id="overlaySuccessProducts" class="hidden text-center">
 
                         <!-- Tick icon -->
-                        <div class="w-12 h-12 mx-auto mb-2 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center shadow-lg">
+                        <div class="w-12 h-12 mx-auto mb-2 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center shadow-lg">
                             <i class="fas fa-check text-xl text-white"></i>
                         </div>
 
-                        <h2 class="font-heading font-bold text-xl md:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-600 mb-0.5">
-                            Quote Ready<span class="success-customer-name"></span>!
+                        <h2 class="font-heading font-bold text-xl md:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary mb-0.5">
+                            Your Quote is Ready<span class="success-customer-name"></span>!
                         </h2>
-                        <p class="text-gray-500 text-xs mb-2">Your personalised quote has been prepared</p>
+                        <p class="text-gray-500 text-xs mb-2">Your personalised itemised quote has been prepared</p>
+
+                        <!-- Quote reference (shown if returned by webhook) -->
+                        <div class="success-ref-block hidden mb-2">
+                            <p class="text-xs text-gray-500">Reference: <span class="success-quote-ref font-mono font-semibold text-gray-700"></span></p>
+                        </div>
 
                         <!-- Quote total (shown if returned by webhook) -->
                         <div class="success-total-block hidden mb-2">
-                            <div class="bg-gradient-to-r from-green-600 to-emerald-500 rounded-xl px-5 py-2 inline-block shadow-md">
+                            <div class="bg-gradient-to-r from-primary to-secondary rounded-xl px-5 py-2 inline-block shadow-md">
                                 <p class="text-green-100 text-xs uppercase tracking-widest mb-0">Your Estimated Total</p>
                                 <p class="success-quote-total text-white font-bold text-2xl"></p>
                             </div>
                         </div>
 
-                        <!-- PDF download button (shown if returned by webhook) -->
-                        <button type="button"
-                           class="success-pdf-btn hidden w-full flex items-center justify-center gap-2 bg-primary text-white px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-secondary transition shadow-md mb-2">
-                            <i class="fas fa-file-pdf"></i> Download Your PDF Quote
-                        </button>
+                        <!-- Action buttons -->
+                        <div class="flex flex-col gap-1.5 mb-2">
+                            <button type="button"
+                               class="success-pdf-btn hidden w-full flex items-center justify-center gap-2 bg-white border-2 border-primary text-primary px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-green-50 transition">
+                                <i class="fas fa-file-pdf"></i> Download PDF Quote
+                            </button>
+                        </div>
 
                         <!-- Email confirmation -->
                         <div class="bg-green-50 border border-green-200 rounded-lg p-2.5 mb-3 text-left">
                             <div class="flex items-start gap-2">
                                 <i class="fas fa-envelope-open-text text-green-500 mt-0.5 text-sm"></i>
                                 <div>
-                                    <p class="text-xs font-semibold text-green-800">Also sent to your inbox</p>
+                                    <p class="text-xs font-semibold text-green-800">Copies sent to your inbox</p>
                                     <p class="text-xs text-gray-600">Your quote has been emailed to <strong id="successEmailQuote" class="text-green-700">your email</strong></p>
                                     <p class="text-xs text-amber-700 mt-0.5"><i class="fas fa-exclamation-triangle mr-1"></i>Check <strong>Promotions</strong>, <strong>Spam</strong> &amp; <strong>Junk</strong> if you don't see it.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <a href="index.html" class="inline-flex items-center gap-1.5 bg-gray-100 text-gray-700 hover:bg-gray-200 px-5 py-2 rounded-full font-semibold text-sm transition">
-                            <i class="fas fa-home text-xs"></i> Back to Home
-                        </a>
+                        <!-- CTA row -->
+                        <div class="flex items-center justify-center gap-3">
+                            <a href="contact.html" class="inline-flex items-center gap-1.5 bg-accent text-white px-5 py-2 rounded-full font-semibold text-sm hover:opacity-90 transition">
+                                <i class="fas fa-phone text-xs"></i> Book a Site Visit
+                            </a>
+                            <a href="index.html" class="inline-flex items-center gap-1.5 bg-gray-100 text-gray-700 hover:bg-gray-200 px-5 py-2 rounded-full font-semibold text-sm transition">
+                                <i class="fas fa-home text-xs"></i> Home
+                            </a>
+                        </div>
                     </div>
 
                     <!-- Success State - Full Redesign (Design + Quote) -->
@@ -2188,6 +2201,11 @@
                             Your Garden Design is Ready<span class="success-customer-name"></span>!
                         </h2>
                         <p class="text-gray-500 text-xs mb-2">Your AI-generated design and quote are prepared</p>
+
+                        <!-- Quote reference (shown if returned by webhook) -->
+                        <div class="success-ref-block hidden mb-2">
+                            <p class="text-xs text-gray-500">Reference: <span class="success-quote-ref font-mono font-semibold text-gray-700"></span></p>
+                        </div>
 
                         <!-- Quote total -->
                         <div class="success-total-block hidden mb-2">

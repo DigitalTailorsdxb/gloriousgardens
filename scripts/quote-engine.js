@@ -284,6 +284,14 @@ const SubmissionOverlay = {
             if (fallbackIcon) fallbackIcon.classList.add('hidden');
         }
 
+        // Populate quote reference number
+        if (data.quoteRef) {
+            document.querySelectorAll('.success-quote-ref').forEach(el => {
+                el.textContent = data.quoteRef;
+                el.closest('.success-ref-block')?.classList.remove('hidden');
+            });
+        }
+
         if (this.hasImage) {
             document.getElementById('overlaySuccessRedesign').classList.remove('hidden');
         } else {
@@ -649,7 +657,7 @@ function advanceProgressStep(stepIndex) {
     }
 }
 
-// Normalise any webhook response format into { success, pdfUrl, imageUrl, customerName, quoteTotal }
+// Normalise any webhook response format into { success, pdfUrl, imageUrl, customerName, quoteTotal, quoteRef }
 function normaliseWebhookResult(raw) {
     if (!raw) return {};
     // Already in expected format
@@ -659,22 +667,26 @@ function normaliseWebhookResult(raw) {
     if (deal && deal.properties) {
         const p = deal.properties;
         const prop = (key) => (p[key]?.value || '').toString().trim();
-        // Customer name: prefer dealname ("lewis reid – Instant Quote"), fall back to quote_reference
+        // quote_reference is now "lewis reid – Instant Quote – PL-260328-29138"
+        // Extract: customerName = first segment, quoteRef = last segment
+        const quoteRefField = prop('quote_reference');
         const dealName = prop('dealname');
-        const quoteRef = prop('quote_reference');
         let customerName = '';
-        if (dealName && dealName.includes('–')) {
+        let quoteRef = '';
+        if (quoteRefField && quoteRefField.includes('–')) {
+            const parts = quoteRefField.split(/\s*[–-]\s*/);
+            customerName = parts[0].trim();
+            quoteRef = parts[parts.length - 1].trim();
+        } else if (dealName && dealName.includes('–')) {
             customerName = dealName.split(/\s*[–-]\s*/)[0].trim();
-        } else if (quoteRef && quoteRef.includes('–')) {
-            customerName = quoteRef.split(/\s*[–-]\s*/)[0].trim();
         }
         // Amount: check all known fields
         const amount = prop('amount') || prop('estimated_total') || prop('hs_forecast_amount');
         const quoteTotal = amount ? parseFloat(amount).toFixed(0) : '';
         const pdfUrl = prop('ai_quote_pdf_url');
         const imageUrl = prop('ai_garden_image_url');
-        console.log('🔄 Normalised HubSpot deal → customerName:', customerName, 'total:', quoteTotal, 'pdfUrl:', !!pdfUrl, 'imageUrl:', !!imageUrl);
-        return { success: true, customerName, quoteTotal, pdfUrl: pdfUrl || undefined, imageUrl: imageUrl || undefined };
+        console.log('🔄 Normalised HubSpot deal → customerName:', customerName, 'ref:', quoteRef, 'total:', quoteTotal, 'pdfUrl:', !!pdfUrl, 'imageUrl:', !!imageUrl);
+        return { success: true, customerName, quoteRef: quoteRef || undefined, quoteTotal, pdfUrl: pdfUrl || undefined, imageUrl: imageUrl || undefined };
     }
     return raw;
 }
