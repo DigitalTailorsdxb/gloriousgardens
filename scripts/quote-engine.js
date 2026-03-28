@@ -660,6 +660,11 @@ function advanceProgressStep(stepIndex) {
 // Normalise any webhook response format into { success, pdfUrl, imageUrl, customerName, quoteTotal, quoteRef }
 function normaliseWebhookResult(raw) {
     if (!raw) return {};
+    // Detect and discard processing-acknowledgment responses (no display data available yet)
+    if (raw.status === 'processing' || (raw.quoteRef && String(raw.quoteRef).startsWith('='))) {
+        console.log('ℹ️ Processing acknowledgment received — no display data yet');
+        return { success: true };
+    }
     // Already in expected format
     if (raw.pdfUrl || raw.imageUrl || raw.customerName || raw.quoteTotal) return raw;
     // HubSpot deal array format: [{portalId, dealId, properties: {...}}]
