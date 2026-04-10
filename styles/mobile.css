@@ -614,3 +614,9 @@ img[loading="lazy"] {
         padding-bottom: 0;
     }
 }
+
+/* Unlimited budget button shimmer animation */
+@keyframes shimmer {
+    0%   { transform: translateX(-100%); }
+    100% { transform: translateX(200%); }
+}

@@ -13,6 +13,7 @@ const SubmissionOverlay = {
     stepTimers: [],
     _imageUrl: null,
     _pdfUrl: null,
+    _successTimer: null,
 
     // Open design image in new tab
     openImage() {
@@ -133,7 +134,7 @@ const SubmissionOverlay = {
                 
                 // If last step, show success after a delay
                 if (i === steps.length - 1) {
-                    setTimeout(() => this.showSuccess(), 2000);
+                    this._successTimer = setTimeout(() => this.showSuccess(), 2000);
                 }
             }, (i + 1) * stepDuration);
             this.stepTimers.push(timer);
@@ -238,7 +239,7 @@ const SubmissionOverlay = {
 
         // Store URLs on the overlay object so onclick handlers can always reach them
         if (data.pdfUrl) {
-            this._pdfUrl = data.pdfUrl;
+            this._pdfUrl = String(data.pdfUrl).trim();
             document.querySelectorAll('.success-pdf-btn').forEach(el => {
                 el.removeAttribute('href');
                 el.removeAttribute('target');
@@ -251,7 +252,7 @@ const SubmissionOverlay = {
 
         // Populate design image (redesign only)
         if (data.imageUrl) {
-            this._imageUrl = data.imageUrl;
+            this._imageUrl = String(data.imageUrl).trim();
             const img = document.getElementById('successDesignImage');
             const imgWrap = document.getElementById('successDesignImageWrap');
             const viewBtn = document.getElementById('successDesignViewBtn');
@@ -301,16 +302,33 @@ const SubmissionOverlay = {
     
     // Force complete animation (called when webhook returns)
     forceComplete() {
-        // Clear pending timers
+        // Cancel pending timers including the deferred success timer
         this.stepTimers.forEach(t => clearTimeout(t));
         this.stepTimers = [];
+        if (this._successTimer) { clearTimeout(this._successTimer); this._successTimer = null; }
         
         // Activate all steps
         const steps = this.hasImage ? this.stepsWithDesign : this.stepsQuoteOnly;
         steps.forEach((_, i) => this.activateStep(i));
         
         // Show success
-        setTimeout(() => this.showSuccess(), 500);
+        this._successTimer = setTimeout(() => this.showSuccess(), 500);
+    },
+
+    showError(message) {
+        // Cancel all pending timers
+        this.stepTimers.forEach(t => clearTimeout(t));
+        this.stepTimers = [];
+        if (this._successTimer) { clearTimeout(this._successTimer); this._successTimer = null; }
+
+        document.getElementById('overlayProcessing').classList.add('hidden');
+        const errEl = document.getElementById('overlayError');
+        if (errEl) {
+            const msgEl = errEl.querySelector('.overlay-error-message');
+            if (msgEl && message) msgEl.textContent = message;
+            errEl.classList.remove('hidden');
+        }
+        console.error('❌ OVERLAY: Error state shown:', message);
     },
     
     // Hide overlay (for errors or reset)
@@ -1664,16 +1682,16 @@ function isSingularProduct(material) {
 function getUnitConfig(feature, material) {
     // Check if this specific product requires linear metres
     if (material && LM_PRODUCTS.includes(material)) {
-        return { label: 'Length (metres)', placeholder: '', unit: 'lm' };
+        return { label: 'Length (metres)', placeholder: '', unit: 'sm' };
     }
     
     const baseConfig = {
-        'fencing': { label: 'Length (metres)', placeholder: '', unit: 'lm' },
-        'hedging': { label: 'Length (metres)', placeholder: '', unit: 'lm' },
+        'fencing': { label: 'Length (metres)', placeholder: '', unit: 'sm' },
+        'hedging': { label: 'Length (metres)', placeholder: '', unit: 'sm' },
         'lighting': { label: 'Number of Fittings', placeholder: '', unit: 'fittings' },
         'steps': { label: 'Number of Steps', placeholder: '', unit: 'steps' },
-        'walls': { label: 'Length (metres)', placeholder: '', unit: 'lm' },
-        'drainage': { label: 'Length (metres)', placeholder: '', unit: 'lm' },
+        'walls': { label: 'Length (metres)', placeholder: '', unit: 'sm' },
+        'drainage': { label: 'Length (metres)', placeholder: '', unit: 'sm' },
         'water-features': { label: 'Quantity', placeholder: '', unit: 'qty' },
         'ponds': { label: 'Quantity', placeholder: '', unit: 'qty' },
         'pergolas': { label: 'Quantity', placeholder: '', unit: 'qty' },
@@ -1914,6 +1932,11 @@ function initializeBudgetOptions() {
     
     if (budgetInput) {
         budgetInput.addEventListener('input', function() {
+            // If user starts typing, deactivate unlimited budget toggle
+            if (_unlimitedBudgetActive && this.value !== '') {
+                _unlimitedBudgetActive = true; // force reset via toggle
+                toggleUnlimitedBudget();
+            }
             const value = parseFloat(this.value);
             if (value && value > 0) {
                 quoteData.budget = value;
@@ -2175,13 +2198,6 @@ function nextStep() {
         currentStep++;
     }
     
-    // Skip step 6 (AI Design) for individual products mode - no images needed
-    if (currentStep === 6 && quoteData.quoteMode === 'individual-products') {
-        // Submit the quote directly instead of showing step 6
-        submitQuote();
-        return;
-    }
-    
     // Special handling for Step 2: detect Full Redesign mode
     if (currentStep === 2) {
         updateStep2Mode();
@@ -2197,14 +2213,10 @@ function nextStep() {
     if (currentStep === 5) {
         updateAIDesignVisibility();
         
-        // Update button text - "Submit Quote" for individual products, "Continue" for full redesign
+        // Step 5 always continues to step 6 now (both modes)
         const step5Btn = document.getElementById('step5ContinueBtn');
         if (step5Btn) {
-            if (quoteData.quoteMode === 'individual-products') {
-                step5Btn.innerHTML = '<i class="fas fa-paper-plane mr-2"></i> Get My Quote';
-            } else {
-                step5Btn.innerHTML = 'Continue <i class="fas fa-arrow-right ml-2"></i>';
-            }
+            step5Btn.innerHTML = 'Continue <i class="fas fa-arrow-right ml-2"></i>';
         }
     }
     
@@ -2213,9 +2225,26 @@ function nextStep() {
         setTimeout(initAIUploadHandlers, 100);
         // Set aiDesign to true by default in step 6
         const aiDesignCheckbox = document.getElementById('aiDesign');
-        if (aiDesignCheckbox) {
-            aiDesignCheckbox.checked = true;
-        }
+        if (aiDesignCheckbox) aiDesignCheckbox.checked = true;
+
+        // Make step 6 content mode-aware
+        const isIP = quoteData.quoteMode === 'individual-products';
+        const step6Heading = document.getElementById('step6Heading');
+        const step6Desc = document.getElementById('step6Desc');
+        const step6AiIntro = document.getElementById('step6AiIntro');
+        const submitWithAIBtn = document.getElementById('submitWithAIBtn');
+        if (step6Heading) step6Heading.textContent = isIP
+            ? 'See Your Products In Your Garden'
+            : 'See Your New Garden Before We Build It';
+        if (step6Desc) step6Desc.textContent = isIP
+            ? 'Upload a photo and our AI will overlay your selected products onto your garden — delivered in 90 seconds!'
+            : 'Get a photorealistic preview — delivered in 90 seconds!';
+        if (step6AiIntro) step6AiIntro.textContent = isIP
+            ? 'Upload a photo of your current garden and we\'ll overlay your selected products onto it, so you can see exactly how they\'ll look before a single thing is moved.'
+            : 'Our AI technology transforms your current garden photo into a photorealistic design image showing exactly how your new garden will look once completed. It\'s like seeing the future of your outdoor space before any work begins!';
+        if (submitWithAIBtn) submitWithAIBtn.innerHTML = isIP
+            ? '<i class="fas fa-magic mr-2"></i> Submit Quote + See My Design'
+            : '<i class="fas fa-magic mr-2"></i> Get Quote + AI Design';
     }
     
     // Update progress
@@ -2288,19 +2317,50 @@ function skipAIDesign() {
     submitQuote();
 }
 
+let _unlimitedBudgetActive = false;
+function toggleUnlimitedBudget() {
+    _unlimitedBudgetActive = !_unlimitedBudgetActive;
+    const input = document.getElementById('customBudgetInput');
+    const btn = document.getElementById('unlimitedBudgetBtn');
+    const inner = btn?.querySelector('.unlimited-btn-inner');
+    const chevron = btn?.querySelector('.unlimited-chevron');
+    const check = btn?.querySelector('.unlimited-check');
+
+    if (_unlimitedBudgetActive) {
+        // Clear the budget input and lock it
+        if (input) { input.value = ''; input.disabled = true; input.classList.add('opacity-50'); }
+        // Visual active state
+        if (inner) inner.classList.replace('bg-white', 'bg-gradient-to-r');
+        if (inner) { inner.classList.add('from-purple-50', 'to-blue-50'); }
+        if (btn) btn.classList.add('ring-2', 'ring-green-400', 'ring-offset-1');
+        if (chevron) chevron.classList.add('hidden');
+        if (check) check.classList.remove('hidden');
+        quoteData.budget = '';
+    } else {
+        // Re-enable input
+        if (input) { input.disabled = false; input.classList.remove('opacity-50'); }
+        if (inner) { inner.classList.remove('from-purple-50', 'to-blue-50'); }
+        if (btn) btn.classList.remove('ring-2', 'ring-green-400', 'ring-offset-1');
+        if (chevron) chevron.classList.remove('hidden');
+        if (check) check.classList.add('hidden');
+    }
+    updateSummary();
+}
+
 function updateProgress() {
-    // Individual products mode has fewer steps (skips step 3 and 6)
+    // Individual products mode skips step 3 only (now includes step 6)
     const isIndividualProducts = quoteData.quoteMode === 'individual-products';
-    const effectiveTotalSteps = isIndividualProducts ? 4 : totalSteps;
+    const effectiveTotalSteps = isIndividualProducts ? 5 : totalSteps;
     
     // Map current step to effective step number for individual products
     let effectiveCurrentStep = currentStep;
     if (isIndividualProducts) {
-        // Steps are: 1, 2, 4, 5 (mapped to display as 1, 2, 3, 4)
+        // Steps are: 1, 2, 4, 5, 6 (mapped to display as 1, 2, 3, 4, 5)
         if (currentStep === 1) effectiveCurrentStep = 1;
         else if (currentStep === 2) effectiveCurrentStep = 2;
         else if (currentStep === 4) effectiveCurrentStep = 3;
         else if (currentStep === 5) effectiveCurrentStep = 4;
+        else if (currentStep === 6) effectiveCurrentStep = 5;
     }
     
     const percentage = (effectiveCurrentStep / effectiveTotalSteps) * 100;
@@ -2922,6 +2982,12 @@ function prepareWebhookPayload() {
             };
         };
         
+        // Human-readable budget for n8n templates
+        const budgetDisplay = totalBudget
+            ? `£${totalBudget.toLocaleString('en-GB')}`
+            : 'unlimited';
+        const budgetType = totalBudget ? 'specified' : 'unlimited';
+
         const payload = {
             customer: {
                 firstName: quoteData.firstName || '',
@@ -2940,6 +3006,8 @@ function prepareWebhookPayload() {
                 type: isFullRedesign ? 'full_garden_redesign' : 'individual_products',
                 totalArea_m2: totalArea,
                 totalBudget_gbp: totalBudget,
+                budgetDisplay: budgetDisplay,
+                budgetType: budgetType,
                 layoutType: 'standard',
                 sunlight: 'partial sun',
                 stylePreference: detectStylePreference(),
@@ -2999,8 +3067,8 @@ function prepareWebhookPayload() {
         
         console.log('🔑 REQUEST ID:', requestId);
         
-        // Add photo for AI design if requested (Full Redesign mode only)
-        if (isFullRedesign && quoteData.aiDesign) {
+        // Add photo for AI design if requested (both modes)
+        if (quoteData.aiDesign) {
             // Priority: AI-specific photos (Step 5) > Step 4 photos
             const photoSource = aiDesignFiles.length > 0 ? aiDesignFiles : quoteData.files;
             
@@ -3346,7 +3414,42 @@ function formatBudgetForDesign(budget) {
     return String(budget);
 }
 
+// Read EXIF orientation tag from a JPEG ArrayBuffer
+function readExifOrientation(buffer) {
+    const view = new DataView(buffer);
+    if (view.getUint16(0, false) !== 0xFFD8) return 1; // not JPEG
+    const length = view.byteLength;
+    let offset = 2;
+    while (offset < length) {
+        const marker = view.getUint16(offset, false);
+        offset += 2;
+        if (marker === 0xFFE1) {
+            if (view.getUint32(offset + 2, false) !== 0x45786966) return 1; // no Exif
+            const little = view.getUint16(offset + 8, false) === 0x4949;
+            offset += 10;
+            const tags = view.getUint16(offset, little);
+            offset += 2;
+            for (let i = 0; i < tags; i++) {
+                if (view.getUint16(offset + i * 12, little) === 0x0112) {
+                    return view.getUint16(offset + i * 12 + 8, little);
+                }
+            }
+        } else if ((marker & 0xFF00) !== 0xFF00) break;
+        else offset += view.getUint16(offset, false);
+    }
+    return 1;
+}
+
 async function compressImage(file, maxWidth = 1200, maxHeight = 1200, quality = 0.7) {
+    // Read EXIF orientation first (JPEG only)
+    const orientation = await new Promise(res => {
+        if (!file.type.startsWith('image/jpeg') && !file.type.startsWith('image/jpg')) { res(1); return; }
+        const r = new FileReader();
+        r.onload = e => res(readExifOrientation(e.target.result));
+        r.onerror = () => res(1);
+        r.readAsArrayBuffer(file.slice(0, 65536));
+    });
+
     return new Promise((resolve, reject) => {
         const reader = new FileReader();
         reader.onload = (e) => {
@@ -3355,22 +3458,51 @@ async function compressImage(file, maxWidth = 1200, maxHeight = 1200, quality = 
                 let width = img.width;
                 let height = img.height;
 
-                if (width > maxWidth || height > maxHeight) {
-                    const ratio = Math.min(maxWidth / width, maxHeight / height);
+                // For orientations 5,6,7,8 the image is rotated 90/270° so swap dimensions
+                const swapped = orientation >= 5 && orientation <= 8;
+                const drawW = swapped ? height : width;
+                const drawH = swapped ? width : height;
+
+                if (drawW > maxWidth || drawH > maxHeight) {
+                    const ratio = Math.min(maxWidth / drawW, maxHeight / drawH);
                     width = Math.round(width * ratio);
                     height = Math.round(height * ratio);
                 }
 
                 const canvas = document.createElement('canvas');
-                canvas.width = width;
-                canvas.height = height;
+                // Canvas dimensions after rotation
+                canvas.width  = swapped ? Math.round((swapped ? height : width) * Math.min(maxWidth / drawW, maxHeight / drawH, 1)) : width;
+                canvas.height = swapped ? Math.round((swapped ? width : height) * Math.min(maxWidth / drawW, maxHeight / drawH, 1)) : height;
+
+                // Simpler recalc
+                const scale = Math.min(maxWidth / drawW, maxHeight / drawH, 1);
+                const cw = Math.round(drawW * scale);
+                const ch = Math.round(drawH * scale);
+                const iw = Math.round(width * scale);  // scaled img width
+                const ih = Math.round(height * scale); // scaled img height
+                canvas.width  = cw;
+                canvas.height = ch;
+
                 const ctx = canvas.getContext('2d');
-                ctx.drawImage(img, 0, 0, width, height);
+                ctx.save();
+                // Apply EXIF orientation transform
+                switch (orientation) {
+                    case 2: ctx.transform(-1,  0,  0,  1, cw,  0); break;
+                    case 3: ctx.transform(-1,  0,  0, -1, cw, ch); break;
+                    case 4: ctx.transform( 1,  0,  0, -1,  0, ch); break;
+                    case 5: ctx.transform( 0,  1,  1,  0,  0,  0); break;
+                    case 6: ctx.transform( 0,  1, -1,  0, ch,  0); break;
+                    case 7: ctx.transform( 0, -1, -1,  0, ch, cw); break;
+                    case 8: ctx.transform( 0, -1,  1,  0,  0, cw); break;
+                    default: break;
+                }
+                ctx.drawImage(img, 0, 0, iw, ih);
+                ctx.restore();
 
                 const compressedBase64 = canvas.toDataURL('image/jpeg', quality);
                 const originalKB = (file.size / 1024).toFixed(0);
                 const compressedKB = (compressedBase64.length * 0.75 / 1024).toFixed(0);
-                console.log(`📸 Image compressed: ${originalKB}KB → ${compressedKB}KB (${width}x${height})`);
+                console.log(`📸 Image compressed: ${originalKB}KB → ${compressedKB}KB (${cw}x${ch}) orientation:${orientation}`);
                 resolve(compressedBase64);
             };
             img.onerror = () => reject(new Error('Failed to load image'));
