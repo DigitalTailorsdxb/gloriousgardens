@@ -678,20 +678,44 @@ function advanceProgressStep(stepIndex) {
 // Normalise any webhook response format into { success, pdfUrl, imageUrl, customerName, quoteTotal, quoteRef }
 function normaliseWebhookResult(raw) {
     if (!raw) return {};
+
+    // Unwrap single-element array
+    if (Array.isArray(raw)) {
+        if (raw.length === 0) return {};
+        raw = raw[0];
+    }
+
     // Detect and discard processing-acknowledgment responses (no display data available yet)
     if (raw.status === 'processing' || (raw.quoteRef && String(raw.quoteRef).startsWith('='))) {
         console.log('ℹ️ Processing acknowledgment received — no display data yet');
         return { success: true };
     }
-    // Already in expected format
+
+    // Unwrap nested wrappers: { output: {...} } or { data: {...} } or { result: {...} }
+    if (!raw.pdfUrl && !raw.imageUrl && !raw.dealId && !raw.id && !raw.properties) {
+        const nested = raw.output || raw.data || raw.result;
+        if (nested && typeof nested === 'object' && !Array.isArray(nested)) {
+            console.log('🔄 Unwrapping nested response wrapper');
+            return normaliseWebhookResult(nested);
+        }
+    }
+
+    // Already in expected format (top-level keys)
     if (raw.pdfUrl || raw.imageUrl || raw.customerName || raw.quoteTotal) return raw;
-    // HubSpot deal array format: [{portalId, dealId, properties: {...}}]
-    const deal = Array.isArray(raw) ? raw[0] : (raw.dealId ? raw : null);
+
+    // HubSpot deal format — supports both v1 (properties have .value) and v3 (direct values)
+    // v1: { dealId: 123, properties: { field: { value: "..." } } }
+    // v3: { id: "123", properties: { field: "..." } }
+    const deal = (raw.dealId || raw.id) ? raw : null;
     if (deal && deal.properties) {
         const p = deal.properties;
-        const prop = (key) => (p[key]?.value || '').toString().trim();
-        // quote_reference is now "lewis reid – Instant Quote – PL-260328-29138"
-        // Extract: customerName = first segment, quoteRef = last segment
+        // Support both HubSpot v1 ({ value: "..." }) and v3 (direct string) formats
+        const prop = (key) => {
+            const v = p[key];
+            if (!v && v !== 0) return '';
+            if (typeof v === 'object' && v !== null && 'value' in v) return String(v.value || '').trim();
+            return String(v).trim();
+        };
         const quoteRefField = prop('quote_reference');
         const dealName = prop('dealname');
         let customerName = '';
@@ -703,7 +727,6 @@ function normaliseWebhookResult(raw) {
         } else if (dealName && dealName.includes('–')) {
             customerName = dealName.split(/\s*[–-]\s*/)[0].trim();
         }
-        // Amount: check all known fields
         const amount = prop('amount') || prop('estimated_total') || prop('hs_forecast_amount');
         const quoteTotal = amount ? parseFloat(amount).toFixed(0) : '';
         const pdfUrl = prop('ai_quote_pdf_url');
@@ -711,6 +734,19 @@ function normaliseWebhookResult(raw) {
         console.log('🔄 Normalised HubSpot deal → customerName:', customerName, 'ref:', quoteRef, 'total:', quoteTotal, 'pdfUrl:', !!pdfUrl, 'imageUrl:', !!imageUrl);
         return { success: true, customerName, quoteRef: quoteRef || undefined, quoteTotal, pdfUrl: pdfUrl || undefined, imageUrl: imageUrl || undefined };
     }
+
+    // Deep search: look for imageUrl / pdfUrl in any top-level sub-object
+    for (const key of Object.keys(raw)) {
+        const sub = raw[key];
+        if (sub && typeof sub === 'object' && !Array.isArray(sub)) {
+            if (sub.imageUrl || sub.pdfUrl) {
+                console.log('🔄 Found imageUrl/pdfUrl in nested key:', key);
+                return normaliseWebhookResult(sub);
+            }
+        }
+    }
+
+    console.log('⚠️ normaliseWebhookResult: no known format matched, returning raw');
     return raw;
 }
 
