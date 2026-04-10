@@ -1,4 +1,4 @@
-// Premium Landscapes - Instant Quote Engine
+// Glorious Gardens Son & Co. - Instant Quote Engine
 // Multi-step conversational quote system
 
 // ============================================================================
@@ -3060,8 +3060,8 @@ function prepareWebhookPayload() {
             requestId: requestId, // Unique ID to detect duplicate webhook calls
             quoteType: isFullRedesign ? 'full_garden_redesign' : 'individual_products',
             webhookDestination: isFullRedesign 
-                ? window.brandConfig?.webhooks?.quoteFullRedesign || 'https://n8n.example.com/webhook/glorious-gardens-full-redesign'
-                : window.brandConfig?.webhooks?.quote || 'https://n8n.example.com/webhook/glorious-gardens-quote',
+                ? window.brandConfig?.webhooks?.quoteFullRedesign || 'https://n8n.trade-engine.co.uk/webhook/glorious-gardens-full-redesign'
+                : window.brandConfig?.webhooks?.quote || 'https://n8n.trade-engine.co.uk/webhook/glorious-gardens-quote',
             aiDesignRequested: quoteData.aiDesign || false
         };
         
@@ -3178,7 +3178,7 @@ function showQuoteError(errorResponse) {
     // Extract error details from response
     const message = errorResponse?.message || 'Sorry, there was an error processing your quote request.';
     const contact = errorResponse?.contact || {
-        email: window.brandConfig?.contact?.email || 'premiumlandscapesuk@gmail.com',
+        email: window.brandConfig?.contact?.email || 'info@glorious-gardens-services.co.uk',
         phone: window.brandConfig?.contact?.phone || '07877 934782',
         message: 'Please contact us with your details and we\'ll create your quote manually.'
     };
@@ -3247,7 +3247,7 @@ function showNetworkError() {
     document.getElementById('quoteResult').classList.add('hidden');
     document.getElementById('quoteResultRedesign')?.classList.add('hidden');
     
-    const contactEmail = window.brandConfig?.contact?.email || 'premiumlandscapesuk@gmail.com';
+    const contactEmail = window.brandConfig?.contact?.email || 'info@glorious-gardens-services.co.uk';
     const contactPhone = window.brandConfig?.contact?.phone || '07877 934782';
     
     // Check if error result element exists, create if not

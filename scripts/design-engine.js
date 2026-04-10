@@ -654,7 +654,7 @@ function showError(errorMessage) {
                 Call us at <strong>07444 887813</strong> for help
             </p>
             <p class="text-sm text-gray-500">
-                Or email us at info@premiumlandscapes.co.uk
+                Or email us at info@glorious-gardens-services.co.uk
             </p>
         </div>
         <button onclick="location.reload()" class="bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-primary-dark transition">
