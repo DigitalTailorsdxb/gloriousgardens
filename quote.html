@@ -646,15 +646,13 @@
             border-bottom: 1.5px solid #eef0f3;
             margin-bottom: 24px;
         }
-        .qsh-num {
+        .qsh-icon {
             width: 40px; height: 40px; min-width: 40px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #2D6A4F, #4A9B6F);
-            color: #fff;
-            font-weight: 800;
-            font-size: 1rem;
+            border-radius: 12px;
+            background: #edf7f2;
+            color: #2D6A4F;
+            font-size: 1.1rem;
             display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 3px 10px rgba(45,106,79,0.28);
             flex-shrink: 0;
         }
         .qsh-title {
@@ -732,7 +730,7 @@
                 border-radius: 16px !important;
             }
             .qsh { padding: 2px 0 14px; gap: 10px; margin-bottom: 18px; }
-            .qsh-num { width: 34px; height: 34px; min-width: 34px; font-size: 0.875rem; }
+            .qsh-icon { width: 34px; height: 34px; min-width: 34px; border-radius: 10px; font-size: 0.95rem; }
             .qsh-title { font-size: 1rem; }
             .qsh-sub { display: none; }
             .step-pip { width: 26px; height: 26px; min-width: 26px; font-size: 0.68rem; }
@@ -860,7 +858,7 @@
                         <!-- Step 1: Project Type -->
                         <div id="step1" class="step-container step-transition">
 <div class="qsh">
-                                <div class="qsh-num">1</div>
+                                <div class="qsh-icon"><i class="fas fa-wand-magic-sparkles"></i></div>
                                 <div>
                                     <div class="qsh-title">Quote Type</div>
                                     <div class="qsh-sub">Choose one option below</div>
@@ -889,10 +887,7 @@
                                                 <i class="fas fa-info-circle text-accent mt-0.5 flex-shrink-0"></i>
                                                 <p class="leading-relaxed"><strong class="text-primary">What you get:</strong> Tell us your budget and vision — we'll create a complete design with detailed drawings, full pricing breakdown, and expert installation plan.</p>
                                             </div>
-                                            <div class="flex items-start gap-2 text-xs text-amber-700 bg-amber-50 border border-amber-200 p-2 md:p-3 rounded-lg text-left mt-2">
-                                                <i class="fas fa-exclamation-triangle text-amber-500 mt-0.5 flex-shrink-0"></i>
-                                                <p class="leading-relaxed"><strong>Please note:</strong> This option is for a complete garden redesign from scratch. It won't keep or work around existing features — your entire garden will be redesigned as a whole.</p>
-                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -936,7 +931,7 @@
                         <!-- Step 2: Project Details -->
                         <div id="step2" class="step-container hidden step-transition">
 <div class="qsh">
-                                <div class="qsh-num">2</div>
+                                <div class="qsh-icon"><i class="fas fa-boxes-stacked"></i></div>
                                 <div>
                                     <div class="qsh-title" id="step2Title">Select Your Products</div>
                                     <div class="qsh-sub" id="step2Subtitle">Choose the products you'd like quoted</div>
@@ -1206,7 +1201,7 @@
                         <!-- Step 3: Area & Budget -->
                         <div id="step3" class="step-container hidden step-transition">
 <div class="qsh">
-                                <div class="qsh-num">3</div>
+                                <div class="qsh-icon"><i class="fas fa-ruler-combined"></i></div>
                                 <div>
                                     <div class="qsh-title">Project Size & Budget</div>
                                     <div class="qsh-sub">Help us understand the scope</div>
@@ -1283,7 +1278,7 @@
                         <!-- Step 4: Location & Photo -->
                         <div id="step4" class="step-container hidden step-transition">
 <div class="qsh">
-                                <div class="qsh-num">4</div>
+                                <div class="qsh-icon"><i class="fas fa-location-dot"></i></div>
                                 <div>
                                     <div class="qsh-title">Your Location</div>
                                     <div class="qsh-sub">Accurate regional pricing</div>
@@ -1343,7 +1338,7 @@
                         <!-- Step 5: Contact Details -->
                         <div id="step5" class="step-container hidden step-transition">
 <div class="qsh">
-                                <div class="qsh-num">5</div>
+                                <div class="qsh-icon"><i class="fas fa-user-circle"></i></div>
                                 <div>
                                     <div class="qsh-title">Your Contact Details</div>
                                     <div class="qsh-sub">Where should we send your quote?</div>
@@ -1421,7 +1416,7 @@
                         <!-- Step 6: AI Design Visualisation -->
                         <div id="step6" class="step-container hidden step-transition">
 <div class="qsh">
-                                <div class="qsh-num">6</div>
+                                <div class="qsh-icon"><i class="fas fa-sparkles"></i></div>
                                 <div>
                                     <div class="qsh-title" id="step6Heading">See Your New Garden Before We Build It</div>
                                     <div class="qsh-sub" id="step6Desc">Get a photorealistic preview — free!</div>
