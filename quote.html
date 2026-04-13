@@ -476,18 +476,6 @@
                 display: flex;
             }
             
-            /* Compact hero on mobile */
-            #quoteHero {
-                padding-top: 80px !important;
-                padding-bottom: 12px !important;
-            }
-            #quoteHero h1 {
-                font-size: 1.5rem !important;
-            }
-            #quoteHero p {
-                font-size: 0.875rem !important;
-            }
-            
             /* Form card - less padding on mobile */
             .quote-form-column > div {
                 padding: 16px !important;
@@ -637,6 +625,119 @@
             font-weight: 900;
             color: #10b981;
         }
+
+        /* ===== QUOTE PAGE V2 — APP-LIKE REDESIGN ===== */
+        body { background: #eef1f6; }
+
+        /* Elevated form card */
+        .quote-form-column > div {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 4px 28px rgba(0,0,0,0.08);
+            border: none !important;
+        }
+
+        /* QSH — clean step header */
+        .qsh {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 4px 0 18px;
+            border-bottom: 1.5px solid #eef0f3;
+            margin-bottom: 24px;
+        }
+        .qsh-num {
+            width: 40px; height: 40px; min-width: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2D6A4F, #4A9B6F);
+            color: #fff;
+            font-weight: 800;
+            font-size: 1rem;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 3px 10px rgba(45,106,79,0.28);
+            flex-shrink: 0;
+        }
+        .qsh-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #1a2e1f;
+            line-height: 1.25;
+        }
+        .qsh-sub {
+            font-size: 0.8rem;
+            color: #6b7280;
+            margin-top: 3px;
+        }
+
+        /* Step pip row */
+        .pips-row {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .step-pip {
+            width: 32px; height: 32px; min-width: 32px;
+            border-radius: 50%;
+            background: #e5e7eb;
+            color: #9ca3af;
+            font-size: 0.78rem;
+            font-weight: 700;
+            display: flex; align-items: center; justify-content: center;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            flex-shrink: 0;
+            position: relative;
+        }
+        .step-pip.active {
+            background: linear-gradient(135deg, #2D6A4F, #4A9B6F);
+            color: #fff;
+            box-shadow: 0 3px 10px rgba(45,106,79,0.4);
+        }
+        .step-pip.done {
+            background: #d1fae5;
+            color: transparent;
+        }
+        .step-pip.done::after {
+            content: '✓';
+            color: #059669;
+            font-size: 0.8rem;
+            font-weight: 800;
+            position: absolute;
+        }
+        .pip-line {
+            flex: 1;
+            height: 2px;
+            background: #e5e7eb;
+            transition: background 0.3s;
+            min-width: 8px;
+        }
+        .pip-line.done { background: #6ee7b7; }
+
+        /* Progress text */
+        #progressText {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            color: #6b7280;
+        }
+        #progressPercent {
+            font-size: 0.7rem;
+            color: #9ca3af;
+        }
+
+        /* Mobile compact overrides */
+        @media (max-width: 767px) {
+            .quote-form-column > div {
+                padding: 16px !important;
+                border-radius: 16px !important;
+            }
+            .qsh { padding: 2px 0 14px; gap: 10px; margin-bottom: 18px; }
+            .qsh-num { width: 34px; height: 34px; min-width: 34px; font-size: 0.875rem; }
+            .qsh-title { font-size: 1rem; }
+            .qsh-sub { display: none; }
+            .step-pip { width: 26px; height: 26px; min-width: 26px; font-size: 0.68rem; }
+            .pips-wrapper { padding-top: 8px !important; padding-bottom: 8px !important; }
+        }
     </style>
     <link rel="stylesheet" href="styles/mobile.css">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
@@ -701,33 +802,25 @@
         </div>
     </div>
     
-    <!-- Quote Page Hero - Compact on mobile -->
-    <section id="quoteHero" class="pt-24 md:pt-32 pb-4 md:pb-8 px-4 bg-gradient-to-br from-stone to-white transition-all duration-300">
-        <div class="container mx-auto max-w-5xl text-center">
-            <h1 class="font-heading font-bold text-2xl md:text-5xl text-primary mb-2 md:mb-3">
-                AI-Powered Quote &amp; Design
-                <span class="hidden md:inline-block md:ml-3 bg-green-500 text-white text-sm font-bold px-3 py-1 rounded-full shadow-lg align-middle">FREE</span>
-            </h1>
-            <span class="md:hidden inline-block bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full shadow-lg mb-2">FREE</span>
-            <p class="text-sm md:text-xl text-gray-600 mb-1 md:mb-2">
-                Get pricing & a design concept in minutes. No cost, no obligation.
-            </p>
-            <div class="flex items-center justify-center space-x-1 md:space-x-2 text-xs md:text-sm text-accent">
-                <i class="fas fa-bolt"></i>
-                <span>Powered by <a href="https://trade-engine.co.uk" target="_blank" class="font-bold hover:opacity-80"><span class="text-black">Trade</span> <span class="text-amber-500">Engine</span></a> • ~2 mins</span>
+    <!-- Progress Pips Bar -->
+    <div class="sticky top-20 z-40 bg-white pips-wrapper" style="border-bottom:1px solid #e2e8f0; padding-top:10px; padding-bottom:10px;">
+        <div class="container mx-auto max-w-5xl px-4 mt-20 md:mt-0">
+            <div class="flex items-center justify-between mb-1">
+                <span id="progressText">Step 1 of 6</span>
+                <span id="progressPercent">20%</span>
             </div>
-        </div>
-    </section>
-    
-    <!-- Progress Bar -->
-    <div class="sticky top-20 z-40 bg-white shadow-sm">
-        <div class="container mx-auto max-w-5xl px-4 py-4">
-            <div class="flex items-center justify-between mb-2">
-                <span class="text-sm font-semibold text-gray-600" id="progressText">Step 1 of 6</span>
-                <span class="text-xs text-gray-500" id="progressPercent">20%</span>
-            </div>
-            <div class="w-full bg-gray-200 rounded-full h-2">
-                <div id="progressBar" class="progress-bar bg-gradient-to-r from-primary to-accent h-2 rounded-full" style="width: 20%"></div>
+            <div class="pips-row">
+                <div class="step-pip active" id="pip-1"><span>1</span></div>
+                <div class="pip-line" id="pl-12"></div>
+                <div class="step-pip" id="pip-2"><span>2</span></div>
+                <div class="pip-line" id="pl-23"></div>
+                <div class="step-pip" id="pip-3"><span>3</span></div>
+                <div class="pip-line" id="pl-34"></div>
+                <div class="step-pip" id="pip-4"><span>4</span></div>
+                <div class="pip-line" id="pl-45"></div>
+                <div class="step-pip" id="pip-5"><span>5</span></div>
+                <div class="pip-line" id="pl-56"></div>
+                <div class="step-pip" id="pip-6"><span>6</span></div>
             </div>
         </div>
     </div>
@@ -766,39 +859,11 @@
                         
                         <!-- Step 1: Project Type -->
                         <div id="step1" class="step-container step-transition">
-                            <div class="group relative mb-6 -mx-4 md:mx-0">
-                                <!-- Animated border gradient -->
-                                <div class="absolute -inset-0.5 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 rounded-3xl opacity-75 blur-sm group-hover:opacity-100 transition duration-500"></div>
-                                <!-- Main container -->
-                                <div class="relative bg-white px-6 py-5 rounded-3xl flex items-center gap-4">
-                                    <!-- Floating number badge -->
-                                    <div class="absolute -top-3 -left-2 md:left-4 px-3 py-1 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center shadow-lg text-white font-bold text-xs ring-4 ring-white whitespace-nowrap">
-                                        Step 1
-                                    </div>
-                                    <!-- Icon with morphing background -->
-                                    <div class="w-14 h-14 relative">
-                                        <div class="absolute inset-0 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-2xl rotate-6 group-hover:rotate-12 transition-transform duration-300"></div>
-                                        <div class="absolute inset-0 bg-gradient-to-br from-teal-400 to-cyan-500 rounded-2xl -rotate-6 group-hover:-rotate-12 transition-transform duration-300 opacity-60"></div>
-                                        <div class="relative w-full h-full bg-white rounded-2xl flex items-center justify-center shadow-inner">
-                                            <i class="fas fa-wand-magic-sparkles text-2xl bg-gradient-to-r from-emerald-500 to-teal-500 bg-clip-text text-transparent"></i>
-                                        </div>
-                                    </div>
-                                    <!-- Text content -->
-                                    <div class="flex-1">
-                                        <h2 class="font-heading font-bold text-xl md:text-2xl bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">Quote Type</h2>
-                                        <p class="text-gray-500 text-sm">Choose one option below</p>
-                                    </div>
-                                    <!-- Decorative dots -->
-                                    <div class="hidden md:flex flex-col gap-1.5 mr-2">
-                                        <div class="flex gap-1.5">
-                                            <div class="w-2 h-2 rounded-full bg-emerald-400"></div>
-                                            <div class="w-2 h-2 rounded-full bg-teal-400"></div>
-                                        </div>
-                                        <div class="flex gap-1.5">
-                                            <div class="w-2 h-2 rounded-full bg-cyan-400"></div>
-                                            <div class="w-2 h-2 rounded-full bg-emerald-300"></div>
-                                        </div>
-                                    </div>
+<div class="qsh">
+                                <div class="qsh-num">1</div>
+                                <div>
+                                    <div class="qsh-title">Quote Type</div>
+                                    <div class="qsh-sub">Choose one option below</div>
                                 </div>
                             </div>
                             
@@ -870,40 +935,11 @@
                         
                         <!-- Step 2: Project Details -->
                         <div id="step2" class="step-container hidden step-transition">
-                            <div class="mobile-step-spacer h-12 md:hidden"></div>
-                            <div id="step2Header" class="group relative mb-6 -mx-4 md:mx-0">
-                                <!-- Animated border gradient -->
-                                <div class="absolute -inset-0.5 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 rounded-3xl opacity-75 blur-sm group-hover:opacity-100 transition duration-500"></div>
-                                <!-- Main container -->
-                                <div class="relative bg-white px-6 py-5 rounded-3xl flex items-center gap-4 shadow-lg">
-                                    <!-- Floating number badge -->
-                                    <div class="absolute -top-3 -left-2 md:left-4 px-3 py-1 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center shadow-lg text-white font-bold text-xs ring-4 ring-white whitespace-nowrap">
-                                        Step 2
-                                    </div>
-                                    <!-- Icon with morphing background -->
-                                    <div class="w-14 h-14 relative">
-                                        <div class="absolute inset-0 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-2xl rotate-6 group-hover:rotate-12 transition-transform duration-300"></div>
-                                        <div class="absolute inset-0 bg-gradient-to-br from-teal-400 to-cyan-500 rounded-2xl -rotate-6 group-hover:-rotate-12 transition-transform duration-300 opacity-60"></div>
-                                        <div class="relative w-full h-full bg-white rounded-2xl flex items-center justify-center shadow-inner">
-                                            <i id="step2IconInner" class="fas fa-boxes-stacked text-2xl bg-gradient-to-r from-emerald-500 to-teal-500 bg-clip-text text-transparent"></i>
-                                        </div>
-                                    </div>
-                                    <!-- Text content -->
-                                    <div class="flex-1">
-                                        <h2 id="step2Title" class="font-heading font-bold text-xl md:text-2xl bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">Select Your Products</h2>
-                                        <p id="step2Subtitle" class="text-gray-500 text-sm">Choose the products you'd like quoted</p>
-                                    </div>
-                                    <!-- Decorative dots -->
-                                    <div class="hidden md:flex flex-col gap-1.5 mr-2">
-                                        <div class="flex gap-1.5">
-                                            <div class="w-2 h-2 rounded-full bg-emerald-400"></div>
-                                            <div class="w-2 h-2 rounded-full bg-teal-400"></div>
-                                        </div>
-                                        <div class="flex gap-1.5">
-                                            <div class="w-2 h-2 rounded-full bg-cyan-400"></div>
-                                            <div class="w-2 h-2 rounded-full bg-emerald-300"></div>
-                                        </div>
-                                    </div>
+<div class="qsh">
+                                <div class="qsh-num">2</div>
+                                <div>
+                                    <div class="qsh-title" id="step2Title">Select Your Products</div>
+                                    <div class="qsh-sub" id="step2Subtitle">Choose the products you'd like quoted</div>
                                 </div>
                             </div>
                             
@@ -1169,46 +1205,17 @@
                         
                         <!-- Step 3: Area & Budget -->
                         <div id="step3" class="step-container hidden step-transition">
-                            <div class="mobile-step-spacer h-12 md:hidden"></div>
-                            <div class="group relative mb-6 -mx-4 md:mx-0">
-                                <!-- Animated border gradient -->
-                                <div class="absolute -inset-0.5 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 rounded-3xl opacity-75 blur-sm group-hover:opacity-100 transition duration-500"></div>
-                                <!-- Main container -->
-                                <div class="relative bg-white px-6 py-5 rounded-3xl flex items-center gap-4 shadow-lg">
-                                    <!-- Floating number badge -->
-                                    <div class="absolute -top-3 -left-2 md:left-4 px-3 py-1 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center shadow-lg text-white font-bold text-xs ring-4 ring-white whitespace-nowrap">
-                                        Step 3
-                                    </div>
-                                    <!-- Icon with morphing background -->
-                                    <div class="w-14 h-14 relative">
-                                        <div class="absolute inset-0 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-2xl rotate-6 group-hover:rotate-12 transition-transform duration-300"></div>
-                                        <div class="absolute inset-0 bg-gradient-to-br from-teal-400 to-cyan-500 rounded-2xl -rotate-6 group-hover:-rotate-12 transition-transform duration-300 opacity-60"></div>
-                                        <div class="relative w-full h-full bg-white rounded-2xl flex items-center justify-center shadow-inner">
-                                            <i class="fas fa-ruler-combined text-2xl bg-gradient-to-r from-emerald-500 to-teal-500 bg-clip-text text-transparent"></i>
-                                        </div>
-                                    </div>
-                                    <!-- Text content -->
-                                    <div class="flex-1">
-                                        <h2 class="font-heading font-bold text-xl md:text-2xl bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">Project Size & Budget</h2>
-                                        <p class="text-gray-500 text-sm">Help us understand the scope</p>
-                                    </div>
-                                    <!-- Decorative dots -->
-                                    <div class="hidden md:flex flex-col gap-1.5 mr-2">
-                                        <div class="flex gap-1.5">
-                                            <div class="w-2 h-2 rounded-full bg-emerald-400"></div>
-                                            <div class="w-2 h-2 rounded-full bg-teal-400"></div>
-                                        </div>
-                                        <div class="flex gap-1.5">
-                                            <div class="w-2 h-2 rounded-full bg-cyan-400"></div>
-                                            <div class="w-2 h-2 rounded-full bg-emerald-300"></div>
-                                        </div>
-                                    </div>
+<div class="qsh">
+                                <div class="qsh-num">3</div>
+                                <div>
+                                    <div class="qsh-title">Project Size & Budget</div>
+                                    <div class="qsh-sub">Help us understand the scope</div>
                                 </div>
                             </div>
                             
                             <div class="mb-6">
                                 <label class="block text-gray-700 font-semibold mb-2">Approximate total area <span id="areaRequired" class="text-red-500">*</span></label>
-                                <p class="text-sm text-gray-500 mb-3">m² = length × width (e.g. 10m × 7m = 70m²)</p>
+                                <p class="text-sm text-gray-500 mb-3">m² = length × width</p>
                                 <div class="bg-gray-50 rounded-xl p-4 border border-gray-200">
                                     <div class="text-center mb-4">
                                         <span class="text-3xl font-bold text-emerald-600"><span id="areaValue">100</span> m²</span>
@@ -1275,40 +1282,11 @@
                         
                         <!-- Step 4: Location & Photo -->
                         <div id="step4" class="step-container hidden step-transition">
-                            <div class="mobile-step-spacer h-12 md:hidden"></div>
-                            <div class="group relative mb-6 -mx-4 md:mx-0">
-                                <!-- Animated border gradient -->
-                                <div class="absolute -inset-0.5 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 rounded-3xl opacity-75 blur-sm group-hover:opacity-100 transition duration-500"></div>
-                                <!-- Main container -->
-                                <div class="relative bg-white px-6 py-5 rounded-3xl flex items-center gap-4 shadow-lg">
-                                    <!-- Floating number badge -->
-                                    <div class="absolute -top-3 -left-2 md:left-4 px-3 py-1 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center shadow-lg text-white font-bold text-xs ring-4 ring-white whitespace-nowrap">
-                                        Step 4
-                                    </div>
-                                    <!-- Icon with morphing background -->
-                                    <div class="w-14 h-14 relative">
-                                        <div class="absolute inset-0 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-2xl rotate-6 group-hover:rotate-12 transition-transform duration-300"></div>
-                                        <div class="absolute inset-0 bg-gradient-to-br from-teal-400 to-cyan-500 rounded-2xl -rotate-6 group-hover:-rotate-12 transition-transform duration-300 opacity-60"></div>
-                                        <div class="relative w-full h-full bg-white rounded-2xl flex items-center justify-center shadow-inner">
-                                            <i class="fas fa-location-dot text-2xl bg-gradient-to-r from-emerald-500 to-teal-500 bg-clip-text text-transparent"></i>
-                                        </div>
-                                    </div>
-                                    <!-- Text content -->
-                                    <div class="flex-1">
-                                        <h2 class="font-heading font-bold text-xl md:text-2xl bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">Your Location</h2>
-                                        <p class="text-gray-500 text-sm">This helps us provide accurate regional pricing</p>
-                                    </div>
-                                    <!-- Decorative dots -->
-                                    <div class="hidden md:flex flex-col gap-1.5 mr-2">
-                                        <div class="flex gap-1.5">
-                                            <div class="w-2 h-2 rounded-full bg-emerald-400"></div>
-                                            <div class="w-2 h-2 rounded-full bg-teal-400"></div>
-                                        </div>
-                                        <div class="flex gap-1.5">
-                                            <div class="w-2 h-2 rounded-full bg-cyan-400"></div>
-                                            <div class="w-2 h-2 rounded-full bg-emerald-300"></div>
-                                        </div>
-                                    </div>
+<div class="qsh">
+                                <div class="qsh-num">4</div>
+                                <div>
+                                    <div class="qsh-title">Your Location</div>
+                                    <div class="qsh-sub">Accurate regional pricing</div>
                                 </div>
                             </div>
                             
@@ -1364,40 +1342,11 @@
                         
                         <!-- Step 5: Contact Details -->
                         <div id="step5" class="step-container hidden step-transition">
-                            <div class="mobile-step-spacer h-12 md:hidden"></div>
-                            <div class="group relative mb-6 -mx-4 md:mx-0">
-                                <!-- Animated border gradient -->
-                                <div class="absolute -inset-0.5 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 rounded-3xl opacity-75 blur-sm group-hover:opacity-100 transition duration-500"></div>
-                                <!-- Main container -->
-                                <div class="relative bg-white px-6 py-5 rounded-3xl flex items-center gap-4 shadow-lg">
-                                    <!-- Floating number badge -->
-                                    <div class="absolute -top-3 -left-2 md:left-4 px-3 py-1 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center shadow-lg text-white font-bold text-xs ring-4 ring-white whitespace-nowrap">
-                                        Step 5
-                                    </div>
-                                    <!-- Icon with morphing background -->
-                                    <div class="w-14 h-14 relative">
-                                        <div class="absolute inset-0 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-2xl rotate-6 group-hover:rotate-12 transition-transform duration-300"></div>
-                                        <div class="absolute inset-0 bg-gradient-to-br from-teal-400 to-cyan-500 rounded-2xl -rotate-6 group-hover:-rotate-12 transition-transform duration-300 opacity-60"></div>
-                                        <div class="relative w-full h-full bg-white rounded-2xl flex items-center justify-center shadow-inner">
-                                            <i class="fas fa-user-circle text-2xl bg-gradient-to-r from-emerald-500 to-teal-500 bg-clip-text text-transparent"></i>
-                                        </div>
-                                    </div>
-                                    <!-- Text content -->
-                                    <div class="flex-1">
-                                        <h2 class="font-heading font-bold text-xl md:text-2xl bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">Your Contact Details</h2>
-                                        <p class="text-gray-500 text-sm">Where should we send your quote?</p>
-                                    </div>
-                                    <!-- Decorative dots -->
-                                    <div class="hidden md:flex flex-col gap-1.5 mr-2">
-                                        <div class="flex gap-1.5">
-                                            <div class="w-2 h-2 rounded-full bg-emerald-400"></div>
-                                            <div class="w-2 h-2 rounded-full bg-teal-400"></div>
-                                        </div>
-                                        <div class="flex gap-1.5">
-                                            <div class="w-2 h-2 rounded-full bg-cyan-400"></div>
-                                            <div class="w-2 h-2 rounded-full bg-emerald-300"></div>
-                                        </div>
-                                    </div>
+<div class="qsh">
+                                <div class="qsh-num">5</div>
+                                <div>
+                                    <div class="qsh-title">Your Contact Details</div>
+                                    <div class="qsh-sub">Where should we send your quote?</div>
                                 </div>
                             </div>
                             
@@ -1471,34 +1420,11 @@
                         
                         <!-- Step 6: AI Design Visualisation -->
                         <div id="step6" class="step-container hidden step-transition">
-                            <div class="mobile-step-spacer h-12 md:hidden"></div>
-                            <div class="group relative mb-6 -mx-4 md:mx-0">
-                                <!-- Animated border gradient -->
-                                <div class="absolute -inset-0.5 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 rounded-3xl opacity-75 blur-sm group-hover:opacity-100 transition duration-500"></div>
-                                <!-- Main container -->
-                                <div class="relative bg-white px-6 py-5 rounded-3xl flex items-center gap-4 shadow-lg">
-                                    <!-- Floating number badge -->
-                                    <div class="absolute -top-3 -left-2 md:left-4 px-3 py-1 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center shadow-lg text-white font-bold text-xs ring-4 ring-white whitespace-nowrap">
-                                        Step 6
-                                    </div>
-                                    <!-- Icon with morphing background -->
-                                    <div class="w-14 h-14 relative">
-                                        <div class="absolute inset-0 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-2xl rotate-6 group-hover:rotate-12 transition-transform duration-300"></div>
-                                        <div class="absolute inset-0 bg-gradient-to-br from-teal-400 to-cyan-500 rounded-2xl -rotate-6 group-hover:-rotate-12 transition-transform duration-300 opacity-60"></div>
-                                        <div class="relative w-full h-full bg-white rounded-2xl flex items-center justify-center shadow-inner">
-                                            <i class="fas fa-wand-magic-sparkles text-2xl bg-gradient-to-r from-emerald-500 to-teal-500 bg-clip-text text-transparent"></i>
-                                        </div>
-                                    </div>
-                                    <!-- Text content -->
-                                    <div class="flex-1">
-                                        <h2 id="step6Heading" class="font-heading font-bold text-xl md:text-2xl bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">See Your New Garden Before We Build It</h2>
-                                        <p id="step6Desc" class="text-gray-500 text-sm">Get a photorealistic preview - delivered in 90 seconds!</p>
-                                    </div>
-                                    <!-- FREE badge -->
-                                    <div class="hidden md:flex items-center bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-bold">
-                                        <i class="fas fa-gift mr-1"></i>
-                                        100% FREE
-                                    </div>
+<div class="qsh">
+                                <div class="qsh-num">6</div>
+                                <div>
+                                    <div class="qsh-title" id="step6Heading">See Your New Garden Before We Build It</div>
+                                    <div class="qsh-sub" id="step6Desc">Get a photorealistic preview — free!</div>
                                 </div>
                             </div>
                             
@@ -2089,9 +2015,9 @@
         </div>
     </footer>
     
-    <script src="scripts/config.js?v=1775827056"></script>
-    <script src="scripts/quote-engine.js?v=1775827056"></script>
-    <script src="scripts/main.js?v=1775827056"></script>
+    <script src="scripts/config.js?v=1776099999"></script>
+    <script src="scripts/quote-engine.js?v=1776099999"></script>
+    <script src="scripts/main.js?v=1776099999"></script>
     <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/447946861456?text=Hi%2C%20I%27d%20like%20a%20quote%20for%20my%20garden" 
        target="_blank" 

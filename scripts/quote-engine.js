@@ -2384,25 +2384,42 @@ function toggleUnlimitedBudget() {
 }
 
 function updateProgress() {
-    // Individual products mode skips step 3 only (now includes step 6)
     const isIndividualProducts = quoteData.quoteMode === 'individual-products';
     const effectiveTotalSteps = isIndividualProducts ? 5 : totalSteps;
-    
-    // Map current step to effective step number for individual products
+
     let effectiveCurrentStep = currentStep;
     if (isIndividualProducts) {
-        // Steps are: 1, 2, 4, 5, 6 (mapped to display as 1, 2, 3, 4, 5)
         if (currentStep === 1) effectiveCurrentStep = 1;
         else if (currentStep === 2) effectiveCurrentStep = 2;
         else if (currentStep === 4) effectiveCurrentStep = 3;
         else if (currentStep === 5) effectiveCurrentStep = 4;
         else if (currentStep === 6) effectiveCurrentStep = 5;
     }
-    
+
     const percentage = (effectiveCurrentStep / effectiveTotalSteps) * 100;
-    document.getElementById('progressBar').style.width = `${percentage}%`;
-    document.getElementById('progressText').textContent = `Step ${effectiveCurrentStep} of ${effectiveTotalSteps}`;
-    document.getElementById('progressPercent').textContent = `${Math.round(percentage)}%`;
+    const progressText = document.getElementById('progressText');
+    const progressPercent = document.getElementById('progressPercent');
+    if (progressText) progressText.textContent = `Step ${effectiveCurrentStep} of ${effectiveTotalSteps}`;
+    if (progressPercent) progressPercent.textContent = `${Math.round(percentage)}%`;
+
+    // Drive pip circles
+    for (let i = 1; i <= 6; i++) {
+        const pip = document.getElementById(`pip-${i}`);
+        if (!pip) continue;
+        pip.classList.remove('active', 'done');
+        if (i < effectiveCurrentStep) {
+            pip.classList.add('done');
+        } else if (i === effectiveCurrentStep) {
+            pip.classList.add('active');
+        }
+    }
+
+    // Drive connecting lines
+    const lineIds = ['pl-12', 'pl-23', 'pl-34', 'pl-45', 'pl-56'];
+    lineIds.forEach((id, idx) => {
+        const line = document.getElementById(id);
+        if (line) line.classList.toggle('done', idx < effectiveCurrentStep - 1);
+    });
 }
 
 // Update live summary
