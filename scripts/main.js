@@ -1,5 +1,27 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+    document.querySelectorAll('header a[href="commercial-landscaping.html"]').forEach(link => {
+        link.textContent = 'Commercial';
+    });
+
+    // Keep legacy pages aligned with the commercial-first primary navigation.
+    document.querySelectorAll('header a[href="services.html"], #mobileMenu a[href="services.html"]').forEach(link => {
+        if (link.textContent.trim() === 'Services') {
+            link.href = 'commercial-landscaping.html';
+            link.textContent = 'Commercial';
+        }
+    });
+    document.querySelectorAll('header a[href="quote.html"], #mobileMenu a[href="quote.html"]').forEach(link => {
+        const isPrimaryCta = link.classList.contains('w-full');
+        link.href = isPrimaryCta ? 'contact.html' : 'services.html';
+        link.textContent = isPrimaryCta ? 'Discuss a Project' : 'Residential';
+    });
+    document.querySelectorAll('footer p').forEach(paragraph => {
+        if (paragraph.textContent.trim() === 'Transforming gardens with AI-powered design and expert craftsmanship.') {
+            paragraph.textContent = 'Commercial landscaping and grounds care across Hampshire, Surrey and Berkshire.';
+        }
+    });
+
     /* ═══════════════════════════════════════════════════════
        MOBILE MENU — handles all three patterns:
        Pattern 1: fixed inset-0 slide-drawer (index,about,etc.)
@@ -84,9 +106,9 @@ document.addEventListener('DOMContentLoaded', function () {
             document.body.classList.add('on-quote-page');
         } else {
             // Get phone from config if available
-            const phone = (typeof brandConfig !== 'undefined' && brandConfig.contact && brandConfig.contact.phone)
-                ? brandConfig.contact.phone
-                : '0116 000 0000';
+            const phone = (typeof brandConfig !== 'undefined' && brandConfig.phone)
+                ? brandConfig.phone
+                : '07946 861456';
             const phoneTel = phone.replace(/\s+/g, '');
 
             const bar = document.createElement('div');
@@ -96,9 +118,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     <i class="fas fa-phone"></i>
                     <span>Call</span>
                 </a>
-                <a href="quote.html" class="cta-quote" aria-label="Get free quote and AI design">
-                    <i class="fas fa-magic"></i>
-                    <span>Free Quote &amp; Design</span>
+                <a href="contact.html" class="cta-quote" aria-label="Discuss a commercial landscaping project">
+                    <i class="fas fa-building"></i>
+                    <span>Discuss a Project</span>
                 </a>`;
             document.body.appendChild(bar);
         }

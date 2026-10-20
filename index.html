@@ -137,7 +137,7 @@
                 "author": {"@type": "Person", "name": "Mark Jennings"},
                 "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
                 "datePublished": "2025-10-30",
-                "reviewBody": "The AI quote tool gave me an instant price that matched the final quote almost exactly. New artificial lawn, block paving path and garden lighting. My neighbours keep asking who did it!"
+                "reviewBody": "New artificial lawn, block paving path and garden lighting. My neighbours keep asking who did it!"
             }
         ],
         "hasOfferCatalog": {
@@ -180,8 +180,8 @@
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "Garden Lighting",
-                        "description": "Outdoor and landscape lighting installation"
+                        "name": "Grounds Maintenance",
+                        "description": "Garden and grounds maintenance for outdoor spaces"
                     }
                 },
                 {
@@ -189,7 +189,7 @@
                     "itemOffered": {
                         "@type": "Service",
                         "name": "Full Garden Redesign",
-                        "description": "Complete garden makeover with AI-powered design visualisation"
+                        "description": "Landscaping improvements for outdoor spaces"
                     }
                 }
             ]
@@ -202,7 +202,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Font Awesome for Icons -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -225,8 +225,8 @@
                         'stone': '#F4FBF7',
                     },
                     fontFamily: {
-                        'heading': ['Inter', 'sans-serif'],
-                        'body': ['Open Sans', 'sans-serif'],
+                        'heading': ['Manrope', 'sans-serif'],
+                        'body': ['DM Sans', 'sans-serif'],
                     }
                 }
             }
@@ -235,14 +235,14 @@
     
     <style>
         body {
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'DM Sans', sans-serif;
         }
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Manrope', sans-serif;
         }
         
         .hero-bg {
-            background-image: url('images/hero-cover.jpg');
+            background-image: url('images/services-garden.webp');
             background-size: cover;
             background-position: center;
         }
@@ -287,11 +287,17 @@
         .service-image-bright:hover {
             filter: brightness(1.4) contrast(1.15);
         }
+        @media (max-width: 1023px) {
+            header nav > div.hidden { display: none !important; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+        }
     </style>
     <link rel="stylesheet" href="styles/mobile.css">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 </head>
-<body class="bg-white text-gray-800">
+<body class="commercial-home bg-white text-gray-800">
     
     <!-- Navigation Header -->
     <header class="bg-white shadow-sm fixed w-full top-0 z-50" style="-webkit-transform: translateZ(0); transform: translateZ(0);">
@@ -300,21 +306,20 @@
                 <img src="images/logo-gg.png" alt="Glorious Gardens Son & Co." class="h-12 md:h-16">
             </a>
             
-            <div class="hidden md:flex items-center space-x-8">
+            <div class="hidden lg:flex items-center gap-6 text-sm font-semibold">
+                <a href="commercial-landscaping.html" class="text-primary">Commercial Landscaping</a>
                 <a href="about.html" class="text-gray-700 hover:text-primary transition">About</a>
-                <a href="commercial-landscaping.html" class="text-gray-700 hover:text-primary transition">Commercial Landscaping</a>
-                <a href="portfolio.html" class="text-gray-700 hover:text-primary transition">Portfolio</a>
-                <a href="quote.html" class="text-gray-700 hover:text-primary transition flex items-center">AI-Powered Quote &amp; Design <span class="ml-1.5 bg-green-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full">FREE</span></a>
-                <a href="contact.html" class="text-white bg-primary px-6 py-2 rounded-full hover:bg-primary-dark transition">Contact</a>
+                <a href="portfolio.html" class="text-gray-700 hover:text-primary transition">Project examples</a>
+                <a href="contact.html" class="text-white bg-primary px-5 py-2.5 rounded-full hover:bg-primary-dark transition">Discuss a Site</a>
             </div>
             
-            <button id="mobileMenuBtn" class="md:hidden text-primary text-2xl">
+            <button id="mobileMenuBtn" class="lg:hidden text-primary text-2xl">
                 <i class="fas fa-bars"></i>
             </button>
         </nav>
     </header>
     
-    <div id="mobileMenu" class="mobile-menu fixed inset-0 bg-white translate-x-full md:hidden z-[100]" style="-webkit-transform: translateX(100%); transform: translateX(100%);">
+    <div id="mobileMenu" class="mobile-menu fixed inset-0 bg-white translate-x-full lg:hidden z-[100]" style="-webkit-transform: translateX(100%); transform: translateX(100%);">
         <div class="flex flex-col h-full">
             <div class="flex items-center justify-between p-4 border-b border-gray-100">
                 <a href="index.html">
@@ -327,656 +332,88 @@
             <div class="flex-1 overflow-y-auto p-6">
                 <div class="flex flex-col space-y-1">
                     <a href="index.html" class="text-primary bg-blue-50 font-semibold transition text-lg py-3 px-4 rounded-xl mobile-menu-link">Home</a>
-                    <a href="quote.html" class="text-gray-700 hover:bg-gray-50 transition text-lg py-3 px-4 rounded-xl mobile-menu-link flex items-center justify-between">
-                        AI-Powered Quote & Design 
-                        <span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">FREE</span>
-                    </a>
                     <a href="about.html" class="text-gray-700 hover:bg-gray-50 transition text-lg py-3 px-4 rounded-xl mobile-menu-link">About</a>
                     <a href="commercial-landscaping.html" class="text-gray-700 hover:bg-gray-50 transition text-lg py-3 px-4 rounded-xl mobile-menu-link">Commercial Landscaping</a>
-                    <a href="portfolio.html" class="text-gray-700 hover:bg-gray-50 transition text-lg py-3 px-4 rounded-xl mobile-menu-link">Portfolio</a>
+                    <a href="portfolio.html" class="text-gray-700 hover:bg-gray-50 transition text-lg py-3 px-4 rounded-xl mobile-menu-link">Project examples</a>
                     <a href="contact.html" class="text-gray-700 hover:bg-gray-50 transition text-lg py-3 px-4 rounded-xl mobile-menu-link">Contact</a>
                 </div>
             </div>
             <div class="p-4 border-t border-gray-100">
-                <a href="quote.html" class="block w-full py-4 bg-primary text-white text-center rounded-xl font-semibold text-lg">
-                    Discuss a Project <i class="fas fa-arrow-right ml-2"></i>
+                <a href="contact.html" class="block w-full py-4 bg-primary text-white text-center rounded-xl font-semibold text-lg">
+                    Discuss a Commercial Site <i class="fas fa-arrow-right ml-2"></i>
                 </a>
             </div>
         </div>
     </div>
     
-    <!-- Hero Section -->
-    <section id="hero" class="hero-bg pt-24 pb-12 md:pt-32 md:pb-20 px-4 min-h-[100svh] md:min-h-screen flex items-center">
-        <div class="container mx-auto text-center text-white">
-            <h1 class="font-heading font-bold text-3xl sm:text-4xl md:text-6xl lg:text-7xl mb-4 md:mb-6 text-shadow-strong leading-tight md:leading-relaxed">
-                Commercial Landscaping<br class="hidden sm:block"><span class="sm:hidden"> </span>Across Hampshire &amp; Surrey
-            </h1>
-            <p class="text-lg md:text-2xl mb-4 md:mb-6 max-w-3xl mx-auto text-shadow-strong">
-                Thoughtful outdoor spaces and dependable grounds care for businesses, property managers and commercial sites.
-            </p>
-            <p class="text-base md:text-lg mb-6 md:mb-8 max-w-2xl mx-auto text-white/80 text-shadow-strong">
-                Site improvements · Landscaping · Grounds maintenance · Farnborough, Hampshire &amp; surrounding areas
-            </p>
-            <div class="mb-3">
-                <a href="https://prestigeawards.co.uk/glorious-gardens-son-co-ltd-wins-full-service-landscaping-company-of-the-year/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white text-sm font-bold px-4 py-2 rounded-full shadow-lg transition">
-                    <i class="fas fa-trophy"></i> Full-Service Landscaping Company of the Year 2025/26
-                </a>
+    <!-- Commercial-first homepage -->
+    <main>
+    <section id="hero" class="hero-bg relative pt-32 pb-20 md:pt-40 md:pb-28 px-5 min-h-[78vh] flex items-center">
+        <div class="absolute inset-0 bg-[#18362b]/65"></div>
+        <div class="container mx-auto relative z-10 max-w-6xl text-white">
+            <p class="mb-5 text-sm font-bold uppercase tracking-[.2em] text-amber-300">Farnborough · Hampshire · Surrey</p>
+            <h1 class="font-heading max-w-4xl text-4xl sm:text-5xl md:text-7xl font-bold leading-[1.04] mb-7">Landscaping and grounds care for commercial sites.</h1>
+            <p class="max-w-2xl text-lg md:text-xl leading-relaxed text-white/90 mb-9">A local, family-run team for practical outdoor improvements and grounds maintenance. Tell us about your property and what it needs.</p>
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a href="contact.html" class="inline-flex items-center justify-center rounded-full bg-amber-500 px-7 py-4 font-bold text-white transition hover:bg-amber-600">Discuss a commercial project <i class="fas fa-arrow-right ml-3"></i></a>
+                <a href="commercial-landscaping.html" class="inline-flex items-center justify-center rounded-full border border-white/70 px-7 py-4 font-semibold text-white transition hover:bg-white/10">How we can help</a>
             </div>
-            <p class="text-white/90 text-sm font-semibold mb-2 tracking-wide">
-                <i class="fas fa-arrow-down mr-1 inline-block animate-bounce"></i> Tell us about your commercial site
-            </p>
-            <a href="contact.html" class="modern-btn-filled btn-lg">
-                <span class="btn-inner"><i class="fas fa-arrow-right mr-2"></i>Discuss a Commercial Project</span>
-            </a>
+            <p class="mt-8 text-sm text-white/75">Direct conversation with Lorenzo and Esat · Serving Farnborough and surrounding areas</p>
         </div>
     </section>
-    
-    <!-- Instant Features Section - COMBINED -->
-    <section class="py-4 md:py-16 px-1 md:px-4 bg-white min-h-[55vh] md:min-h-0 flex items-center">
-        <div class="mx-auto max-w-3xl w-full">
-            <div class="bg-gradient-to-br from-blue-50 via-white to-purple-50 border-2 border-primary rounded-xl md:rounded-3xl p-8 md:p-12 shadow-2xl mx-1 md:mx-0 text-center">
-                <div class="flex justify-center space-x-4 mb-6">
-                    <div class="bg-gradient-to-br from-primary to-accent rounded-2xl w-16 h-16 md:w-20 md:h-20 flex items-center justify-center shadow-lg">
-                        <i class="fas fa-calculator text-white text-3xl md:text-4xl"></i>
-                    </div>
-                    <div class="bg-gradient-to-br from-accent to-pink-500 rounded-2xl w-16 h-16 md:w-20 md:h-20 flex items-center justify-center shadow-lg">
-                        <i class="fas fa-wand-magic-sparkles text-white text-3xl md:text-4xl"></i>
-                    </div>
-                </div>
-                
-                <span class="inline-block bg-green-500 text-white text-sm font-bold px-5 py-2 rounded-full shadow-lg mb-6">100% FREE</span>
-                
-                <p class="font-heading font-bold text-3xl md:text-4xl text-primary mb-5">
-                    Outdoor spaces that work for your business
-                </p>
-                <p class="text-gray-700 text-lg md:text-xl mb-8 max-w-xl mx-auto">
-                    From planned landscape improvements to grounds care, we work with commercial clients to understand the site, priorities and scope before recommending the next step.
-                </p>
-                
-                <div class="space-y-4 mb-8 inline-block text-left">
-                    <div class="flex items-center space-x-3">
-                        <i class="fas fa-check-circle text-green-600 text-xl flex-shrink-0"></i>
-                        <span class="text-gray-700 text-lg">Landscaping improvements for commercial outdoor spaces</span>
-                    </div>
-                    <div class="flex items-center space-x-3">
-                        <i class="fas fa-check-circle text-green-600 text-xl flex-shrink-0"></i>
-                        <span class="text-gray-700 text-lg">Grounds maintenance and outdoor care enquiries</span>
-                    </div>
-                    <div class="flex items-center space-x-3">
-                        <i class="fas fa-check-circle text-green-600 text-xl flex-shrink-0"></i>
-                        <span class="text-gray-700 text-lg">A direct conversation about your site requirements</span>
-                    </div>
-                    <div class="flex items-center space-x-3">
-                        <i class="fas fa-check-circle text-green-600 text-xl flex-shrink-0"></i>
-                        <span class="text-gray-700 text-lg">Serving Farnborough, Hampshire, Surrey and Berkshire</span>
-                    </div>
-                </div>
-                
-                <div class="max-w-md mx-auto text-center">
-                    <a href="commercial-landscaping.html" class="modern-btn-filled btn-lg">
-                        <span class="btn-inner">Explore Commercial Landscaping <i class="fas fa-arrow-right ml-2"></i></span>
-                    </a>
-                    <p class="mt-3 text-sm text-gray-500 font-medium">Have a site or project in mind? <a href="contact.html" class="text-primary underline">Talk to the team</a>.</p>
-                </div>
-            </div>
-            
-            <!-- Trust Badge -->
-            <div class="flex justify-center mt-6 md:mt-10">
-                <img src="images/review-badges.png" alt="5.0 stars on Google (36 reviews) and Checkatrade (40 reviews)" class="max-w-sm w-full">
-            </div>
-        </div>
-    </section>
-    
-    <!-- About Section -->
-    <section id="about" class="py-20 px-4 bg-stone">
-        <div class="container mx-auto">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <p class="text-sm font-bold uppercase tracking-widest text-primary mb-2">Glorious Gardens Son &amp; Co. LTD</p>
-                    <h2 class="font-heading font-bold text-4xl md:text-5xl text-primary mb-6">
-                        Family-run landscaping, built on 25+ years of experience
-                    </h2>
-                    <p class="text-lg text-gray-700 mb-4">
-                        Glorious Gardens Son &amp; Co. is a family-run landscaping business based in Farnborough, delivering outdoor projects with care, practical experience and attention to detail.
-                    </p>
-                    <p class="text-lg text-gray-700 mb-6">
-                        The business is now focused on commercial landscaping and grounds care. We welcome enquiries from businesses and property professionals looking to improve or maintain their outdoor spaces.
-                    </p>
-                    <div class="inline-flex items-center gap-2 bg-amber-500 text-white text-xs font-bold px-3 py-1.5 rounded-full mb-6 shadow">
-                        <i class="fas fa-trophy"></i> Full-Service Landscaping Company of the Year — Prestige Awards 2025/26
-                    </div>
-                    <div class="grid grid-cols-2 gap-3">
-                        <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 text-center">
-                            <div class="font-heading font-bold text-3xl text-primary mb-1">25+</div>
-                            <div class="text-sm text-gray-600 font-medium">Years of experience</div>
-                        </div>
-                        <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 text-center">
-                            <div class="font-heading font-bold text-3xl text-primary mb-1">5.0★</div>
-                            <div class="text-sm text-gray-600 font-medium">Google &amp; Checkatrade</div>
-                        </div>
-                        <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 text-center">
-                            <div class="font-heading font-bold text-3xl text-primary mb-1">76+</div>
-                            <div class="text-sm text-gray-600 font-medium">Five-star reviews</div>
-                        </div>
-                        <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 text-center">
-                            <div class="font-heading font-bold text-3xl text-amber-500 mb-1">🏆</div>
-                            <div class="text-sm text-gray-600 font-medium">Company of the Year 2025</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="relative">
-                    <div class="rounded-2xl overflow-hidden shadow-2xl">
-                        <img loading="lazy" src="images/team-lorenzo-esat.jpg" alt="Lorenzo and Esat — founders of Glorious Gardens Son & Co. Farnborough" class="w-full object-cover">
-                    </div>
-                    <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur rounded-xl p-4 shadow-lg">
-                        <p class="text-sm font-bold text-primary mb-1">Lorenzo &amp; Esat — Founders</p>
-                        <p class="text-gray-700 text-sm italic leading-snug">"Every project we take on, we ask ourselves: would we be proud to show this to our own family? If the answer isn't yes, we're not done yet."</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
 
-    <!-- Award Section — Prestige Awards Winner -->
-    <section class="py-16 px-4" style="background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); border-top: 1px solid #fde68a; border-bottom: 1px solid #fde68a;">
-        <div class="container mx-auto max-w-5xl">
-            <div class="text-center mb-10">
-                <div class="inline-flex items-center gap-2 bg-amber-500 text-white text-sm font-bold px-4 py-2 rounded-full mb-4 shadow-lg">
-                    <i class="fas fa-trophy"></i> South England Prestige Awards 2025/26
-                </div>
-                <h2 class="font-heading font-bold text-3xl md:text-4xl text-gray-900 mb-4">
-                    Full-Service Landscaping Company of the Year
-                </h2>
-                <p class="text-gray-700 text-lg max-w-2xl mx-auto">
-                    We're proud to have been recognised for delivering consistently exceptional landscaping across residential and commercial projects in Hampshire and Surrey.
-                </p>
-            </div>
+    <section class="bg-[#f2f6f1] border-b border-[#dce6dc] px-5 py-8">
+        <div class="mx-auto grid max-w-6xl gap-6 md:grid-cols-[1.2fr_2fr] md:items-center">
+            <div><p class="text-xs font-bold uppercase tracking-[.18em] text-primary">Commercial focus</p><h2 class="mt-2 text-2xl font-bold text-[#203b30]">Good grounds start with a clear conversation.</h2></div>
+            <p class="text-gray-700 leading-relaxed">We’re developing our commercial work with the same hands-on approach behind our established local landscaping business. From a defined upgrade to a maintenance enquiry, we’ll first understand the site, priorities and scope.</p>
+        </div>
+    </section>
 
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="rounded-2xl overflow-hidden shadow-2xl">
-                    <img loading="lazy" src="https://prestigeawards.co.uk/wp-content/uploads/2026/03/Screenshot_5-1.jpg"
-                         alt="Glorious Gardens Son & Co — Full-Service Landscaping Company of the Year, South England Prestige Awards 2025/26"
-                         class="w-full object-cover">
-                </div>
-                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-xl border border-amber-100">
-                    <div class="flex items-center gap-3 mb-5">
-                        <div class="w-12 h-12 bg-amber-500 rounded-xl flex items-center justify-center shadow flex-shrink-0">
-                            <i class="fas fa-quote-left text-white text-lg"></i>
-                        </div>
-                        <div>
-                            <p class="font-bold text-gray-900 leading-tight">Judges' Comments</p>
-                            <p class="text-sm text-amber-600 font-medium">South England Prestige Awards</p>
-                        </div>
-                    </div>
-                    <blockquote class="text-gray-700 italic leading-relaxed mb-5 text-base">
-                        "The judges admired the company's hands-on leadership and the consistency evident at every stage of delivery. Their ability to combine technical expertise with imaginative design stood out, as did their thorough approach to drainage, groundworks and long-term durability."
-                    </blockquote>
-                    <div class="border-t border-amber-100 pt-4">
-                        <a href="https://prestigeawards.co.uk/glorious-gardens-son-co-ltd-wins-full-service-landscaping-company-of-the-year/"
-                           target="_blank" rel="noopener"
-                           class="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-bold px-5 py-2.5 rounded-full shadow transition text-sm">
-                            <i class="fas fa-external-link-alt"></i> Read the Full Article
-                        </a>
-                    </div>
+    <section class="px-5 py-20 md:py-24">
+        <div class="mx-auto max-w-6xl">
+            <div class="grid gap-10 md:grid-cols-[.9fr_1.1fr] md:items-end mb-12">
+                <div><p class="mb-3 text-xs font-bold uppercase tracking-[.18em] text-primary">What we do</p><h2 class="text-3xl md:text-5xl font-bold text-[#203b30] leading-tight">Useful outdoor spaces, looked after properly.</h2></div>
+                <p class="max-w-xl text-lg leading-relaxed text-gray-600">Talk to us about a commercial property, shared outdoor area or business site across Hampshire, Surrey and Berkshire.</p>
+            </div>
+            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <article class="rounded-2xl border border-[#dce6dc] bg-white p-7"><span class="text-sm font-bold text-amber-700">01</span><h3 class="mt-5 text-xl font-bold text-[#203b30]">Landscape improvements</h3><p class="mt-3 leading-relaxed text-gray-600">Paving, lawns, fencing and decking, planned around the site and how it is used.</p></article>
+                <article class="rounded-2xl border border-[#dce6dc] bg-white p-7"><span class="text-sm font-bold text-amber-700">02</span><h3 class="mt-5 text-xl font-bold text-[#203b30]">Grounds maintenance</h3><p class="mt-3 leading-relaxed text-gray-600">Discuss ongoing garden and grounds care, lawn work and keeping outdoor areas in order.</p></article>
+                <article class="rounded-2xl border border-[#dce6dc] bg-white p-7"><span class="text-sm font-bold text-amber-700">03</span><h3 class="mt-5 text-xl font-bold text-[#203b30]">Outdoor cleaning</h3><p class="mt-3 leading-relaxed text-gray-600">Jet washing and practical care for outdoor surfaces and spaces.</p></article>
+            </div>
+            <div class="mt-8 flex flex-wrap gap-x-6 gap-y-2 border-t border-[#dce6dc] pt-5 text-sm font-semibold text-[#40594c]"><span>Landscaping</span><span>Paving</span><span>Lawns</span><span>Fencing</span><span>Decking</span><span>Garden maintenance</span><span>Jet washing</span></div>
+        </div>
+    </section>
+
+    <section class="bg-[#203b30] px-5 py-16 md:py-20 text-white">
+        <div class="mx-auto grid max-w-6xl gap-10 md:grid-cols-[1fr_auto] md:items-center">
+            <div><p class="mb-3 text-xs font-bold uppercase tracking-[.18em] text-amber-300">Local, family-run</p><h2 class="max-w-2xl text-3xl md:text-4xl font-bold">Experience built on real landscaping work.</h2><p class="mt-5 max-w-2xl leading-relaxed text-white/75">Based in Farnborough, Glorious Gardens Son &amp; Co. brings more than 25 years of landscaping experience. We are now focused on hearing from businesses and property professionals who need considered outdoor work or grounds care.</p></div>
+            <img src="images/team-lorenzo-esat.jpg" alt="Lorenzo and Esat of Glorious Gardens Son &amp; Co." class="w-full max-w-sm rounded-2xl object-cover md:w-72" loading="lazy">
+        </div>
+    </section>
+
+    <section class="px-5 py-20 md:py-24">
+        <div class="mx-auto max-w-6xl">
+            <div class="grid gap-10 md:grid-cols-[.75fr_1.25fr] md:items-center">
+                <div><p class="mb-3 text-xs font-bold uppercase tracking-[.18em] text-primary">A note on our work</p><h2 class="text-3xl md:text-4xl font-bold leading-tight text-[#203b30]">Our project photos show where we’ve come from.</h2></div>
+                <div class="grid gap-5 sm:grid-cols-2">
+                    <figure class="overflow-hidden rounded-2xl bg-[#f2f6f1]"><img src="images/services-garden.webp" alt="Residential landscaping example by Glorious Gardens Son &amp; Co." class="h-64 w-full object-cover" loading="lazy"><figcaption class="p-4 text-sm text-gray-700"><span class="mb-1 block text-xs font-bold uppercase tracking-wider text-primary">Residential project example</span>Landscaping work from our established residential experience.</figcaption></figure>
+                    <figure class="overflow-hidden rounded-2xl bg-[#f2f6f1]"><img src="images/after-garden.webp" alt="Residential garden landscaping example by Glorious Gardens Son &amp; Co." class="h-64 w-full object-cover" loading="lazy"><figcaption class="p-4 text-sm text-gray-700"><span class="mb-1 block text-xs font-bold uppercase tracking-wider text-primary">Residential project example</span>These images are examples of our work, not commercial case studies.</figcaption></figure>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Before & After Section -->
-    <section class="py-20 px-4 bg-white">
-        <div class="container mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="font-heading font-bold text-4xl md:text-5xl text-primary mb-4">
-                    Could This Be Your Garden?
-                </h2>
-                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-                    From overgrown and unusable to a space you actually want to spend time in — see what's possible.
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                <!-- Before Image -->
-                <div class="relative group">
-                    <div class="absolute top-4 left-4 bg-red-600 text-white px-6 py-2 rounded-full font-bold text-lg z-10 shadow-lg">
-                        BEFORE
-                    </div>
-                    <div class="rounded-2xl overflow-hidden shadow-2xl border-4 border-gray-300">
-                        <img loading="lazy" src="images/before-garden.webp" alt="Overgrown Farnborough garden before landscaping transformation" class="w-full h-full object-cover aspect-square">
-                    </div>
-                    <div class="mt-4 text-center">
-                        <p class="text-gray-600 italic">Overgrown lawn, muddy patches, no usable space</p>
-                    </div>
-                </div>
-                
-                <!-- After Image -->
-                <div class="relative group">
-                    <div class="absolute top-4 left-4 bg-green-600 text-white px-6 py-2 rounded-full font-bold text-lg z-10 shadow-lg">
-                        AFTER
-                    </div>
-                    <div class="relative">
-                        <div class="absolute inset-0 bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 rounded-2xl blur-lg opacity-60"></div>
-                        <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-emerald-400">
-                            <img loading="lazy" src="images/after-garden.webp" alt="Stunning modern garden transformation in Farnborough by Glorious Gardens Son & Co." class="w-full h-full object-cover aspect-square">
-                        </div>
-                    </div>
-                    <div class="mt-4 text-center">
-                        <p class="text-primary font-semibold">Premium patio, artificial lawn, composite decking, contemporary planting</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Transformation Details -->
-            <div class="mt-12 bg-stone p-8 rounded-2xl max-w-4xl mx-auto">
-                <p class="font-heading font-bold text-2xl text-primary mb-6 text-center">What You'll Get:</p>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="flex items-start space-x-3">
-                        <i class="fas fa-check-circle text-green-600 text-2xl mt-1"></i>
-                        <div>
-                            <p class="font-semibold text-lg">Porcelain Patio</p>
-                            <p class="text-gray-600">Large-format porcelain slabs in contemporary grey</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start space-x-3">
-                        <i class="fas fa-check-circle text-green-600 text-2xl mt-1"></i>
-                        <div>
-                            <p class="font-semibold text-lg">Premium Artificial Lawn</p>
-                            <p class="text-gray-600">Realistic turf with excellent drainage</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start space-x-3">
-                        <i class="fas fa-check-circle text-green-600 text-2xl mt-1"></i>
-                        <div>
-                            <p class="font-semibold text-lg">Composite Decking</p>
-                            <p class="text-gray-600">Low-maintenance raised deck with seating area</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start space-x-3">
-                        <i class="fas fa-check-circle text-green-600 text-2xl mt-1"></i>
-                        <div>
-                            <p class="font-semibold text-lg">Contemporary Planting</p>
-                            <p class="text-gray-600">Raised beds with architectural plants and lighting</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-8 text-center">
-                    <a href="quote.html" class="modern-btn-filled btn-lg">
-                        <span class="btn-inner">Transform Your Garden <i class="fas fa-arrow-right ml-2"></i></span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Services Section -->
-    <section id="services" class="py-20 px-4 bg-stone">
-        <div class="container mx-auto">
-            <div class="max-w-xl mx-auto mb-12">
-                <div class="modern-header-blue">
-                    <div class="glow-border"></div>
-                    <div class="header-content">
-                        <div class="icon-morph">
-                            <div class="bg-layer-1"></div>
-                            <div class="bg-layer-2"></div>
-                            <div class="icon-inner">
-                                <i class="fas fa-leaf"></i>
-                            </div>
-                        </div>
-                        <div class="header-text flex-1">
-                            <h2 class="text-2xl md:text-3xl">Commercial Landscaping Services</h2>
-                            <p>Outdoor improvements and grounds care for commercial sites</p>
-                        </div>
-                        <div class="decorative-dots">
-                            <div class="dot-row">
-                                <div class="dot dot-blue"></div>
-                                <div class="dot dot-indigo"></div>
-                            </div>
-                            <div class="dot-row">
-                                <div class="dot dot-violet"></div>
-                                <div class="dot dot-blue-light"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service Card 1 -->
-                <div class="glass-rim rounded-2xl">
-                <div class="service-card relative bg-white border-2 border-stone rounded-2xl overflow-hidden">
-                    <a href="artificial-grass.html" class="absolute inset-0 z-10 rounded-2xl focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:outline-none"><span class="sr-only">Artificial Grass Installation</span></a>
-                    <div class="h-48 overflow-hidden">
-                        <img loading="lazy" src="images/artificial-turf-family.webp" alt="Artificial grass installation in Farnborough garden" class="w-full h-full object-cover service-image-bright">
-                    </div>
-                    <div class="p-6 text-center">
-                        <p class="font-heading font-bold text-2xl mb-3">Lawn Installation &amp; Renewal</p>
-                        <p class="text-gray-600">Natural turf and artificial grass options for shared outdoor areas and commercial properties.</p>
-                    </div>
-                </div>
-                </div>
-                
-                <!-- Service Card 2 -->
-                <div class="glass-rim rounded-2xl">
-                <div class="service-card relative bg-white border-2 border-stone rounded-2xl overflow-hidden">
-                    <a href="composite-decking.html" class="absolute inset-0 z-10 rounded-2xl focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:outline-none"><span class="sr-only">Composite Decking Installation</span></a>
-                    <div class="h-48 overflow-hidden">
-                        <img loading="lazy" src="images/decking-hero.webp" alt="Composite decking installation in Farnborough" class="w-full h-full object-cover service-image-bright">
-                    </div>
-                    <div class="p-6 text-center">
-                        <p class="font-heading font-bold text-2xl mb-3">Decking &amp; Outdoor Areas</p>
-                        <p class="text-gray-600">Create defined, usable outdoor areas with practical decking and landscaping improvements.</p>
-                    </div>
-                </div>
-                </div>
-                
-                <!-- Service Card 3 -->
-                <div class="glass-rim rounded-2xl">
-                <div class="service-card relative bg-white border-2 border-stone rounded-2xl overflow-hidden">
-                    <a href="patios.html" class="absolute inset-0 z-10 rounded-2xl focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:outline-none"><span class="sr-only">Patio Installation Farnborough</span></a>
-                    <div class="h-48 overflow-hidden">
-                        <img loading="lazy" src="images/gallery-patio.webp" alt="Porcelain patio installation in Farnborough garden" class="w-full h-full object-cover service-image-bright">
-                    </div>
-                    <div class="p-6 text-center">
-                        <p class="font-heading font-bold text-2xl mb-3">Patios &amp; Paving</p>
-                        <p class="text-gray-600">Hard landscaping to improve access, circulation and the day-to-day use of outdoor spaces.</p>
-                    </div>
-                </div>
-                </div>
-                
-                <!-- Service Card 4 -->
-                <div class="glass-rim rounded-2xl">
-                <div class="service-card relative bg-white border-2 border-stone rounded-2xl overflow-hidden">
-                    <a href="driveways.html" class="absolute inset-0 z-10 rounded-2xl focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:outline-none"><span class="sr-only">Driveway Installation Farnborough</span></a>
-                    <div class="h-48 overflow-hidden">
-                        <img loading="lazy" src="images/driveway-block-paving.webp" alt="Block paving driveway installation in Farnborough" class="w-full h-full object-cover service-image-bright">
-                    </div>
-                    <div class="p-6 text-center">
-                        <p class="font-heading font-bold text-2xl mb-3">Driveways &amp; Access Areas</p>
-                        <p class="text-gray-600">Paving and driveway improvements that help create a tidy, welcoming approach to your site.</p>
-                    </div>
-                </div>
-                </div>
-                
-                <!-- Service Card 5 -->
-                <div class="glass-rim rounded-2xl">
-                <div class="service-card relative bg-white border-2 border-stone rounded-2xl overflow-hidden">
-                    <a href="garden-lighting.html" class="absolute inset-0 z-10 rounded-2xl focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:outline-none"><span class="sr-only">Garden Lighting Installation Farnborough</span></a>
-                    <div class="h-48 overflow-hidden">
-                        <img loading="lazy" src="images/garden-lighting.webp" alt="Garden lighting installation in Farnborough" class="w-full h-full object-cover service-image-bright">
-                    </div>
-                    <div class="p-6 text-center">
-                        <p class="font-heading font-bold text-2xl mb-3">Landscape Lighting</p>
-                        <p class="text-gray-600">Discuss lighting as part of a wider plan for the appearance and use of your outdoor space.</p>
-                    </div>
-                </div>
-                </div>
-                
-                <!-- Service Card 6 -->
-                <div class="glass-rim rounded-2xl">
-                <div class="service-card relative bg-white border-2 border-stone rounded-2xl overflow-hidden">
-                    <a href="full-garden-makeover.html" class="absolute inset-0 z-10 rounded-2xl focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:outline-none"><span class="sr-only">Full Garden Makeover Farnborough</span></a>
-                    <div class="h-48 overflow-hidden">
-                        <img loading="lazy" src="images/services-garden.webp" alt="Complete garden transformation and redesign in Farnborough" class="w-full h-full object-cover service-image-bright">
-                    </div>
-                    <div class="p-6 text-center">
-                        <p class="font-heading font-bold text-2xl mb-3">Landscape Improvements</p>
-                        <p class="text-gray-600">Bring multiple outdoor improvements together in a coordinated project, from preparation to finishing details.</p>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Design Examples Section -->
-    <section id="examples" class="py-20 px-4 bg-stone">
-        <div class="container mx-auto">
-            <h2 class="font-heading font-bold text-4xl md:text-5xl text-center text-primary mb-4">
-                AI-Powered Design Examples
-            </h2>
-            <p class="text-center text-gray-600 text-lg mb-12 max-w-2xl mx-auto">
-                Here's what your garden could look like — before we lay a single slab. Real examples from our AI design generator.
-            </p>
-            
-            <!-- Carousel -->
-            <div class="relative max-w-5xl mx-auto">
-                <div id="carousel" class="carousel-container overflow-x-auto flex gap-6 pb-4 snap-x snap-mandatory">
-                    <!-- Example 1 -->
-                    <div class="flex-shrink-0 w-full md:w-1/2 snap-center">
-                        <div class="bg-white rounded-2xl h-96 overflow-hidden shadow-xl">
-                            <img loading="lazy" src="images/services-garden.webp" alt="Modern family garden design in Farnborough by Glorious Gardens Son & Co." class="w-full h-full object-cover">
-                        </div>
-                    </div>
-                    
-                    <!-- Example 2 -->
-                    <div class="flex-shrink-0 w-full md:w-1/2 snap-center">
-                        <div class="bg-white rounded-2xl h-96 overflow-hidden shadow-xl">
-                            <img loading="lazy" src="images/gallery-patio.webp" alt="Outdoor patio and seating area design in Farnborough" class="w-full h-full object-cover">
-                        </div>
-                    </div>
-                    
-                    <!-- Example 3 -->
-                    <div class="flex-shrink-0 w-full md:w-1/2 snap-center">
-                        <div class="bg-white rounded-2xl h-96 overflow-hidden shadow-xl">
-                            <img loading="lazy" src="images/garden-lighting.webp" alt="LED garden lighting design in Farnborough" class="w-full h-full object-cover">
-                        </div>
-                    </div>
-                    
-                    <!-- Example 4 -->
-                    <div class="flex-shrink-0 w-full md:w-1/2 snap-center">
-                        <div class="bg-white rounded-2xl h-96 overflow-hidden shadow-xl">
-                            <img loading="lazy" src="images/artificial-turf-family.webp" alt="Family-friendly garden with artificial grass in Farnborough" class="w-full h-full object-cover">
-                        </div>
-                    </div>
-                    
-                    <!-- Example 5 -->
-                    <div class="flex-shrink-0 w-full md:w-1/2 snap-center">
-                        <div class="bg-white rounded-2xl h-96 overflow-hidden shadow-xl">
-                            <img loading="lazy" src="images/tropical-paradise-garden.webp" alt="Tropical paradise garden design by Glorious Gardens Son & Co. Farnborough" class="w-full h-full object-cover">
-                        </div>
-                    </div>
-                    
-                    <!-- Example 6 -->
-                    <div class="flex-shrink-0 w-full md:w-1/2 snap-center">
-                        <div class="bg-white rounded-2xl h-96 overflow-hidden shadow-xl">
-                            <img loading="lazy" src="images/ai-design-mediterranean.webp" alt="Mediterranean style garden design by Glorious Gardens Son & Co. Farnborough" class="w-full h-full object-cover">
-                        </div>
-                    </div>
-                    
-                    <!-- Example 7 -->
-                    <div class="flex-shrink-0 w-full md:w-1/2 snap-center">
-                        <div class="bg-white rounded-2xl h-96 overflow-hidden shadow-xl">
-                            <img loading="lazy" src="images/decking-hero.webp" alt="Premium composite decking design in Farnborough garden" class="w-full h-full object-cover">
-                        </div>
-                    </div>
-                    
-                    <!-- Example 8 -->
-                    <div class="flex-shrink-0 w-full md:w-1/2 snap-center">
-                        <div class="bg-white rounded-2xl h-96 overflow-hidden shadow-xl">
-                            <img loading="lazy" src="images/family-garden-lighting.webp" alt="Farnborough garden with LED lighting installation" class="w-full h-full object-cover">
-                        </div>
-                    </div>
-                    
-                    <!-- Example 9 -->
-                    <div class="flex-shrink-0 w-full md:w-1/2 snap-center">
-                        <div class="bg-white rounded-2xl h-96 overflow-hidden shadow-xl">
-                            <img loading="lazy" src="images/natural-stone-patio.webp" alt="Natural stone patio installation in Farnborough garden" class="w-full h-full object-cover">
-                        </div>
-                    </div>
-                    
-                    <!-- Example 10 -->
-                    <div class="flex-shrink-0 w-full md:w-1/2 snap-center">
-                        <div class="bg-white rounded-2xl h-96 overflow-hidden shadow-xl">
-                            <img loading="lazy" src="images/gallery-garden-pergola.webp" alt="Farnborough garden with pergola and feature planting" class="w-full h-full object-cover">
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Carousel Controls -->
-                <button id="carouselPrev" class="absolute left-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-stone transition">
-                    <i class="fas fa-chevron-left text-primary text-xl"></i>
-                </button>
-                <button id="carouselNext" class="absolute right-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-stone transition">
-                    <i class="fas fa-chevron-right text-primary text-xl"></i>
-                </button>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Real Examples Section -->
-    <section class="py-20 px-4 bg-white">
-        <div class="container mx-auto max-w-5xl">
-            <h2 class="font-heading font-bold text-4xl md:text-5xl text-center text-primary mb-4">
-                See What You'll Receive
-            </h2>
-            <p class="text-center text-gray-600 text-lg mb-12 max-w-2xl mx-auto">
-                Every quote includes a professional PDF breakdown and an AI-generated design of your dream garden. Here's a real example.
-            </p>
-
-            <div class="grid md:grid-cols-2 gap-8">
-                <a href="files/example-quote.pdf" target="_blank" rel="noopener noreferrer" class="group block">
-                    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:-translate-y-1">
-                        <div class="h-56 md:h-64 overflow-hidden relative">
-                            <img loading="lazy" src="images/example-quote-preview.png" alt="Example professional quote breakdown PDF showing itemised pricing and project summary" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute bottom-0 inset-x-0 h-10 bg-gradient-to-t from-blue-50/80 to-transparent pointer-events-none"></div>
-                        </div>
-                        <div class="p-6">
-                            <div class="flex items-center gap-3 mb-3">
-                                <span class="bg-red-100 text-red-600 text-xs font-bold px-3 py-1 rounded-full">PDF</span>
-                                <h3 class="font-bold text-lg text-gray-900">Professional Quote Breakdown</h3>
-                            </div>
-                            <p class="text-sm text-gray-600 mb-4">Full itemised pricing, material specifications, project timeline, and installation details — all branded and ready to review.</p>
-                            <span class="inline-flex items-center text-primary font-semibold text-sm group-hover:gap-3 gap-2 transition-all">
-                                View PDF <i class="fas fa-external-link-alt text-xs"></i>
-                            </span>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="images/example-garden-design.jpg" target="_blank" rel="noopener noreferrer" class="group block">
-                    <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:-translate-y-1">
-                        <div class="h-56 md:h-64 overflow-hidden">
-                            <img loading="lazy" src="images/example-garden-design.jpg" alt="AI-generated garden design visualisation for Farnborough home" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        </div>
-                        <div class="p-6">
-                            <div class="flex items-center gap-3 mb-3">
-                                <span class="bg-green-100 text-green-600 text-xs font-bold px-3 py-1 rounded-full">AI DESIGN</span>
-                                <h3 class="font-bold text-lg text-gray-900">AI Garden Visualisation</h3>
-                            </div>
-                            <p class="text-sm text-gray-600 mb-4">A photorealistic preview of your new garden, generated by AI based on your vision, budget, and garden size — delivered in seconds.</p>
-                            <span class="inline-flex items-center text-primary font-semibold text-sm group-hover:gap-3 gap-2 transition-all">
-                                View Design <i class="fas fa-external-link-alt text-xs"></i>
-                            </span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="text-center mt-10">
-                <a href="quote.html" class="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary-dark transition shadow-lg hover:shadow-xl">
-                    Get Yours Free <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
+    <section class="bg-[#f2f6f1] px-5 py-16 md:py-20">
+        <div class="mx-auto grid max-w-6xl gap-9 md:grid-cols-[1fr_1fr] md:items-center">
+            <div><p class="mb-3 text-xs font-bold uppercase tracking-[.18em] text-primary">Recognised locally</p><h2 class="text-3xl md:text-4xl font-bold text-[#203b30]">Full-Service Landscaping Company of the Year</h2><p class="mt-4 leading-relaxed text-gray-600">South England Prestige Awards 2025/26. Recognition for the landscaping business and experience we bring to each project.</p><a href="https://prestigeawards.co.uk/glorious-gardens-son-co-ltd-wins-full-service-landscaping-company-of-the-year/" target="_blank" rel="noopener" class="mt-5 inline-flex items-center font-semibold text-primary underline underline-offset-4">Read about the award <i class="fas fa-arrow-up-right-from-square ml-2 text-xs"></i></a></div>
+            <div class="overflow-hidden rounded-2xl"><img src="https://prestigeawards.co.uk/wp-content/uploads/2026/03/Screenshot_5-1.jpg" alt="South England Prestige Awards 2025/26 recognition for Glorious Gardens Son &amp; Co." class="w-full object-cover" loading="lazy"></div>
         </div>
     </section>
 
-    <!-- SEO Content Section -->
-    <section class="py-20 px-4 bg-stone">
-        <div class="container mx-auto max-w-6xl">
-            <div class="text-center mb-14">
-                <h2 class="font-heading font-bold text-4xl md:text-5xl text-primary mb-4">Landscaping Services Across Farnborough &amp; Hampshire</h2>
-                <p class="text-gray-600 text-lg max-w-3xl mx-auto">Your garden is in good hands. Serving homeowners throughout Farnborough, Hampshire, Surrey and the surrounding areas — from simple patio upgrades to complete garden makeovers — with craftsmanship and attention to detail on every project.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-                <div class="bg-white rounded-2xl p-6 shadow-sm">
-                    <div class="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center mb-4">
-                        <i class="fas fa-th-large text-primary"></i>
-                    </div>
-                    <h3 class="font-heading font-bold text-xl mb-3">Patio Installation</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Your new patio will be built on a proper sub-base so it stays level and lasts for decades. Porcelain, natural stone, block paving — whichever you choose across Farnborough and Hampshire, you'll get it on time, on budget, and looking exactly as promised.</p>
-                    <a href="patios.html" class="text-primary font-semibold text-sm mt-3 inline-block hover:underline">Patio Installation →</a>
-                </div>
-
-                <div class="bg-white rounded-2xl p-6 shadow-sm">
-                    <div class="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center mb-4">
-                        <i class="fas fa-leaf text-green-600"></i>
-                    </div>
-                    <h3 class="font-heading font-bold text-xl mb-3">Artificial Grass</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Your new artificial lawn will look and feel like natural turf — without the mud, watering or mowing. Ideal for families with children and pets, built with premium blades and proper drainage layers so it performs in all weathers. Installed in 1–3 days with zero mess left behind.</p>
-                    <a href="artificial-grass.html" class="text-primary font-semibold text-sm mt-3 inline-block hover:underline">Artificial Grass →</a>
-                </div>
-
-                <div class="bg-white rounded-2xl p-6 shadow-sm">
-                    <div class="w-10 h-10 bg-purple-50 rounded-xl flex items-center justify-center mb-4">
-                        <i class="fas fa-border-all text-purple-600"></i>
-                    </div>
-                    <h3 class="font-heading font-bold text-xl mb-3">Composite Decking</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Composite decking lasts 25+ years with virtually no maintenance — no staining, no splitting, no annual treatments. Choose from leading brands in a range of colours and finishes, with optional glass balustrades, built-in lighting and privacy screens to create a complete outdoor room.</p>
-                    <a href="composite-decking.html" class="text-primary font-semibold text-sm mt-3 inline-block hover:underline">Composite Decking →</a>
-                </div>
-
-                <div class="bg-white rounded-2xl p-6 shadow-sm">
-                    <div class="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center mb-4">
-                        <i class="fas fa-lightbulb text-amber-500"></i>
-                    </div>
-                    <h3 class="font-heading font-bold text-xl mb-3">Garden Lighting</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Professional LED garden lighting transforms your outdoor space after dark — highlighting plants, illuminating pathways and creating the right ambience for entertaining. Low-voltage systems, safely installed, energy-efficient and controllable from your smartphone.</p>
-                    <a href="garden-lighting.html" class="text-primary font-semibold text-sm mt-3 inline-block hover:underline">Garden Lighting →</a>
-                </div>
-
-                <div class="bg-white rounded-2xl p-6 shadow-sm">
-                    <div class="w-10 h-10 bg-gray-100 rounded-xl flex items-center justify-center mb-4">
-                        <i class="fas fa-car text-gray-600"></i>
-                    </div>
-                    <h3 class="font-heading font-bold text-xl mb-3">Driveways</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">From traditional block paving to resin-bound and pattern-imprinted concrete, your new driveway will add serious kerb appeal and value. Every job uses a proper sub-base and drainage to meet SuDS regulations — planning, kerb drops, all handled from start to finish.</p>
-                    <a href="driveways.html" class="text-primary font-semibold text-sm mt-3 inline-block hover:underline">Driveways →</a>
-                </div>
-
-                <div class="bg-white rounded-2xl p-6 shadow-sm">
-                    <div class="w-10 h-10 bg-teal-50 rounded-xl flex items-center justify-center mb-4">
-                        <i class="fas fa-seedling text-teal-600"></i>
-                    </div>
-                    <h3 class="font-heading font-bold text-xl mb-3">Full Garden Makeovers</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Your full garden makeover combines every element — patio, lawn, decking, planting, lighting and fencing — into one seamlessly managed project. You get a single point of contact from first survey to final handover, with design, groundworks and installation all taken care of.</p>
-                    <a href="full-garden-makeover.html" class="text-primary font-semibold text-sm mt-3 inline-block hover:underline">Full Garden Makeovers →</a>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-2xl p-8 md:p-10 shadow-sm">
-                <div class="grid md:grid-cols-2 gap-10 items-start">
-                    <div>
-                        <h3 class="font-heading font-bold text-2xl md:text-3xl text-primary mb-4">Why Homeowners Choose Glorious Gardens Son & Co.</h3>
-                        <p class="text-gray-600 mb-4 leading-relaxed">We've built a reputation across Farnborough, Aldershot, Camberley, Fleet, Frimley and beyond for delivering landscaping projects that genuinely transform outdoor spaces. Every team member is fully trained, all work is fully insured, and we always leave the site clean and tidy at the end of each day.</p>
-                        <p class="text-gray-600 mb-4 leading-relaxed">Our AI-powered quoting system means you get an accurate, detailed quote quickly — no vague ballpark figures, no hard sell. If you'd like a garden design visualisation, we generate that too as part of the free quote, so you can see exactly how your finished garden will look before any work begins.</p>
-                        <ul class="space-y-2 text-gray-700 text-sm">
-                            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500"></i> Fully insured, experienced installation teams</li>
-                            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500"></i> Free AI-powered quote and design visualisation</li>
-                            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500"></i> No obligation — quotes are yours to keep</li>
-                            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500"></i> Fixed-price contracts, no hidden extras</li>
-                            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500"></i> Site left clean and tidy every day</li>
-                            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500"></i> Family-run business — 25+ years serving Farnborough &amp; Hampshire</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="font-heading font-bold text-2xl md:text-3xl text-primary mb-4">Areas We Cover</h3>
-                        <p class="text-gray-600 mb-4 leading-relaxed">We cover Farnborough and all surrounding areas including Aldershot, Camberley, Fleet, Frimley, Sandhurst, Yateley, Bracknell, Woking and Guildford. We also take on projects further afield across Hampshire, Surrey, and Berkshire.</p>
-                        <div class="grid grid-cols-2 gap-2 text-sm text-gray-600 mb-5">
-                            <a href="landscaping-camberley.html" class="flex items-center gap-1.5 hover:text-primary"><i class="fas fa-map-marker-alt text-primary text-xs"></i> Camberley</a>
-                            <a href="landscaping-aldershot.html" class="flex items-center gap-1.5 hover:text-primary"><i class="fas fa-map-marker-alt text-primary text-xs"></i> Aldershot</a>
-                            <a href="landscaping-fleet.html" class="flex items-center gap-1.5 hover:text-primary"><i class="fas fa-map-marker-alt text-primary text-xs"></i> Fleet</a>
-                            <a href="landscaping-frimley.html" class="flex items-center gap-1.5 hover:text-primary"><i class="fas fa-map-marker-alt text-primary text-xs"></i> Frimley</a>
-                            <a href="landscaping-sandhurst.html" class="flex items-center gap-1.5 hover:text-primary"><i class="fas fa-map-marker-alt text-primary text-xs"></i> Sandhurst</a>
-                            <a href="landscaping-yateley.html" class="flex items-center gap-1.5 hover:text-primary"><i class="fas fa-map-marker-alt text-primary text-xs"></i> Yateley</a>
-                            <a href="landscaping-bracknell.html" class="flex items-center gap-1.5 hover:text-primary"><i class="fas fa-map-marker-alt text-primary text-xs"></i> Bracknell</a>
-                            <a href="landscaping-guildford.html" class="flex items-center gap-1.5 hover:text-primary"><i class="fas fa-map-marker-alt text-primary text-xs"></i> Guildford</a>
-                        </div>
-                        <a href="areas-we-cover.html" class="text-primary font-semibold text-sm hover:underline">View all areas we cover →</a>
-                    </div>
-                </div>
-            </div>
+    <section class="bg-white px-5 py-16">
+        <div class="mx-auto flex max-w-6xl flex-col gap-6 rounded-3xl bg-[#e7eee7] p-7 md:flex-row md:items-center md:justify-between md:p-10">
+            <div><p class="text-xs font-bold uppercase tracking-[.18em] text-primary">Have a site in mind?</p><h2 class="mt-2 text-2xl md:text-3xl font-bold text-[#203b30]">Tell us what needs doing.</h2><p class="mt-2 text-gray-600">Share the location and the work you’re considering. We’ll take it from there.</p></div>
+            <a href="contact.html" class="inline-flex shrink-0 items-center justify-center rounded-full bg-primary px-7 py-4 font-bold text-white transition hover:bg-[#1b4332]">Contact the team <i class="fas fa-arrow-right ml-3"></i></a>
         </div>
     </section>
 
@@ -990,8 +427,8 @@
                     <svg class="w-4 h-4 fill-current text-amber-500" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                     <span><span data-rating-value>5.0</span> out of 5 — <span data-review-count>76</span> verified reviews</span>
                 </div>
-                <h2 class="font-heading font-bold text-4xl md:text-5xl text-primary mb-4">What Our Customers Say</h2>
-                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Real reviews from real customers across Farnborough, Aldershot, Camberley, Fleet and the surrounding areas of Hampshire &amp; Surrey.</p>
+                <h2 class="font-heading font-bold text-4xl md:text-5xl text-primary mb-4">Residential customer feedback</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Reviews from our established residential landscaping work across Farnborough, Aldershot, Camberley, Fleet and nearby areas. These are not commercial client references.</p>
             </div>
 
             <!-- Review cards + Facebook plugin side by side on desktop -->
@@ -1050,10 +487,10 @@
     <section id="contact" class="py-20 px-4 bg-white">
         <div class="container mx-auto max-w-6xl">
             <h2 class="font-heading font-bold text-4xl md:text-5xl text-center text-primary mb-4">
-                Get In Touch
+                Discuss your commercial site
             </h2>
             <p class="text-center text-gray-600 text-lg mb-12">
-                Have questions? We're here to help.
+                Businesses and property professionals: tell us about your location, priorities and the work you have in mind.
             </p>
             
             <div class="grid md:grid-cols-2 gap-12">
@@ -1087,7 +524,7 @@
                             <div>
                                 <p class="font-semibold mb-1">WhatsApp</p>
                                 <a 
-                                    href="https://wa.me/447946861456?text=Hi%2C%20I%27d%20like%20a%20quote%20for%20my%20garden" 
+                                    href="https://wa.me/447946861456?text=Hello%2C%20I%27d%20like%20to%20discuss%20a%20commercial%20landscaping%20enquiry." 
                                     id="whatsappLink"
                                     target="_blank"
                                     class="text-gray-600 hover:text-primary transition"
@@ -1119,60 +556,18 @@
                     </div>
                 </div>
                 
-                <!-- Contact Form -->
-                <div>
-                    <form id="contactForm" class="bg-stone rounded-2xl p-8">
-                        <div class="mb-4">
-                            <label class="block text-gray-700 font-semibold mb-2" for="contactName">
-                                Name *
-                            </label>
-                            <input 
-                                type="text" 
-                                id="contactName" 
-                                name="contactName"
-                                required
-                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-primary"
-                                placeholder="Your name"
-                            >
-                        </div>
-                        
-                        <div class="mb-4">
-                            <label class="block text-gray-700 font-semibold mb-2" for="contactEmailForm">
-                                Email *
-                            </label>
-                            <input 
-                                type="email" 
-                                id="contactEmailForm" 
-                                name="contactEmailForm"
-                                required
-                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-primary"
-                                placeholder="your@email.com"
-                            >
-                        </div>
-                        
-                        <div class="mb-4">
-                            <label class="block text-gray-700 font-semibold mb-2" for="contactMessage">
-                                Message *
-                            </label>
-                            <textarea 
-                                id="contactMessage" 
-                                name="contactMessage"
-                                required
-                                rows="5"
-                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-primary"
-                                placeholder="Tell us about your project..."
-                            ></textarea>
-                        </div>
-                        
-                        <button 
-                            type="submit"
-                            class="w-full bg-primary text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary-dark transition shadow-lg"
-                        >
-                            Send Message
-                        </button>
-                        
-                        <div id="contactFormResult" class="hidden mt-4 p-4 rounded-lg"></div>
-                    </form>
+                <div class="bg-stone rounded-2xl p-8">
+                    <h3 class="font-heading font-bold text-2xl text-primary mb-4">Send us your site brief</h3>
+                    <p class="text-gray-700 mb-6">For commercial landscaping or grounds care, email the team with a few details about your requirements:</p>
+                    <ul class="space-y-3 text-gray-700 mb-8">
+                        <li><i class="fas fa-check text-primary mr-2" aria-hidden="true"></i>Your business and contact details</li>
+                        <li><i class="fas fa-check text-primary mr-2" aria-hidden="true"></i>The site location or postcode</li>
+                        <li><i class="fas fa-check text-primary mr-2" aria-hidden="true"></i>The work or maintenance you are considering</li>
+                        <li><i class="fas fa-check text-primary mr-2" aria-hidden="true"></i>Any preferred timescale and relevant site photos</li>
+                    </ul>
+                    <a href="mailto:info@glorious-gardens-services.co.uk?subject=Commercial%20landscaping%20enquiry" class="block text-center bg-primary text-white px-6 py-4 rounded-full text-lg font-semibold hover:bg-primary-dark transition">Email Your Enquiry <i class="fas fa-arrow-right ml-2" aria-hidden="true"></i></a>
+                    <p class="text-sm text-gray-600 mt-3">Opens your email app. You can also write directly to <a href="mailto:info@glorious-gardens-services.co.uk" class="underline break-all">info@glorious-gardens-services.co.uk</a>.</p>
+                    <a href="https://wa.me/447946861456?text=Hello%2C%20I%27d%20like%20to%20discuss%20a%20commercial%20landscaping%20enquiry." class="inline-flex items-center gap-2 mt-6 font-semibold text-primary hover:underline"><i class="fab fa-whatsapp" aria-hidden="true"></i>Prefer WhatsApp? Message the team</a>
                 </div>
             </div>
         </div>
@@ -1185,28 +580,16 @@
                 <img src="images/logo-gg.png" alt="Glorious Gardens Son & Co." class="h-16 md:h-32">
             </div>
             <p class="text-gray-600 mb-6 text-center">
-                Professional landscaping services with AI-powered quotes and designs.
+                Commercial landscaping and grounds care across Farnborough, Hampshire and surrounding areas.
             </p>
             <div class="flex flex-wrap justify-center gap-4 md:gap-6 mb-8">
                 <a href="about.html" class="text-gray-700 hover:text-primary transition">About</a>
                 <a href="commercial-landscaping.html" class="text-gray-700 hover:text-primary transition">Commercial Landscaping</a>
-                <a href="portfolio.html" class="text-gray-700 hover:text-primary transition">Portfolio</a>
-                <a href="blog.html" class="text-gray-700 hover:text-primary transition">Blog</a>
-                <a href="cost-guide.html" class="text-gray-700 hover:text-primary transition">Cost Guide</a>
+                <a href="portfolio.html" class="text-gray-700 hover:text-primary transition">Project examples</a>
                 <a href="contact.html" class="text-gray-700 hover:text-primary transition">Contact</a>
                 <a href="areas-we-cover.html" class="text-primary font-semibold hover:text-primary-dark transition">Areas We Cover</a>
             </div>
-            <div class="flex flex-wrap justify-center gap-3 mb-5 text-sm">
-                <a href="landscaping-camberley.html" class="text-gray-500 hover:text-primary transition">Camberley</a>
-                <a href="landscaping-aldershot.html" class="text-gray-500 hover:text-primary transition">Aldershot</a>
-                <a href="landscaping-fleet.html" class="text-gray-500 hover:text-primary transition">Fleet</a>
-                <a href="landscaping-frimley.html" class="text-gray-500 hover:text-primary transition">Frimley</a>
-                <a href="landscaping-sandhurst.html" class="text-gray-500 hover:text-primary transition">Sandhurst</a>
-                <a href="landscaping-yateley.html" class="text-gray-500 hover:text-primary transition">Yateley</a>
-                <a href="landscaping-bracknell.html" class="text-gray-500 hover:text-primary transition">Bracknell</a>
-                <a href="landscaping-guildford.html" class="text-gray-500 hover:text-primary transition">Guildford</a>
-                <a href="areas-we-cover.html" class="text-gray-500 hover:text-primary transition font-medium">+ More Areas</a>
-            </div>
+            <p class="mb-6 text-center text-sm text-gray-500">Based in Farnborough · Serving Hampshire, Surrey and Berkshire</p>
 
             <p class="text-center text-sm text-amber-600 font-semibold mb-4">
                 <i class="fas fa-trophy mr-1"></i> Full-Service Landscaping Company of the Year — South England Prestige Awards 2025/26
@@ -1224,7 +607,7 @@
     </footer>
     
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/447946861456?text=Hi%2C%20I%27d%20like%20a%20quote%20for%20my%20garden" 
+    <a href="https://wa.me/447946861456?text=Hello%2C%20I%27d%20like%20to%20discuss%20a%20commercial%20landscaping%20enquiry." 
        target="_blank" 
        class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300 group"
        aria-label="Chat on WhatsApp">
@@ -1237,5 +620,12 @@
     <!-- Scripts -->
     <script src="scripts/config.js"></script>
     <script src="scripts/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('#reviewCardsContainer .review-card').forEach(function (card) {
+                if (/Mark Jennings/.test(card.textContent)) card.remove();
+            });
+        });
+    </script>
 </body>
 </html>

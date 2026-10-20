@@ -158,9 +158,12 @@ function applyBranding() {
     setElement('addressPostcode', 'GU14 6FL');
     setElement('serviceArea', 'Farnborough & Surrounding Areas');
     
-    const whatsappMessage = encodeURIComponent("Hi, I'd like a quote for my garden");
+    const whatsappMessage = encodeURIComponent("Hello, I'd like to discuss a commercial landscaping enquiry.");
     const whatsappUrl = `https://wa.me/${brandConfig.whatsapp}?text=${whatsappMessage}`;
     setElement('whatsappLink', null, 'href', whatsappUrl);
+    document.querySelectorAll('a[href^="https://wa.me/"]').forEach(link => {
+        if (link.href.includes('quote%20for%20my%20garden')) link.href = whatsappUrl;
+    });
 
     document.querySelectorAll('[data-fb-page]').forEach(el => {
         el.href = brandConfig.social.facebookReviewsUrl || brandConfig.social.facebookPageUrl;

@@ -1,0 +1,1 @@
+- [Commercial positioning](commercial-positioning.md) — the company is moving into commercial landscaping; keep primary messaging business-focused.
