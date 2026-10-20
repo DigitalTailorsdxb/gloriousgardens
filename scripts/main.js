@@ -1,5 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+    // The quote software is residential only, separate from commercial tenders.
+    document.querySelectorAll('header a[href="quote.html"], #mobileMenu a[href="quote.html"], footer a[href="quote.html"]').forEach(link => {
+        link.textContent = 'Residential quote tool';
+    });
+
     document.querySelectorAll('header a[href="commercial-landscaping.html"]').forEach(link => {
         link.textContent = 'Commercial';
     });
@@ -113,9 +118,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     <i class="fas fa-phone"></i>
                     <span>Call</span>
                 </a>
-                <a href="quote.html" class="cta-quote" aria-label="Get an instant quote and design">
-                    <i class="fas fa-calculator"></i>
-                    <span>Quote &amp; Design</span>
+                <a href="contact.html" class="cta-quote" aria-label="Commercial tender and project enquiries">
+                    <i class="fas fa-envelope"></i>
+                    <span>Commercial enquiries</span>
                 </a>`;
             document.body.appendChild(bar);
         }

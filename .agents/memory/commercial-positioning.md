@@ -9,8 +9,8 @@ The client wants the website to promote commercial landscaping because that is n
 
 **How to apply:** Lead primary messaging and enquiries with commercial landscaping. Keep residential material secondary and accurately labelled. Do not imply existing residential photographs are commercial case studies, or invent commercial clients, accreditations, insurance levels or contract guarantees.
 
-Keep the quoting software prominent and accessible; do not remove or downgrade it when changing the site's commercial positioning.
+Preserve the quoting software, but keep it separate from commercial services and clearly label it as residential only.
 
-**Why:** The user explicitly clarified that keeping the quoting software is important, while the rest of the website should focus on commercial landscaping.
+**Why:** The user clarified that the quoting software must stay, but commercial customers will not receive instant quotes. The commercial website establishes the company's commercial identity when they send off tenders.
 
-**How to apply:** Preserve the quote engine and its integrations. Keep clear quote-tool links and calls to action alongside commercial-focused website content.
+**How to apply:** Preserve the quote engine and integrations. Keep a secondary residential quote-tool link, never present it as a commercial quoting option, and direct commercial tender/project enquiries to the team. Focus the main website on commercial services and company information.
