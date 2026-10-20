@@ -11,11 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
             link.textContent = 'Commercial';
         }
     });
-    document.querySelectorAll('header a[href="quote.html"], #mobileMenu a[href="quote.html"]').forEach(link => {
-        const isPrimaryCta = link.classList.contains('w-full');
-        link.href = isPrimaryCta ? 'contact.html' : 'services.html';
-        link.textContent = isPrimaryCta ? 'Discuss a Project' : 'Residential';
-    });
     document.querySelectorAll('footer p').forEach(paragraph => {
         if (paragraph.textContent.trim() === 'Transforming gardens with AI-powered design and expert craftsmanship.') {
             paragraph.textContent = 'Commercial landscaping and grounds care across Hampshire, Surrey and Berkshire.';
@@ -118,9 +113,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     <i class="fas fa-phone"></i>
                     <span>Call</span>
                 </a>
-                <a href="contact.html" class="cta-quote" aria-label="Discuss a commercial landscaping project">
-                    <i class="fas fa-building"></i>
-                    <span>Discuss a Project</span>
+                <a href="quote.html" class="cta-quote" aria-label="Get an instant quote and design">
+                    <i class="fas fa-calculator"></i>
+                    <span>Quote &amp; Design</span>
                 </a>`;
             document.body.appendChild(bar);
         }
